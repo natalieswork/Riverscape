@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bqpskyk77juhh"
+path="res://.godot/imported/question_mark.aseprite-18584ac70a12a826ef697d5df8b30a1b.res"
+
+[deps]
+
+source_file="res://assests/emoticons/question_mark.aseprite"
+dest_files=["res://.godot/imported/question_mark.aseprite-18584ac70a12a826ef697d5df8b30a1b.res"]
+
+[params]
+

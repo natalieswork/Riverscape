@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dj5peg3ncp8un"
+path="res://.godot/imported/kit_front.aseprite-f866446d53b20a8d19ee7e710669af62.res"
+
+[deps]
+
+source_file="res://assests/characters/kit/kit_front.aseprite"
+dest_files=["res://.godot/imported/kit_front.aseprite-f866446d53b20a8d19ee7e710669af62.res"]
+
+[params]
+

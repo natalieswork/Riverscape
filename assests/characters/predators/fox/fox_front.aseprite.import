@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cwvs3jm4fnl76"
+path="res://.godot/imported/fox_front.aseprite-7f29d5016590673e719497d7ebd6cdee.res"
+
+[deps]
+
+source_file="res://assests/characters/predators/fox/fox_front.aseprite"
+dest_files=["res://.godot/imported/fox_front.aseprite-7f29d5016590673e719497d7ebd6cdee.res"]
+
+[params]
+

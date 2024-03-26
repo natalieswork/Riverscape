@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://c5rr3cye5w16l"
+path="res://.godot/imported/coyote_front.aseprite-f5601fd643e9e0ffeb49059b00db2fae.res"
+
+[deps]
+
+source_file="res://assests/characters/predators/coyote/coyote_front.aseprite"
+dest_files=["res://.godot/imported/coyote_front.aseprite-f5601fd643e9e0ffeb49059b00db2fae.res"]
+
+[params]
+

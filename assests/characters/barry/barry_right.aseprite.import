@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cqech7fsb8v42"
+path="res://.godot/imported/barry_right.aseprite-a2d1fdbfdf018f3e9ef57d3a77c27ea6.res"
+
+[deps]
+
+source_file="res://assests/characters/barry/barry_right.aseprite"
+dest_files=["res://.godot/imported/barry_right.aseprite-a2d1fdbfdf018f3e9ef57d3a77c27ea6.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dfakdf860nfsp"
+path="res://.godot/imported/barry_front.aseprite-4508750d0f6eaa4c51389823a1fbc6f3.res"
+
+[deps]
+
+source_file="res://assests/characters/barry/barry_front.aseprite"
+dest_files=["res://.godot/imported/barry_front.aseprite-4508750d0f6eaa4c51389823a1fbc6f3.res"]
+
+[params]
+

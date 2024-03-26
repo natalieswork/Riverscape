@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b08up266gonlg"
+path="res://.godot/imported/green_checkmark.aseprite-176a90db4bed8d040671b5d872b2e8bb.res"
+
+[deps]
+
+source_file="res://assests/emoticons/green_checkmark.aseprite"
+dest_files=["res://.godot/imported/green_checkmark.aseprite-176a90db4bed8d040671b5d872b2e8bb.res"]
+
+[params]
+

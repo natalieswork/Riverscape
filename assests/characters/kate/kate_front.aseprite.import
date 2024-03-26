@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bt5i27yevnv77"
+path="res://.godot/imported/kate_front.aseprite-c505cbb875674328babf5d57a1fb9b35.res"
+
+[deps]
+
+source_file="res://assests/characters/kate/kate_front.aseprite"
+dest_files=["res://.godot/imported/kate_front.aseprite-c505cbb875674328babf5d57a1fb9b35.res"]
+
+[params]
+
