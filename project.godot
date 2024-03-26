@@ -14,10 +14,6 @@ config/name="Riverscape"
 run/main_scene="res://scenes/player.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
-[display]
-
-window/stretch/scale=5.0
-
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")

@@ -1606,15 +1606,17 @@ animations = [{
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
+collision_layer = 3
 script = ExtResource("1_w6fnb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -17)
+position = Vector2(1, -16)
 sprite_frames = SubResource("SpriteFrames_8ci7i")
 animation = &"idle_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_bs6wh")
 
 [node name="animation_back" type="AnimatedSprite2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://qmpqe7un6t4g"]
+[gd_scene load_steps=18 format=3 uid="uid://qmpqe7un6t4g"]
 
 [ext_resource type="Texture2D" uid="uid://c7qq5l0f7y3vi" path="res://assests/landscape/tiles/whole_paths.png" id="1_m65v4"]
 [ext_resource type="Texture2D" uid="uid://bpyqef5pe23s8" path="res://assests/landscape/objects/alive_whole_oak.png" id="2_7h1y2"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://crykj8yq3s4xg" path="res://assests/landscape/objects/dam.png" id="6_dhs3i"]
 [ext_resource type="Texture2D" uid="uid://cg8183gim2j5w" path="res://assests/landscape/objects/lodge.png" id="7_w4tmy"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/player.tscn" id="8_eatiu"]
+[ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/coyote.tscn" id="9_irkmq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hv0j"]
 texture = ExtResource("1_m65v4")
@@ -1441,4 +1442,7 @@ layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array(1638417, 1, 0, 983100, 1, 0, 2162740, 1, 0, 1048579, 2, 0, 2228228, 2, 0, 655376, 2, 0, 393252, 6, 3, 1703968, 5, 4, 1769504, 5, 4, 1835072, 2, 0, 1900608, 2, 0, 1441846, 2, 0, 1638408, 2, 0, 65584, 2, 0, 2228268, 2, 0, 1572911, 1, 0)
 
 [node name="player" parent="." instance=ExtResource("8_eatiu")]
-position = Vector2(1, 0)
+position = Vector2(570, 139)
+
+[node name="coyote" parent="." instance=ExtResource("9_irkmq")]
+position = Vector2(734, 280)
