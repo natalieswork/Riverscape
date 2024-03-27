@@ -1,7 +1,7 @@
 [gd_scene load_steps=57 format=3 uid="uid://djw0brrw10117"]
 
 [ext_resource type="Texture2D" uid="uid://d1p3cyfpsckfl" path="res://assests/characters/predators/coyote/sprite_sheet/coyote.png" id="1_e0op0"]
-[ext_resource type="Script" path="res://scripts/coyote.gd" id="1_tabye"]
+[ext_resource type="Script" path="res://scripts/characters/predators/coyote.gd" id="1_tabye"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h0lm"]
 atlas = ExtResource("1_e0op0")

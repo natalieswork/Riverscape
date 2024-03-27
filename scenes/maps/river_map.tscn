@@ -1,17 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://qmpqe7un6t4g"]
+[gd_scene load_steps=20 format=3 uid="uid://qmpqe7un6t4g"]
 
-[ext_resource type="Texture2D" uid="uid://c7qq5l0f7y3vi" path="res://assests/landscape/tiles/whole_paths.png" id="1_m65v4"]
-[ext_resource type="Texture2D" uid="uid://bpyqef5pe23s8" path="res://assests/landscape/objects/alive_whole_oak.png" id="2_7h1y2"]
-[ext_resource type="Texture2D" uid="uid://b164bs33gl2iv" path="res://assests/landscape/objects/alive_whole_pine.png" id="3_qdgrd"]
-[ext_resource type="Texture2D" uid="uid://b6x20018noub6" path="res://assests/landscape/tiles/whole_cliffs.png" id="4_muxjo"]
-[ext_resource type="Texture2D" uid="uid://dsbsqy6s3cvdv" path="res://assests/landscape/tiles/inside_grass_dying_alive_transtion.png" id="5_7pa6r"]
-[ext_resource type="Texture2D" uid="uid://crykj8yq3s4xg" path="res://assests/landscape/objects/dam.png" id="6_dhs3i"]
-[ext_resource type="Texture2D" uid="uid://cg8183gim2j5w" path="res://assests/landscape/objects/lodge.png" id="7_w4tmy"]
-[ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/player.tscn" id="8_eatiu"]
-[ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/coyote.tscn" id="9_irkmq"]
+[ext_resource type="Script" path="res://scripts/maps/river_map.gd" id="1_kv4kb"]
+[ext_resource type="Texture2D" uid="uid://c7qq5l0f7y3vi" path="res://assests/landscape/tiles/whole_paths.png" id="1_ymes4"]
+[ext_resource type="Texture2D" uid="uid://bpyqef5pe23s8" path="res://assests/landscape/objects/alive_whole_oak.png" id="2_8avt3"]
+[ext_resource type="Texture2D" uid="uid://b164bs33gl2iv" path="res://assests/landscape/objects/alive_whole_pine.png" id="3_00vqu"]
+[ext_resource type="Texture2D" uid="uid://b6x20018noub6" path="res://assests/landscape/tiles/whole_cliffs.png" id="4_o5oxg"]
+[ext_resource type="Texture2D" uid="uid://dsbsqy6s3cvdv" path="res://assests/landscape/tiles/inside_grass_dying_alive_transtion.png" id="5_llqfr"]
+[ext_resource type="Texture2D" uid="uid://crykj8yq3s4xg" path="res://assests/landscape/objects/dam.png" id="6_brujf"]
+[ext_resource type="Texture2D" uid="uid://cg8183gim2j5w" path="res://assests/landscape/objects/lodge.png" id="7_ehrbs"]
+[ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="8_lcw5w"]
+[ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="9_6om6t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2hv0j"]
-texture = ExtResource("1_m65v4")
+texture = ExtResource("1_ymes4")
 texture_region_size = Vector2i(25, 25)
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1159,7 +1160,7 @@ texture_region_size = Vector2i(25, 25)
 8:0/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q54rp"]
-texture = ExtResource("2_7h1y2")
+texture = ExtResource("2_8avt3")
 texture_region_size = Vector2i(20, 25)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1241,7 +1242,7 @@ texture_region_size = Vector2i(20, 25)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6.625, 28.125, 2.375, 29.125, 12.375, 30.125, 13.375, 45.875, 20.625, 74.125, -14.625, 73.625, -8.875, 43.875, -7.625, 34.875)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5l7gy"]
-texture = ExtResource("3_qdgrd")
+texture = ExtResource("3_00vqu")
 texture_region_size = Vector2i(20, 25)
 5:4/0 = 0
 5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1311,7 +1312,7 @@ texture_region_size = Vector2i(20, 25)
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(13.875, 49.625, 17.125, 71.625, 0.375, 74.375, -14.625, 71.625, -13.875, 50.875, -3.875, 41.125)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_paaj5"]
-texture = ExtResource("4_muxjo")
+texture = ExtResource("4_o5oxg")
 texture_region_size = Vector2i(25, 25)
 0:3/size_in_atlas = Vector2i(2, 2)
 0:3/0 = 0
@@ -1363,7 +1364,7 @@ texture_region_size = Vector2i(25, 25)
 4:7/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve61u"]
-texture = ExtResource("5_7pa6r")
+texture = ExtResource("5_llqfr")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1393,7 +1394,7 @@ texture = ExtResource("5_7pa6r")
 2:2/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4qrqh"]
-texture = ExtResource("6_dhs3i")
+texture = ExtResource("6_brujf")
 texture_region_size = Vector2i(15, 15)
 0:4/size_in_atlas = Vector2i(10, 5)
 0:4/0 = 0
@@ -1403,7 +1404,7 @@ texture_region_size = Vector2i(15, 15)
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(73.875, -2.875, 73.875, 18.125, 54.375, 23.625, 41.375, 26.125, 21.625, 23.375, -0.125, 23.875, -37.625, 12.125, -77.875, 9.125, -71.875, -14.125, -0.125, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xso8m"]
-texture = ExtResource("7_w4tmy")
+texture = ExtResource("7_ehrbs")
 texture_region_size = Vector2i(15, 15)
 0:3/size_in_atlas = Vector2i(10, 7)
 0:3/0 = 0
@@ -1422,8 +1423,12 @@ sources/4 = SubResource("TileSetAtlasSource_ve61u")
 sources/5 = SubResource("TileSetAtlasSource_4qrqh")
 sources/6 = SubResource("TileSetAtlasSource_xso8m")
 
-[node name="world" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgfn1"]
+size = Vector2(61, 130)
+
+[node name="river_map" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_kv4kb")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1441,8 +1446,23 @@ layer_4/name = "ysort"
 layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array(1638417, 1, 0, 983100, 1, 0, 2162740, 1, 0, 1048579, 2, 0, 2228228, 2, 0, 655376, 2, 0, 393252, 6, 3, 1703968, 5, 4, 1769504, 5, 4, 1835072, 2, 0, 1900608, 2, 0, 1441846, 2, 0, 1638408, 2, 0, 65584, 2, 0, 2228268, 2, 0, 1572911, 1, 0)
 
-[node name="player" parent="." instance=ExtResource("8_eatiu")]
+[node name="player" parent="." instance=ExtResource("8_lcw5w")]
 position = Vector2(570, 139)
 
-[node name="coyote" parent="." instance=ExtResource("9_irkmq")]
+[node name="coyote" parent="." instance=ExtResource("9_6om6t")]
 position = Vector2(734, 280)
+
+[node name="collisions" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(0, 195, 0, 656, 1147, 656, 1152, 247, 1216, 244, 1220, 122, 1154, 115, 1103, 114, 1076, 112, 1070, 98, 1070, 80, 1069, 73, 1043, 68, 992, 65, 943, 70, 913, 68, 874, 66, 848, 64, 844, 44, 844, 19, 436, 18, 436, 28, 434, 59, 432, 76, 429, 81, 401, 82, 385, 82, 366, 84, 358, 85, 355, 109, 357, 141, 334, 149, 311, 148, 297, 143, 288, 150, 281, 157, 253, 164, 204, 164, 179, 164, 173, 178, 155, 196, 119, 196, 74, 195, 48, 193, 25, 193, 3, 191, 4, -31, 521, -88, 1134, -69, 1346, 65, 1315, 407, 1226, 719, 836, 748, 405, 739, 56, 731, -174, 673, -150, 357, -87, 181)
+
+[node name="forest_entrance" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="forest_entrance"]
+position = Vector2(1183.5, 181)
+shape = SubResource("RectangleShape2D_qgfn1")
+
+[connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
+[connection signal="body_exited" from="forest_entrance" to="." method="_on_forest_entrance_body_exited"]

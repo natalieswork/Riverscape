@@ -7,6 +7,7 @@ var health = 100
 var player_in_attack_zone = false
 var can_take_damage = true  
 
+
 func _physics_process(delta):
 	handle_damage()
 	
@@ -20,6 +21,7 @@ func _physics_process(delta):
 			$AnimatedSprite2D.play("walk_right")
 	else: 
 		$AnimatedSprite2D.play("idle_right")
+
 
 func _on_detection_area_body_entered(body):
 	player = body
@@ -45,6 +47,7 @@ func _on_coyote_hitbox_body_exited(body):
 		player_in_attack_zone = false
 		
 
+
 func handle_damage():
 	if player_in_attack_zone and global.player_active_attack == true:
 		if can_take_damage == true:
@@ -55,9 +58,6 @@ func handle_damage():
 			
 			if health <= 0:
 				self.queue_free()
-
-
-
 
 
 func _on_damage_cooldown_timeout():

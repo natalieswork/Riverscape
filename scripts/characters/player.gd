@@ -8,9 +8,10 @@ var health = 100
 var alive = true
 var active_attack = false
 
-# Starting stuff
+
 func _ready():
 	$AnimatedSprite2D.play("idle_front")
+
 
 func _physics_process(delta):
 	player_movement(delta)
@@ -52,7 +53,8 @@ func player_movement(delta):
 		velocity.x = 0
 		
 	move_and_slide()
-	
+
+
 '''
 1 is moving
 0 is not moving/idle
@@ -96,8 +98,8 @@ func play_anim(movement):
 
 func player():
 	pass
-	
-	
+
+
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
 		enemy_in_attack_range = true
@@ -106,8 +108,8 @@ func _on_player_hitbox_body_entered(body):
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		enemy_in_attack_range = false
-		
-		
+
+
 func enemy_attack():
 	if enemy_in_attack_range and enemy_attack_cooldown:
 		health = health - 5
@@ -146,3 +148,4 @@ func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_active_attack = false
 	active_attack = false
+
