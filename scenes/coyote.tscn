@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://djw0brrw10117"]
+[gd_scene load_steps=57 format=3 uid="uid://djw0brrw10117"]
 
 [ext_resource type="Texture2D" uid="uid://d1p3cyfpsckfl" path="res://assests/characters/predators/coyote/sprite_sheet/coyote.png" id="1_e0op0"]
 [ext_resource type="Script" path="res://scripts/coyote.gd" id="1_tabye"]
@@ -523,6 +523,9 @@ radius = 111.005
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_doh5h"]
 size = Vector2(33.5, 12)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgu4j"]
+size = Vector2(66, 38)
+
 [node name="coyote" type="CharacterBody2D"]
 script = ExtResource("1_tabye")
 
@@ -557,5 +560,18 @@ shape = SubResource("CircleShape2D_6myql")
 position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_doh5h")
 
+[node name="coyote_hitbox" type="Area2D" parent="."]
+position = Vector2(0, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coyote_hitbox"]
+position = Vector2(-2, -11)
+shape = SubResource("RectangleShape2D_fgu4j")
+
+[node name="damage_cooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="coyote_hitbox" to="." method="_on_coyote_hitbox_body_entered"]
+[connection signal="body_exited" from="coyote_hitbox" to="." method="_on_coyote_hitbox_body_exited"]
+[connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]
