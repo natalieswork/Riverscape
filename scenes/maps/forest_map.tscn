@@ -1,15 +1,16 @@
 [gd_scene load_steps=6 format=3 uid="uid://dv2kqooed8dnb"]
 
 [ext_resource type="TileSet" uid="uid://cha21wb7fchj6" path="res://scenes/maps/forest_map.tres" id="1_1i2gw"]
-[ext_resource type="Script" path="res://scripts/maps/forest_exit.gd" id="2_7bhx0"]
+[ext_resource type="Script" path="res://scripts/maps/forest_map.gd" id="1_hlji7"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="2_fwe54"]
 [ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="3_rykng"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk7of"]
-size = Vector2(70, 117)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fgy6q"]
+size = Vector2(69, 116.5)
 
 [node name="forest_map" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_hlji7")
 metadata/_edit_vertical_guides_ = [-2.0, 1364.0]
 metadata/_edit_horizontal_guides_ = [3.0, 1376.0]
 
@@ -33,13 +34,6 @@ position = Vector2(-3, 3)
 scale = Vector2(1.00318, 1)
 polygon = PackedVector2Array(440.6, 454, 947.987, 462, 953, 1120, 444, 1118, 441, 562, 368.828, 564, 373.812, 446, 433.622, 448, 408.701, 390, 334, 413, 309, 478, 309, 613, 309, 613, 324, 676, 324, 1013, 370.822, 1193, 1037.7, 1193, 1076, 567, 1015, 422, 928, 349, 666.134, 330, 482, 350)
 
-[node name="forest_exit" type="Area2D" parent="."]
-script = ExtResource("2_7bhx0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="forest_exit"]
-position = Vector2(406, 509.5)
-shape = SubResource("RectangleShape2D_xk7of")
-
 [node name="player" parent="." instance=ExtResource("2_fwe54")]
 position = Vector2(472, 514)
 
@@ -51,3 +45,12 @@ position = Vector2(571, 817)
 
 [node name="coyote3" parent="." instance=ExtResource("3_rykng")]
 position = Vector2(894, 926)
+
+[node name="forest_exit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="forest_exit"]
+position = Vector2(407.5, 508)
+shape = SubResource("RectangleShape2D_fgy6q")
+
+[connection signal="body_entered" from="forest_exit" to="." method="_on_forest_exit_body_entered"]
+[connection signal="body_exited" from="forest_exit" to="." method="_on_forest_exit_body_exited"]

@@ -30,7 +30,7 @@ layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array(1638417, 1, 0, 983100, 1, 0, 2162740, 1, 0, 1048579, 2, 0, 2228228, 2, 0, 655376, 2, 0, 393252, 6, 3, 1703968, 5, 4, 1769504, 5, 4, 1835072, 2, 0, 1900608, 2, 0, 1441846, 2, 0, 1638408, 2, 0, 65584, 2, 0, 2228268, 2, 0, 1572911, 1, 0)
 
 [node name="player" parent="." instance=ExtResource("8_lcw5w")]
-position = Vector2(570, 139)
+position = Vector2(576, 153)
 
 [node name="collisions" type="StaticBody2D" parent="."]
 
