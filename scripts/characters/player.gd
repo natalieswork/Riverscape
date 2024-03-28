@@ -25,6 +25,11 @@ func _physics_process(delta):
 		print("Player has been killed.")
 		self.queue_free()
 
+
+func player():
+	pass
+
+
 func player_movement(delta):
 
 	if Input.is_action_pressed("ui_right"):
@@ -94,10 +99,6 @@ func play_anim(movement):
 			if active_attack == false:
 				anim.play("idle_back")
 			
-
-
-func player():
-	pass
 
 
 func _on_player_hitbox_body_entered(body):

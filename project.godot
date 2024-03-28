@@ -18,6 +18,12 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 global="*res://scripts/global.gd"
 
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=600
+window/stretch/scale=3.0
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")

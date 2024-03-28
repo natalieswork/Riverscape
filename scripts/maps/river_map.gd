@@ -8,7 +8,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	change_scene()
 
 
 func _on_forest_entrance_body_entered(body):
@@ -20,3 +20,10 @@ func _on_forest_entrance_body_entered(body):
 func _on_forest_entrance_body_exited(body):
 	if body.has_method("player"):
 		global.transition_scene = false
+		
+
+func change_scene():
+	if global.transition_scene == true:
+		if global.current_scene == "river_map":
+			get_tree().change_scene_to_file("res://scenes/maps/forest_map.tscn")
+			global.finish_changescenes()
