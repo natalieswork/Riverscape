@@ -17,6 +17,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
 	attack()
+	current_camera()
 	
 	if health <= 0:
 		$AnimatedSprite2D.play("death")
@@ -150,3 +151,12 @@ func _on_deal_attack_timer_timeout():
 	global.player_active_attack = false
 	active_attack = false
 
+
+func current_camera():
+	if global.current_scene == "river_map":
+		$river_camera.enabled = true
+		$forest_camera.enabled = false
+	elif global.current_scene == "forest_map":
+		$river_camera.enabled = false
+		$forest_camera.enabled = true
+	

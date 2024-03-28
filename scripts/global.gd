@@ -15,8 +15,8 @@ func finish_changescenes():
 	if transition_scene == true:
 		transition_scene = false
 		if current_scene == "river_map":
-			current_scene == "forest_map"
+			current_scene = "forest_map"
 		else:
-			current_scene == "river_map"
+			current_scene = "river_map"
 	
 

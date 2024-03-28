@@ -18,8 +18,9 @@ func _on_forest_entrance_body_entered(body):
 
 
 func _on_forest_entrance_body_exited(body):
-	if body.has_method("player"):
-		global.transition_scene = false
+	#if body.has_method("player"):
+		#global.transition_scene = false
+		pass
 		
 
 func change_scene():

@@ -22,6 +22,7 @@ global="*res://scripts/global.gd"
 
 window/size/viewport_width=1024
 window/size/viewport_height=600
+window/size/mode=3
 window/stretch/scale=3.0
 
 [editor_plugins]

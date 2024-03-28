@@ -1634,13 +1634,23 @@ wait_time = 0.5
 [node name="deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.8
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="river_camera" type="Camera2D" parent="."]
 position = Vector2(0, -14)
+enabled = false
 zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 20
+limit_left = 1
+limit_top = 15
 limit_right = 1150
 limit_bottom = 650
+limit_smoothed = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[node name="forest_camera" type="Camera2D" parent="."]
+position = Vector2(0, -15)
+enabled = false
+zoom = Vector2(2, 2)
 limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
