@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dx8d58ckjykc4"]
+
+[node name="new_forest_map" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
