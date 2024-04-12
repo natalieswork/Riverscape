@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://cmmhvstkpewxs"]
+[gd_resource type="TileSet" load_steps=25 format=3 uid="uid://cmmhvstkpewxs"]
 
 [ext_resource type="Texture2D" uid="uid://bf7jyxvhqs4lq" path="res://assests/landscape/tiles/edge grass alive.png" id="1_gyav7"]
 [ext_resource type="Texture2D" uid="uid://dat4obu6o0j46" path="res://assests/landscape/tiles/inside_soild_tiles.png" id="2_7il7a"]
@@ -10,22 +10,24 @@
 [ext_resource type="Texture2D" uid="uid://cg8183gim2j5w" path="res://assests/landscape/objects/lodge.png" id="8_oapog"]
 [ext_resource type="Texture2D" uid="uid://bpyqef5pe23s8" path="res://assests/landscape/objects/alive_whole_oak.png" id="9_wmp5s"]
 [ext_resource type="Texture2D" uid="uid://b164bs33gl2iv" path="res://assests/landscape/objects/alive_whole_pine.png" id="10_3x70x"]
+[ext_resource type="Texture2D" uid="uid://b88gyjmbe3mhp" path="res://assests/landscape/tiles/grass_textre.png" id="11_8uxtl"]
 [ext_resource type="Texture2D" uid="uid://dpf3dldjnguu1" path="res://assests/landscape/objects/alive_bush.png" id="11_32dj3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt25s"]
 texture = ExtResource("1_gyav7")
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
-1:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
 1:2/0 = 0
 2:2/0 = 0
 3:2/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+1:1/0 = 0
+3:0/0 = 0
+2:1/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tgjrh"]
 texture = ExtResource("2_7il7a")
@@ -286,6 +288,17 @@ texture_region_size = Vector2i(25, 25)
 0:0/size_in_atlas = Vector2i(4, 6)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pr5nh"]
+texture = ExtResource("11_8uxtl")
+texture_region_size = Vector2i(25, 25)
+0:2/0 = 0
+2:1/0 = 0
+1:2/0 = 0
+2:0/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+2:2/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q8img"]
 texture = ExtResource("11_32dj3")
 texture_region_size = Vector2i(25, 25)
@@ -316,3 +329,4 @@ sources/9 = SubResource("TileSetAtlasSource_q8img")
 sources/10 = SubResource("TileSetAtlasSource_e67jj")
 sources/11 = SubResource("TileSetAtlasSource_jprws")
 sources/12 = SubResource("TileSetAtlasSource_u7gc3")
+sources/7 = SubResource("TileSetAtlasSource_pr5nh")
