@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbao6087q1y2c"
-path="res://.godot/imported/transtion_grass_dying_alive.png-e891178c532d9ff17eb020c85179c908.ctex"
+uid="uid://dqynyovc3vghv"
+path="res://.godot/imported/transtion_grass_dying_alive.png-798c35ff7929540fb162988f2dd291db.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/landscape/transtion_grass_dying_alive.png"
-dest_files=["res://.godot/imported/transtion_grass_dying_alive.png-e891178c532d9ff17eb020c85179c908.ctex"]
+source_file="res://assests/landscape/tiles/transtion_grass_dying_alive.png"
+dest_files=["res://.godot/imported/transtion_grass_dying_alive.png-798c35ff7929540fb162988f2dd291db.ctex"]
 
 [params]
 
