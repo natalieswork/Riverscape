@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=55 format=3 uid="uid://cmmhvstkpewxs"]
+[gd_resource type="TileSet" load_steps=57 format=3 uid="uid://cmmhvstkpewxs"]
 
 [ext_resource type="Texture2D" uid="uid://bf7jyxvhqs4lq" path="res://assests/landscape/tiles/edge grass alive.png" id="1_ed4t6"]
 [ext_resource type="Texture2D" uid="uid://dat4obu6o0j46" path="res://assests/landscape/tiles/inside_soild_tiles.png" id="2_33awm"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://vs4f3cftvvbb" path="res://assests/landscape/objects/rand_stump_shade.png" id="9_s43v1"]
 [ext_resource type="Texture2D" uid="uid://bqgvtemkbtmlf" path="res://assests/landscape/objects/alive_whole_oak_shade.png" id="10_c3lv2"]
 [ext_resource type="Texture2D" uid="uid://b164bs33gl2iv" path="res://assests/landscape/objects/alive_whole_pine.png" id="10_mbv36"]
+[ext_resource type="Texture2D" uid="uid://ct6ahppppmr48" path="res://assests/landscape/objects/single_medium_rock_shade.png" id="10_outex"]
 [ext_resource type="Texture2D" uid="uid://b88gyjmbe3mhp" path="res://assests/landscape/tiles/grass_textre.png" id="11_1mdob"]
 [ext_resource type="Texture2D" uid="uid://cbni4p71tiws2" path="res://assests/landscape/tiles/whole_cliffs_alive.png" id="12_ycniy"]
 [ext_resource type="Texture2D" uid="uid://bojh18b8i1a75" path="res://assests/landscape/objects/alive_whole_pine_shade.png" id="12_yngbc"]
@@ -277,6 +278,15 @@ texture = ExtResource("9_s43v1")
 texture_region_size = Vector2i(31, 31)
 2:0/0 = 0
 2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ygpup"]
+texture = ExtResource("10_outex")
+texture_region_size = Vector2i(25, 25)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -772,3 +782,4 @@ sources/25 = SubResource("TileSetAtlasSource_a8oev")
 sources/26 = SubResource("TileSetAtlasSource_qnee0")
 sources/27 = SubResource("TileSetAtlasSource_noor4")
 sources/16 = SubResource("TileSetAtlasSource_yjxwv")
+sources/17 = SubResource("TileSetAtlasSource_ygpup")
