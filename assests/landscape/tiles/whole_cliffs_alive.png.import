@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6pu8213umtfl"
-path="res://.godot/imported/whole_cliffs shade.png-b936d5ce7006ca7e3d5d44ffafba7795.ctex"
+uid="uid://cbni4p71tiws2"
+path="res://.godot/imported/whole_cliffs_alive.png-a7a5a88995edbda127e6ffa4b3ceaf7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/landscape/tiles/whole_cliffs shade.png"
-dest_files=["res://.godot/imported/whole_cliffs shade.png-b936d5ce7006ca7e3d5d44ffafba7795.ctex"]
+source_file="res://assests/landscape/tiles/whole_cliffs_alive.png"
+dest_files=["res://.godot/imported/whole_cliffs_alive.png-a7a5a88995edbda127e6ffa4b3ceaf7b.ctex"]
 
 [params]
 
