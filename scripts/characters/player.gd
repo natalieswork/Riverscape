@@ -14,7 +14,7 @@ const walk_speed = 100
 const run_speed = 160
 var enemy_in_attack_range = false
 var enemy_attack_cooldown = true
-var health = 100
+# var health = 100
 var alive = true
 
 
@@ -23,12 +23,13 @@ func _ready():
 
 
 func _physics_process(delta):
-	if health <= 0:
+	if global.player_health <= 0:
 		die()
 
 	player_movement(delta)
 	attack()
 	enemy_attack()
+	update_health()
 	current_camera()
 
 
@@ -112,10 +113,10 @@ func _on_player_hitbox_body_exited(body):
 
 func enemy_attack():
 	if enemy_in_attack_range and enemy_attack_cooldown:
-		health = health - 5
+		global.player_health = global.player_health - 5
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
-		print(health)
+		print(global.player_health)
 
 
 func _on_attack_cooldown_timeout():
@@ -147,9 +148,18 @@ func current_camera():
 		$forest_camera.enabled = true
 
 func die():
-	health = 0
+	global.player_health = 0
 	alive = false
 	current_state = State.DEAD
 	update_animation()
 	print("Player has been killed.")
 	self.queue_free() 
+
+func update_health():
+	var healthbar = $healthbar
+	healthbar.value = global.player_health
+	
+	if global.player_health >= 100 or $river_camera.enabled == true:
+		healthbar.visible = false
+	else:
+		healthbar.visible = true 
