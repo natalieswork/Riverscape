@@ -17,6 +17,14 @@ var enemy_attack_cooldown = true
 # var health = 100
 var alive = true
 
+# running vars
+var running = false 
+var max_run_stamina = 100
+var run_stamina = max_run_stamina
+var run_loss = 20 # stamina drain per second
+var run_regen = 10 # stamina regen per second
+var run_cooldown = true
+
 
 func _ready():
 	update_animation()
@@ -40,9 +48,12 @@ func player():
 func player_movement(delta):
 	if current_state != State.ATTACK:
 		var move_speed = walk_speed
-		if Input.is_action_pressed("run"): 
+		if Input.is_action_pressed("run") and run_stamina > 0 and run_cooldown: 
 			move_speed = run_speed
 			current_state = State.RUN
+			running = true
+		elif Input.is_action_just_released("run") or run_stamina <= 0:
+			running = false
 		else:
 			current_state = State.WALK
 
@@ -132,7 +143,6 @@ func attack():
 		$deal_attack_timer.start()
 
 
-
 func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_active_attack = false
@@ -147,6 +157,7 @@ func current_camera():
 		$river_camera.enabled = false
 		$forest_camera.enabled = true
 
+
 func die():
 	global.player_health = 0
 	alive = false
@@ -154,6 +165,7 @@ func die():
 	update_animation()
 	print("Player has been killed.")
 	self.queue_free() 
+
 
 func update_health():
 	var healthbar = $healthbar
@@ -163,3 +175,34 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
+
+
+func update_runbar():
+	var runbar = $runbar
+	runbar.value = run_stamina  
+	runbar.max_value = 100
+	
+	if current_state == State.RUN or run_stamina < 100:
+		runbar.visible = true
+	else:
+		runbar.visible = false
+
+
+func _on_run_timer_timeout():
+	if running and run_stamina > 0:
+		run_stamina -= run_loss * 0.1  # adjust for timer frequency
+		if run_stamina < 0:
+			run_stamina = 0
+			running = false  # automatically stop running if stamina depletes
+			run_cooldown = false
+			$run_cooldown.start()
+	elif running != true and run_stamina < max_run_stamina: # stamina regen
+		run_stamina += run_regen * 0.1  # Regenerate stamina
+		if run_stamina > max_run_stamina:
+			run_stamina = max_run_stamina
+	update_runbar()
+
+
+
+func _on_run_cooldown_timeout():
+	run_cooldown = true
