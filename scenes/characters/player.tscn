@@ -853,13 +853,31 @@ drag_vertical_enabled = true
 [node name="healthbar" type="ProgressBar" parent="."]
 modulate = Color(0, 0.764706, 0.00784314, 1)
 offset_left = -16.0
+offset_top = 17.0
+offset_right = 304.0
+offset_bottom = 67.0
+scale = Vector2(0.1, 0.1)
+show_percentage = false
+
+[node name="run_timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="runbar" type="ProgressBar" parent="."]
+modulate = Color(0, 0.654902, 0.694118, 1)
+offset_left = -16.0
 offset_top = 11.0
 offset_right = 304.0
 offset_bottom = 61.0
 scale = Vector2(0.1, 0.1)
 show_percentage = false
 
+[node name="run_cooldown" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
+[connection signal="timeout" from="run_timer" to="." method="_on_run_timer_timeout"]
+[connection signal="timeout" from="run_cooldown" to="." method="_on_run_cooldown_timeout"]
