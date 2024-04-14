@@ -10,7 +10,8 @@ enum State {
 
 var current_direction = Direction.DOWN
 var current_state = State.IDLE
-const speed = 100
+const walk_speed = 100
+const run_speed = 160
 var enemy_in_attack_range = false
 var enemy_attack_cooldown = true
 var health = 100
@@ -22,13 +23,13 @@ func _ready():
 
 
 func _physics_process(delta):
+	if health <= 0:
+		die()
+
 	player_movement(delta)
 	attack()
 	enemy_attack()
 	current_camera()
-	
-	if health <= 0:
-		die()
 
 
 func player():
@@ -36,31 +37,34 @@ func player():
 
 
 func player_movement(delta):
+	if current_state != State.ATTACK:
+		var move_speed = walk_speed
+		if Input.is_action_pressed("run"): 
+			move_speed = run_speed
+			current_state = State.RUN
+		else:
+			current_state = State.WALK
 
-	if Input.is_action_pressed("ui_right"):
-		current_direction = Direction.RIGHT
-		current_state = State.WALK
-		velocity.x = speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_left"):
-		current_direction = Direction.LEFT
-		current_state = State.WALK
-		velocity.x = -speed
-		velocity.y = 0
-	elif Input.is_action_pressed("ui_down"):
-		current_direction = Direction.DOWN
-		current_state = State.WALK
-		velocity.y = speed
-		velocity.x = 0
-	elif Input.is_action_pressed("ui_up"):
-		current_direction = Direction.UP
-		current_state = State.WALK
-		velocity.y = -speed
-		velocity.x = 0
-	elif current_state != State.ATTACK:
-		current_state = State.IDLE
-		velocity.y = 0
-		velocity.x = 0
+		if Input.is_action_pressed("ui_right"):
+			current_direction = Direction.RIGHT
+			velocity.x = move_speed
+			velocity.y = 0
+		elif Input.is_action_pressed("ui_left"):
+			current_direction = Direction.LEFT
+			velocity.x = -move_speed
+			velocity.y = 0
+		elif Input.is_action_pressed("ui_down"):
+			current_direction = Direction.DOWN
+			velocity.y = move_speed
+			velocity.x = 0
+		elif Input.is_action_pressed("ui_up"):
+			current_direction = Direction.UP
+			velocity.y = -move_speed
+			velocity.x = 0
+		else:
+			current_state = State.IDLE
+			velocity.y = 0
+			velocity.x = 0
 		
 	update_animation()
 	move_and_slide()
@@ -121,6 +125,7 @@ func _on_attack_cooldown_timeout():
 func attack():
 	if Input.is_action_just_pressed("attack"):
 		current_state = State.ATTACK
+		velocity = Vector2() # stops movement during attack
 		global.player_active_attack = true
 		update_animation()
 		$deal_attack_timer.start()
@@ -131,7 +136,6 @@ func _on_deal_attack_timer_timeout():
 	$deal_attack_timer.stop()
 	global.player_active_attack = false
 	current_state = State.IDLE 
-	update_animation()
 
 
 func current_camera():
