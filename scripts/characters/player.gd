@@ -163,6 +163,3 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
-
-func _on_regin_timer_timeout():
-	pass # Replace with function body.
