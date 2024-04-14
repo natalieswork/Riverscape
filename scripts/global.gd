@@ -2,6 +2,7 @@ extends Node
 
 var game_first_loaded = true
 var player_active_attack = false
+var player_health = 100
 
 var current_scene = "river_map" # river_map, forest_map
 var transition_scene = false
