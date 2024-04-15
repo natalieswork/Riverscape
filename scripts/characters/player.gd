@@ -37,7 +37,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	attack()
 	enemy_attack()
-	update_health()
+	update_healthbar()
 	current_camera()
 
 
@@ -167,11 +167,11 @@ func die():
 	self.queue_free() 
 
 
-func update_health():
+func update_healthbar():
 	var healthbar = $healthbar
 	healthbar.value = global.player_health
 	
-	if global.player_health >= 100 or $river_camera.enabled == true:
+	if global.player_health >= 100 or global.current_scene == "river_map":
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
