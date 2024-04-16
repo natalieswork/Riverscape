@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ef8ixr2r5e6h"
+path="res://.godot/imported/Building in the forest.wav-bb35d6468011832c7dbbfc82d6a24d2b.sample"
+
+[deps]
+
+source_file="res://assests/audio/music/Building in the forest.wav"
+dest_files=["res://.godot/imported/Building in the forest.wav-bb35d6468011832c7dbbfc82d6a24d2b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

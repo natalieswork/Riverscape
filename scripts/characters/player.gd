@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var playerWalkingAudio = $AudioStreamPlayer2D_walking
+
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
 }
@@ -59,24 +61,34 @@ func player_movement(delta):
 
 		if Input.is_action_pressed("ui_right"):
 			current_direction = Direction.RIGHT
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 			velocity.x = move_speed
 			velocity.y = 0
+			
 		elif Input.is_action_pressed("ui_left"):
 			current_direction = Direction.LEFT
 			velocity.x = -move_speed
 			velocity.y = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		elif Input.is_action_pressed("ui_down"):
 			current_direction = Direction.DOWN
 			velocity.y = move_speed
 			velocity.x = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		elif Input.is_action_pressed("ui_up"):
 			current_direction = Direction.UP
 			velocity.y = -move_speed
 			velocity.x = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		else:
 			current_state = State.IDLE
 			velocity.y = 0
 			velocity.x = 0
+			playerWalkingAudio.stop()
 		
 	update_animation()
 	move_and_slide()
