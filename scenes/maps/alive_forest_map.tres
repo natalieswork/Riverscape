@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=57 format=3 uid="uid://cmmhvstkpewxs"]
+[gd_resource type="TileSet" load_steps=65 format=3 uid="uid://cmmhvstkpewxs"]
 
 [ext_resource type="Texture2D" uid="uid://bf7jyxvhqs4lq" path="res://assests/landscape/tiles/edge grass alive.png" id="1_ed4t6"]
 [ext_resource type="Texture2D" uid="uid://dat4obu6o0j46" path="res://assests/landscape/tiles/inside_soild_tiles.png" id="2_33awm"]
@@ -28,6 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://dph40mfpg3jb3" path="res://assests/landscape/objects/alive_bush_shade.png" id="17_8614c"]
 [ext_resource type="Texture2D" uid="uid://c3b58cjj518b4" path="res://assests/landscape/objects/dying_bush_shade.png" id="18_lphlr"]
 [ext_resource type="Texture2D" uid="uid://bgcmdd4abe6b4" path="res://assests/landscape/objects/dead_bush_shade.png" id="19_k3fgv"]
+[ext_resource type="Texture2D" uid="uid://chpm4sr0lhj6y" path="res://assests/landscape/tiles/inside_soild_tiles_dead.png" id="22_vkvoi"]
+[ext_resource type="Texture2D" uid="uid://bwcuituvverpu" path="res://assests/landscape/tiles/edge_grass_dead.png" id="23_mm0d4"]
+[ext_resource type="Texture2D" uid="uid://37aryfn4nnqa" path="res://assests/landscape/tiles/grass_textre_dead.png" id="25_7ppx1"]
+[ext_resource type="Texture2D" uid="uid://b05ocgq226mya" path="res://assests/landscape/tiles/whole_cliffs_dead.png" id="26_1e728"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt25s"]
 texture = ExtResource("1_ed4t6")
@@ -590,6 +594,43 @@ texture_region_size = Vector2i(25, 29)
 0:0/size_in_atlas = Vector2i(4, 3)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jsqc1"]
+texture = ExtResource("22_vkvoi")
+texture_region_size = Vector2i(50, 50)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yetqa"]
+texture = ExtResource("23_mm0d4")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+1:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x35my"]
 texture = ExtResource("7_5gw3c")
 texture_region_size = Vector2i(25, 25)
@@ -616,6 +657,100 @@ texture_region_size = Vector2i(25, 25)
 8:7/0 = 0
 0:2/size_in_atlas = Vector2i(6, 4)
 0:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_su4yr"]
+texture = ExtResource("25_7ppx1")
+texture_region_size = Vector2i(25, 25)
+2:0/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:0/size_in_atlas = Vector2i(2, 2)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6ig0"]
+texture = ExtResource("26_1e728")
+texture_region_size = Vector2i(25, 25)
+6:1/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+3:11/0 = 0
+4:11/0 = 0
+5:11/0 = 0
+6:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+0:1/size_in_atlas = Vector2i(2, 2)
+0:1/0 = 0
+2:1/size_in_atlas = Vector2i(2, 2)
+2:1/0 = 0
+4:1/size_in_atlas = Vector2i(2, 2)
+4:1/0 = 0
+0:3/size_in_atlas = Vector2i(2, 2)
+0:3/0 = 0
+2:3/size_in_atlas = Vector2i(2, 2)
+2:3/0 = 0
+4:3/size_in_atlas = Vector2i(2, 2)
+4:3/0 = 0
+0:5/size_in_atlas = Vector2i(2, 2)
+0:5/0 = 0
+2:5/size_in_atlas = Vector2i(2, 2)
+2:5/0 = 0
+4:5/size_in_atlas = Vector2i(2, 2)
+4:5/0 = 0
+0:7/size_in_atlas = Vector2i(2, 1)
+0:7/0 = 0
+2:7/size_in_atlas = Vector2i(2, 1)
+2:7/0 = 0
+4:7/size_in_atlas = Vector2i(2, 1)
+4:7/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qnay"]
 texture = ExtResource("8_m75ch")
@@ -783,3 +918,7 @@ sources/26 = SubResource("TileSetAtlasSource_qnee0")
 sources/27 = SubResource("TileSetAtlasSource_noor4")
 sources/16 = SubResource("TileSetAtlasSource_yjxwv")
 sources/17 = SubResource("TileSetAtlasSource_ygpup")
+sources/28 = SubResource("TileSetAtlasSource_jsqc1")
+sources/29 = SubResource("TileSetAtlasSource_yetqa")
+sources/30 = SubResource("TileSetAtlasSource_su4yr")
+sources/31 = SubResource("TileSetAtlasSource_l6ig0")
