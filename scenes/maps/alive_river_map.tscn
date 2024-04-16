@@ -7,7 +7,7 @@
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)
-scale = Vector2(0.996843, 1)
+scale = Vector2(1.08647, 1.01716)
 tile_set = ExtResource("1_lm86e")
 format = 2
 layer_0/name = "river"
