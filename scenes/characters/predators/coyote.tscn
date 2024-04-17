@@ -582,6 +582,7 @@ show_percentage = false
 
 [node name="AudioStream_coyote" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_1ixot")
+volume_db = -25.0
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

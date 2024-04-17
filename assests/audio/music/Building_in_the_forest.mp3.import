@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Building_in_the_forest.mp3-a32639b62e11741bce
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0.0
 bpm=0.0
 beat_count=0

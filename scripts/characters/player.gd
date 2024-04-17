@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var playerWalkingAudio = $AudioStreamPlayer2D_walking
 @onready var playerAttackAudio = $AudioStreamPlayer2D_attack
+@onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
 
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
@@ -141,7 +142,8 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		print(global.player_health)
-		
+		if !playerHurtAudio.playing:
+				playerHurtAudio.play()
 
 
 func _on_attack_cooldown_timeout():
