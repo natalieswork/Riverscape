@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3 uid="uid://joljn5y0kk16"]
+[gd_scene load_steps=103 format=3 uid="uid://joljn5y0kk16"]
 
 [ext_resource type="Texture2D" uid="uid://1ovtt7lcn1np" path="res://assests/characters/castor/sprite_sheet/castor_front.png" id="1_27an1"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_d054b"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://s8mekou0rf7u" path="res://assests/characters/castor/sprite_sheet/castor_front-Sheet.png" id="3_0j5me"]
 [ext_resource type="Texture2D" uid="uid://debr2ol6eiya4" path="res://assests/characters/castor/sprite_sheet/castor_left.png" id="3_d2cp5"]
 [ext_resource type="AudioStream" uid="uid://cfwh4fsnl54pg" path="res://assests/audio/sound effects/zapsplat_foley_footsteps_forest_floor_18276.mp3" id="7_ux6h3"]
+[ext_resource type="AudioStream" uid="uid://cyg2m3k2f0tst" path="res://assests/audio/sound effects/zapsplat_human_punch_smack_hit_001_62758.mp3" id="8_qxhrj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yurtj"]
 atlas = ExtResource("1_rx5sh")
@@ -878,6 +879,9 @@ wait_time = 3.0
 
 [node name="AudioStreamPlayer2D_walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ux6h3")
+
+[node name="AudioStreamPlayer2D_attack" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_qxhrj")
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]

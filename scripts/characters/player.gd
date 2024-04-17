@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var playerWalkingAudio = $AudioStreamPlayer2D_walking
+@onready var playerAttackAudio = $AudioStreamPlayer2D_attack
 
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
@@ -154,6 +155,9 @@ func attack():
 		global.player_active_attack = true
 		update_animation()
 		$deal_attack_timer.start()
+		if !playerAttackAudio.playing:
+				playerAttackAudio.play()
+		
 
 
 func _on_deal_attack_timer_timeout():
