@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="2_tpuex"]
 
 [node name="NewRiverMap" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)

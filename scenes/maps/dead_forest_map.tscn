@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="3_hws6p"]
 
 [node name="new_forest_map" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_6cdq5")

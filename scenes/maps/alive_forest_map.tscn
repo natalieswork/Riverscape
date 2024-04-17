@@ -3,6 +3,7 @@
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/alive_forest_map.tres" id="1_moogw"]
 
 [node name="new_forest_map" type="Node2D"]
+y_sort_enabled = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_moogw")
