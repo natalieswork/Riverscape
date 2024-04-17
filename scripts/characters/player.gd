@@ -140,6 +140,7 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		print(global.player_health)
+		
 
 
 func _on_attack_cooldown_timeout():

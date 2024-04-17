@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://djw0brrw10117"]
+[gd_scene load_steps=58 format=3 uid="uid://djw0brrw10117"]
 
 [ext_resource type="Texture2D" uid="uid://d1p3cyfpsckfl" path="res://assests/characters/predators/coyote/sprite_sheet/coyote.png" id="1_e0op0"]
 [ext_resource type="Script" path="res://scripts/characters/predators/coyote.gd" id="1_tabye"]
+[ext_resource type="AudioStream" uid="uid://bmyu3l5p2vfvk" path="res://assests/audio/music/Encounter_music_v2.mp3" id="3_1ixot"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8h0lm"]
 atlas = ExtResource("1_e0op0")
@@ -578,6 +579,9 @@ offset_right = 229.0
 offset_bottom = 46.0
 scale = Vector2(0.1, 0.1)
 show_percentage = false
+
+[node name="AudioStream_coyote" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_1ixot")
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]

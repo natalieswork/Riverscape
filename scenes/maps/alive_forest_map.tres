@@ -28,10 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://dph40mfpg3jb3" path="res://assests/landscape/objects/alive_bush_shade.png" id="17_8614c"]
 [ext_resource type="Texture2D" uid="uid://c3b58cjj518b4" path="res://assests/landscape/objects/dying_bush_shade.png" id="18_lphlr"]
 [ext_resource type="Texture2D" uid="uid://bgcmdd4abe6b4" path="res://assests/landscape/objects/dead_bush_shade.png" id="19_k3fgv"]
-[ext_resource type="Texture2D" uid="uid://cq6eyjlp2bapo" path="res://assests/landscape/tiles/inside_soild_tiles_dead.png" id="22_vkvoi"]
-[ext_resource type="Texture2D" uid="uid://cmuenq4rrifsq" path="res://assests/landscape/tiles/edge_grass_dead.png" id="23_mm0d4"]
-[ext_resource type="Texture2D" uid="uid://37aryfn4nnqa" path="res://assests/landscape/tiles/grass_textre_dead.png" id="25_7ppx1"]
-[ext_resource type="Texture2D" uid="uid://b05ocgq226mya" path="res://assests/landscape/tiles/whole_cliffs_dead.png" id="26_1e728"]
+[ext_resource type="Texture2D" uid="uid://dkrswgkcymy5u" path="res://assests/landscape/tiles/inside_soild_tiles_dead.png" id="22_vkvoi"]
+[ext_resource type="Texture2D" uid="uid://b3rlogjtfdaxu" path="res://assests/landscape/tiles/edge_grass_dead.png" id="23_mm0d4"]
+[ext_resource type="Texture2D" uid="uid://c48gnv575dpw7" path="res://assests/landscape/tiles/grass_textre_dead.png" id="25_7ppx1"]
+[ext_resource type="Texture2D" uid="uid://b23fcgkb65bix" path="res://assests/landscape/tiles/whole_cliffs_dead.png" id="26_1e728"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tt25s"]
 texture = ExtResource("1_ed4t6")
