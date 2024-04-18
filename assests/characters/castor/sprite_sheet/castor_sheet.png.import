@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lye014lhc1nm"
-path="res://.godot/imported/castor_back.png-66540941a86989d1757313542630d9e1.ctex"
+uid="uid://byh704qu2xoqj"
+path="res://.godot/imported/castor_sheet.png-f8c09679451b36f0d393d5689cd21ed3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/characters/castor/sprite_sheet/castor_back.png"
-dest_files=["res://.godot/imported/castor_back.png-66540941a86989d1757313542630d9e1.ctex"]
+source_file="res://assests/characters/castor/sprite_sheet/castor_sheet.png"
+dest_files=["res://.godot/imported/castor_sheet.png-f8c09679451b36f0d393d5689cd21ed3.ctex"]
 
 [params]
 

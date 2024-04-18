@@ -142,8 +142,8 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		print(global.player_health)
-		if !playerHurtAudio.playing:
-				playerHurtAudio.play()
+		# if !playerHurtAudio.playing:
+				# playerHurtAudio.play()
 
 
 func _on_attack_cooldown_timeout():
