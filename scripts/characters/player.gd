@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var playerAttackAudio = $AudioStreamPlayer2D_attack
 @onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
 
+@export var inventory: Inv
+
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
 }

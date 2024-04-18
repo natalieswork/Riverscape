@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dtwio1jcikb6t"]
+
+[ext_resource type="Script" path="res://inventory/inventory_item.gd" id="1_5e4ru"]
+[ext_resource type="Texture2D" uid="uid://bk6do0pufa8u" path="res://assests/landscape/objects/rand_stump.png" id="2_dd275"]
+
+[resource]
+script = ExtResource("1_5e4ru")
+name = "branch"
+texture = ExtResource("2_dd275")
