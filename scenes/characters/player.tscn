@@ -886,6 +886,8 @@ volume_db = -10.0
 
 [node name="AudioStreamPlayer2D_hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_60cm7")
+volume_db = -22.632
+pitch_scale = 0.69
 
 [node name="AudioStreamPlayer2D_attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_qxhrj")

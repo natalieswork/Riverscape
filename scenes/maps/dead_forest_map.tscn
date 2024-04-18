@@ -1,11 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cox3157tawdrf"]
+[gd_scene load_steps=6 format=3 uid="uid://cox3157tawdrf"]
 
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/alive_forest_map.tres" id="1_6cdq5"]
 [ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="2_nms88"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="3_hws6p"]
+[ext_resource type="AudioStream" uid="uid://bthyvsctuguky" path="res://assests/audio/music/Chilling_by_the_river.mp3" id="4_ns8k2"]
+[ext_resource type="Script" path="res://scenes/maps/dead_forest_map.gd" id="5_3o0at"]
 
 [node name="new_forest_map" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("5_3o0at")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -29,3 +32,7 @@ position = Vector2(705, 210)
 
 [node name="player" parent="." instance=ExtResource("3_hws6p")]
 position = Vector2(82, 222)
+
+[node name="AudioStream_dead_forest" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ns8k2")
+bus = &"Music"
