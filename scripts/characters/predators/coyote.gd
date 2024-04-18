@@ -8,7 +8,8 @@ var player_in_attack_zone = false
 var can_take_damage = true  
 
 var delay_timer = 6
-@onready var encounter = $AudioStream_coyote
+@onready var encounter = $AudioStream_coyote_encounter
+
 
 func _physics_process(delta):
 	handle_damage()
