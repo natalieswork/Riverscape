@@ -35,4 +35,5 @@ position = Vector2(82, 222)
 
 [node name="AudioStream_dead_forest" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_ns8k2")
+volume_db = -16.0
 bus = &"Music"

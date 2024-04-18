@@ -30,4 +30,5 @@ position = Vector2(573, 231)
 
 [node name="AudioStream_dying_river" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_qbdg8")
+volume_db = -16.0
 bus = &"Music"
