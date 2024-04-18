@@ -1,5 +1,9 @@
 extends CharacterBody2D
 
+@onready var playerWalkingAudio = $AudioStreamPlayer2D_walking
+@onready var playerAttackAudio = $AudioStreamPlayer2D_attack
+@onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
+
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
 }
@@ -59,24 +63,34 @@ func player_movement(delta):
 
 		if Input.is_action_pressed("ui_right"):
 			current_direction = Direction.RIGHT
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 			velocity.x = move_speed
 			velocity.y = 0
+			
 		elif Input.is_action_pressed("ui_left"):
 			current_direction = Direction.LEFT
 			velocity.x = -move_speed
 			velocity.y = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		elif Input.is_action_pressed("ui_down"):
 			current_direction = Direction.DOWN
 			velocity.y = move_speed
 			velocity.x = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		elif Input.is_action_pressed("ui_up"):
 			current_direction = Direction.UP
 			velocity.y = -move_speed
 			velocity.x = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		else:
 			current_state = State.IDLE
 			velocity.y = 0
 			velocity.x = 0
+			playerWalkingAudio.stop()
 		
 	update_animation()
 	move_and_slide()
@@ -128,6 +142,8 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		print(global.player_health)
+		if !playerHurtAudio.playing:
+				playerHurtAudio.play()
 
 
 func _on_attack_cooldown_timeout():
@@ -141,6 +157,9 @@ func attack():
 		global.player_active_attack = true
 		update_animation()
 		$deal_attack_timer.start()
+		if !playerAttackAudio.playing:
+				playerAttackAudio.play()
+		
 
 
 func _on_deal_attack_timer_timeout():
