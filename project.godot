@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Riverscape"
-run/main_scene="res://scenes/characters/player.tscn"
+run/main_scene="res://scenes/maps/river_map.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [autoload]
@@ -23,7 +23,8 @@ global="*res://scripts/global.gd"
 window/size/viewport_width=1024
 window/size/viewport_height=600
 window/size/mode=3
-window/stretch/scale=3.0
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor_plugins]
 
