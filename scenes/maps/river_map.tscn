@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://qmpqe7un6t4g"]
+[gd_scene load_steps=7 format=3 uid="uid://qmpqe7un6t4g"]
 
 [ext_resource type="Script" path="res://scripts/maps/river_map.gd" id="1_kv4kb"]
+[ext_resource type="PackedScene" uid="uid://cjiaug84cffw6" path="res://scenes/ui/interface.tscn" id="2_8eop7"]
 [ext_resource type="TileSet" uid="uid://cha21wb7fchj6" path="res://scenes/maps/forest_map.tres" id="2_7522e"]
 [ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="4_jkox7"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="8_lcw5w"]
@@ -13,6 +14,8 @@ y_sort_enabled = true
 script = ExtResource("1_kv4kb")
 metadata/_edit_vertical_guides_ = [1152.0]
 metadata/_edit_horizontal_guides_ = [16.0]
+
+[node name="Interface" parent="." instance=ExtResource("2_8eop7")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

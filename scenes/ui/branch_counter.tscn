@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b77hqqfcl5jmv"]
+
+[ext_resource type="PackedScene" uid="uid://cebvg6m3jex5h" path="res://scenes/ui/counter.tscn" id="1_23vim"]
+
+[node name="branch_counter" instance=ExtResource("1_23vim")]
