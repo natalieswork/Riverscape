@@ -34,13 +34,15 @@ func _on_detection_area_body_entered(body):
 	#encounter.play()
 	print("encounter")
 	emit_signal("encounter_music_started")
+	print("encounter")
 
 func _on_detection_area_body_exited(body):
 	player = null
 	chase_player = false
 	#encounter.stop()
-	print("stoped")
+	print("stopped")
 	emit_signal("encounter_music_stopped")
+	print("encounter")
 
 
 func enemy():
@@ -83,3 +85,7 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
+
+
+func _on_new_forest_map_encounter_music_started():
+	pass # Replace with function body.

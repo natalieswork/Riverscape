@@ -42,3 +42,9 @@ bus = &"Music"
 [node name="AudioStream_encounter" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_v35th")
 bus = &"Music"
+
+[connection signal="encounter_music_started" from="." to="coyote" method="_on_new_forest_map_encounter_music_started"]
+[connection signal="encounter_music_started" from="coyote" to="." method="_on_coyote_encounter_music_started"]
+[connection signal="encounter_music_stopped" from="coyote" to="." method="_on_coyote_encounter_music_stopped"]
+[connection signal="encounter_music_started" from="coyote2" to="." method="_on_coyote_2_encounter_music_started"]
+[connection signal="encounter_music_stopped" from="coyote2" to="." method="_on_coyote_2_encounter_music_stopped"]
