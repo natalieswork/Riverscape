@@ -9,6 +9,8 @@ var can_take_damage = true
 
 var delay_timer = 6
 @onready var encounter = $AudioStream_coyote_encounter
+signal encounter_music_started
+signal encounter_music_stopped
 
 func _physics_process(delta):
 	handle_damage()
@@ -29,13 +31,16 @@ func _physics_process(delta):
 func _on_detection_area_body_entered(body):
 	player = body
 	chase_player = true 
-	encounter.play()
-
+	#encounter.play()
+	print("encounter")
+	emit_signal("encounter_music_started")
 
 func _on_detection_area_body_exited(body):
 	player = null
 	chase_player = false
-	encounter.stop()
+	#encounter.stop()
+	print("stoped")
+	emit_signal("encounter_music_stopped")
 
 
 func enemy():
