@@ -54,5 +54,14 @@ anchors_preset = 0
 [node name="tree" parent="YSort" instance=ExtResource("4_jkox7")]
 position = Vector2(696, 256)
 
+[node name="tree2" parent="YSort" instance=ExtResource("4_jkox7")]
+position = Vector2(640, 368)
+
+[node name="tree3" parent="YSort" instance=ExtResource("4_jkox7")]
+position = Vector2(418, 336)
+
+[node name="tree4" parent="YSort" instance=ExtResource("4_jkox7")]
+position = Vector2(416, 200)
+
 [connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
 [connection signal="body_exited" from="forest_entrance" to="." method="_on_forest_entrance_body_exited"]

@@ -3,17 +3,52 @@ extends Node2D
 enum State {
 	ALIVE, CUTTING, CUTDOWN
 }
+
+# handle different tree types
+enum Type {
+	OAK, # 0
+	PINE # 1
+}
+
+var tree_type
+
 var state = State.ALIVE
 var player_in_area = false 
 
 var branch = preload("res://scenes/objects/branch_collectable.tscn")
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	# randomly pick a type when the node is initialized
+	var ran_int = randi() % Type.size()
+	print("ran_int ", ran_int)
+	if  ran_int == 0:
+		tree_type = Type.OAK
+	else:
+		tree_type = Type.PINE
+		
+	# Initialize the tree based on the type.
+	initialize_tree()
+	$AnimatedSprite2D.play("default")
+	
 	if state == State.CUTDOWN:
 		$respawn.start()
-		
-		
+
+
+func initialize_tree():
+	match tree_type:
+		Type.OAK:
+		# Set properties specific to OAK.
+			var oak_frames = preload("res://scenes/objects/oak_tree.tres")
+			$AnimatedSprite2D.frames = oak_frames
+			print("Initialized as an Oak tree.")
+		Type.PINE:
+		# Set properties specific to PINE.
+			var pine_frames = preload("res://scenes/objects/pine_tree.tres")
+			$AnimatedSprite2D.frames = pine_frames
+			print("Initialized as an Pine tree.")
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	play_animation()
@@ -21,7 +56,6 @@ func _process(delta):
 
 
 func play_animation():
-	var anim = $AnimatedSprite2D
 	
 	var anim_name = ""
 	match state:
