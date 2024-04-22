@@ -1,17 +1,17 @@
 [gd_scene load_steps=8 format=3 uid="uid://dpfun00511od3"]
 
-[ext_resource type="Texture2D" uid="uid://bk6do0pufa8u" path="res://assests/landscape/objects/rand_stump.png" id="1_mkgbd"]
 [ext_resource type="Script" path="res://scripts/objects/branch_collectable.gd" id="1_ymakl"]
+[ext_resource type="Texture2D" uid="uid://dqcs4mgoe3ewx" path="res://assests/landscape/objects/branch.png" id="2_gnbou"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_241u4"]
-atlas = ExtResource("1_mkgbd")
-region = Rect2(0, 0, 50, 50)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1bdlc"]
+atlas = ExtResource("2_gnbou")
+region = Rect2(0, 0, 143, 107)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eoxrb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_241u4")
+"texture": SubResource("AtlasTexture_1bdlc")
 }],
 "loop": false,
 "name": &"branch",
@@ -108,10 +108,9 @@ z_index = 1
 script = ExtResource("1_ymakl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
 position = Vector2(2.08165e-12, 70)
 rotation = 0.349066
-scale = Vector2(0.32, 0.32)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_eoxrb")
 animation = &"branch"
 
