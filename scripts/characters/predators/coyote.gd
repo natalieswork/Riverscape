@@ -6,7 +6,7 @@ var player = null
 var health = 100
 var player_in_attack_zone = false
 var can_take_damage = true  
-
+signal damage_to_player
 
 func _physics_process(delta):
 	handle_damage()
@@ -40,13 +40,13 @@ func enemy():
 
 func _on_coyote_hitbox_body_entered(body):
 	if body.has_method("player"):
-		player_in_attack_zone = true
+		var damage = 5
+		emit_signal("damage_to_player", damage)
 
 
 func _on_coyote_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_in_attack_zone = false
-		
 
 
 func handle_damage():

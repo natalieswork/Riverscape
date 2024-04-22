@@ -14,7 +14,10 @@ const walk_speed = 100
 const run_speed = 160
 var enemy_in_attack_range = false
 var enemy_attack_cooldown = true
-# var health = 100
+
+var knockback_distance = 10000
+var knockback_duration = 0.3
+
 var alive = true
 
 # running vars
@@ -36,7 +39,7 @@ func _physics_process(delta):
 
 	player_movement(delta)
 	attack()
-	enemy_attack()
+	#enemy_attack()
 	update_healthbar()
 	current_camera()
 
@@ -114,20 +117,22 @@ func update_animation():
 
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
-		enemy_in_attack_range = true
+		var direction = body.global_position - global_position
+		apply_knockback(direction)
+		print("Knockback direction: " + direction)
 
 
-func _on_player_hitbox_body_exited(body):
-	if body.has_method("enemy"):
-		enemy_in_attack_range = false
+#func _on_player_hitbox_body_exited(body):
+	#if body.has_method("enemy"):
+		#enemy_in_attack_range = false
 
 
-func enemy_attack():
-	if enemy_in_attack_range and enemy_attack_cooldown:
-		global.player_health = global.player_health - 5
-		enemy_attack_cooldown = false
-		$attack_cooldown.start()
-		print(global.player_health)
+#func enemy_attack():
+	#if enemy_in_attack_range and enemy_attack_cooldown:
+		#global.player_health = global.player_health - 5
+		#enemy_attack_cooldown = false
+		#$attack_cooldown.start()
+		#print(global.player_health)
 
 
 func _on_attack_cooldown_timeout():
@@ -206,3 +211,41 @@ func _on_run_timer_timeout():
 
 func _on_run_cooldown_timeout():
 	run_cooldown = true
+
+
+func _on_coyote_damage_to_player(damage):
+	if enemy_attack_cooldown:
+		global.player_health = global.player_health - damage
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print(global.player_health)
+
+
+func _on_coyote_2_damage_to_player(damage):
+	if enemy_attack_cooldown:
+		global.player_health = global.player_health - damage
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print(global.player_health)
+
+
+func _on_coyote_3_damage_to_player(damage):
+	if enemy_attack_cooldown:
+		global.player_health = global.player_health - damage
+		enemy_attack_cooldown = false
+		$attack_cooldown.start()
+		print(global.player_health)
+
+func apply_knockback(direction: Vector2):
+	set_process_input(false)
+	var knockback_direction = -direction.normalized()
+	var knockback_velocity = knockback_direction * knockback_distance / knockback_duration
+	velocity = knockback_velocity
+	$knockback_duration.start()
+	print("player knocked")
+	print("Knockback_direction: " + knockback_direction)
+	print("knockback_velocity: " + knockback_velocity)
+
+func _on_knockback_duration_timeout():
+	set_process_input(true)
+	velocity = Vector2.ZERO
