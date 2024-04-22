@@ -227,3 +227,7 @@ func _on_run_timer_timeout():
 
 func _on_run_cooldown_timeout():
 	run_cooldown = true
+
+# inventory functions
+func collect(item):
+	inventory.insert(item)

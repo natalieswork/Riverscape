@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b415mjnfl2v0c"]
+[gd_scene load_steps=5 format=3 uid="uid://b415mjnfl2v0c"]
 
 [ext_resource type="Script" path="res://scripts/objects/tree.gd" id="1_xb1sw"]
+[ext_resource type="Resource" uid="uid://dtwio1jcikb6t" path="res://inventory/items/branch.tres" id="2_wxtcq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7dkv"]
 size = Vector2(28, 24)
@@ -10,6 +11,7 @@ radius = 48.6621
 
 [node name="tree" type="Node2D"]
 script = ExtResource("1_xb1sw")
+item = ExtResource("2_wxtcq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -64)
