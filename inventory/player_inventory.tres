@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://cox1lnr7p5g1o"]
+[gd_resource type="Resource" script_class="Inv" load_steps=3 format=3 uid="uid://b3ou5ng10u6do"]
 
 [ext_resource type="Resource" uid="uid://dtwio1jcikb6t" path="res://inventory/items/branch.tres" id="1_4v7v6"]
 [ext_resource type="Script" path="res://inventory/inventory.gd" id="2_is5l7"]
