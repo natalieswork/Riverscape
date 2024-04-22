@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6q0iqnh03raq"
-path="res://.godot/imported/alive_whole_pine_cut.png-cced14afe23fedaaf1b585c3dc37dc8f.ctex"
+uid="uid://dqcs4mgoe3ewx"
+path="res://.godot/imported/branch.png-7cc4bd9af97d35096f2729c92b340ad2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/landscape/objects/tree_animations/alive_whole_pine_cut.png"
-dest_files=["res://.godot/imported/alive_whole_pine_cut.png-cced14afe23fedaaf1b585c3dc37dc8f.ctex"]
+source_file="res://assests/landscape/objects/branch.png"
+dest_files=["res://.godot/imported/branch.png-7cc4bd9af97d35096f2729c92b340ad2.ctex"]
 
 [params]
 
