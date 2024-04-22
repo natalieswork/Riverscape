@@ -11,8 +11,8 @@ func _process(delta):
 	pass
 
 func fall_from_tree():
-	$AnimationPlayer.play("falling_from_tree")
-	await get_tree().create_timer(1.5).timeout
+	$AnimationPlayer.play("fall_from_tree")
+	await get_tree().create_timer(2).timeout
 	$AnimationPlayer.play("fade")
 	print("+1 branch")
 	await get_tree().create_timer(0.3).timeout

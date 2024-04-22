@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b415mjnfl2v0c"]
+[gd_scene load_steps=23 format=3 uid="uid://b415mjnfl2v0c"]
 
 [ext_resource type="Script" path="res://scripts/objects/tree.gd" id="1_xb1sw"]
 [ext_resource type="Texture2D" uid="uid://cfuiyn6drenp3" path="res://assests/landscape/objects/tree_animations/alive_whole_oak_cut.png" id="2_2bb4v"]
@@ -134,6 +134,9 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7dkv"]
+size = Vector2(28, 24)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2dxd"]
 radius = 48.6621
 
@@ -141,20 +144,26 @@ radius = 48.6621
 script = ExtResource("1_xb1sw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -72)
+position = Vector2(0, -56)
 sprite_frames = SubResource("SpriteFrames_plmbd")
+
+[node name="collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_h7dkv")
 
 [node name="cutdown_area" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cutdown_area"]
-position = Vector2(0, -40)
+position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_j2dxd")
 
 [node name="respawn" type="Timer" parent="."]
 wait_time = 3.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -64)
+position = Vector2(0, -40)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="cutdown_area" to="." method="_on_cutdown_area_body_entered"]
