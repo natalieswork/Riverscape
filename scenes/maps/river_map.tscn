@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://qmpqe7un6t4g"]
+[gd_scene load_steps=7 format=3 uid="uid://qmpqe7un6t4g"]
 
 [ext_resource type="Script" path="res://scripts/maps/river_map.gd" id="1_kv4kb"]
 [ext_resource type="TileSet" uid="uid://cha21wb7fchj6" path="res://scenes/maps/forest_map.tres" id="2_7522e"]
+[ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="4_jkox7"]
+[ext_resource type="PackedScene" uid="uid://cjiaug84cffw6" path="res://scenes/ui/interface.tscn" id="5_fg2fy"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="8_lcw5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgfn1"]
@@ -44,6 +46,27 @@ position = Vector2(4, 56)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forest_entrance"]
 position = Vector2(1180, 128)
 shape = SubResource("RectangleShape2D_qgfn1")
+
+[node name="YSort" type="Control" parent="."]
+y_sort_enabled = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="tree" parent="YSort" instance=ExtResource("4_jkox7")]
+position = Vector2(696, 256)
+
+[node name="tree2" parent="YSort" instance=ExtResource("4_jkox7")]
+position = Vector2(640, 368)
+
+[node name="tree3" parent="YSort" instance=ExtResource("4_jkox7")]
+position = Vector2(418, 336)
+
+[node name="tree4" parent="YSort" instance=ExtResource("4_jkox7")]
+position = Vector2(416, 200)
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+
+[node name="Interface" parent="InterfaceLayer" instance=ExtResource("5_fg2fy")]
 
 [connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
 [connection signal="body_exited" from="forest_entrance" to="." method="_on_forest_entrance_body_exited"]
