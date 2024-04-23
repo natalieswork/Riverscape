@@ -4,6 +4,11 @@ extends CharacterBody2D
 @onready var playerAttackAudio = $AudioStreamPlayer2D_attack
 @onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
 
+@onready var player_low_health = $AudioStreamPlayer2D_low_health
+@onready var player_death_sound = $AudioStreamPlayer2D_death
+@onready var player_out_run = $AudioStreamPlayer2D_out_run
+
+
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
 }
@@ -184,6 +189,8 @@ func die():
 	update_animation()
 	print("Player has been killed.")
 	self.queue_free() 
+	if !player_death_sound.playing:
+				player_death_sound.play()
 
 
 func update_healthbar():
@@ -194,6 +201,10 @@ func update_healthbar():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
+		
+	if healthbar.value < 5:
+		if !player_low_health.playing:
+				player_low_health.play()
 
 
 func update_runbar():
@@ -220,6 +231,9 @@ func _on_run_timer_timeout():
 		if run_stamina > max_run_stamina:
 			run_stamina = max_run_stamina
 	update_runbar()
+	if run_stamina < 5:
+		if !player_out_run.playing:
+				player_out_run.play()
 
 
 

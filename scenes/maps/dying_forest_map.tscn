@@ -26,7 +26,7 @@ layer_3/tile_data = PackedInt32Array(327721, 23, 0, 3211270, 23, 0, 3735597, 23,
 
 [node name="AudioStream_dead_forest" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_6v4al")
-volume_db = -16.0
+volume_db = -12.0
 bus = &"Music"
 
 [node name="player" parent="." instance=ExtResource("4_nqhcq")]
@@ -37,6 +37,7 @@ position = Vector2(552, 242)
 
 [node name="AudioStream_encounter" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_f3vv5")
+volume_db = -10.0
 bus = &"Music"
 
 [connection signal="encounter_music_started" from="coyote" to="." method="_on_coyote_encounter_music_started"]

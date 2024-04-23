@@ -16,10 +16,11 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	update_music_status()
-	
+
 	
 func update_music_status():
 	if BG_music_on:
+		
 		encounter.stop()
 		if !BG_music_forest_dead.playing:
 			BG_music_forest_dead.play()
@@ -34,14 +35,13 @@ func update_music_status():
 		encounter.stop()
 
 func _on_encounter_music_started():
-	print("music")
 	BG_music_on = false
 	encounter_music_on= true
 
 func _on_encounter_music_stopped():
-	print("stoppy")
 	BG_music_on = true
 	encounter_music_on = false
+	
 
 
 func _on_coyote_2_encounter_music_stopped():
