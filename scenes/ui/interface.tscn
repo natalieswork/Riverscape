@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjiaug84cffw6"]
+
+[ext_resource type="PackedScene" uid="uid://d2w7cpkcyedc3" path="res://scenes/ui/bars/healthbar.tscn" id="1_56mgk"]
+[ext_resource type="PackedScene" uid="uid://b77hqqfcl5jmv" path="res://scenes/ui/counters/branch_counter.tscn" id="2_kyd76"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bars" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 548.0
+offset_bottom = 113.0
+
+[node name="healthbar" parent="bars" instance=ExtResource("1_56mgk")]
+layout_mode = 2
+
+[node name="counters" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 72.0
+grow_horizontal = 0
+
+[node name="branch_counter" parent="counters" instance=ExtResource("2_kyd76")]
+layout_mode = 2

@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var playerAttackAudio = $AudioStreamPlayer2D_attack
 @onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
 
+@export var inventory: Inv
+
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
 }
@@ -41,7 +43,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	attack()
 	enemy_attack()
-	update_healthbar()
+	# update_healthbar()
 	current_camera()
 
 
@@ -225,3 +227,7 @@ func _on_run_timer_timeout():
 
 func _on_run_cooldown_timeout():
 	run_cooldown = true
+
+# inventory functions
+func collect(item):
+	inventory.insert(item)

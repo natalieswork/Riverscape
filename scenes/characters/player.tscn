@@ -1,7 +1,9 @@
-[gd_scene load_steps=136 format=3 uid="uid://joljn5y0kk16"]
+[gd_scene load_steps=138 format=3 uid="uid://joljn5y0kk16"]
 
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_d054b"]
 [ext_resource type="Texture2D" uid="uid://byh704qu2xoqj" path="res://assests/characters/castor/sprite_sheet/castor_sheet.png" id="2_48oii"]
+[ext_resource type="Resource" uid="uid://b3ou5ng10u6do" path="res://scenes/inventory/player_inventory.tres" id="2_idflq"]
+[ext_resource type="PackedScene" path="res://scenes/inventory/inv_ui.tscn" id="6_kqtpg"]
 [ext_resource type="AudioStream" uid="uid://cfwh4fsnl54pg" path="res://assests/audio/sound effects/zapsplat_foley_footsteps_forest_floor_18276.mp3" id="7_ux6h3"]
 [ext_resource type="AudioStream" uid="uid://cyg2m3k2f0tst" path="res://assests/audio/sound effects/zapsplat_human_punch_smack_hit_001_62758.mp3" id="8_qxhrj"]
 
@@ -1020,6 +1022,7 @@ radius = 27.0185
 y_sort_enabled = true
 collision_layer = 3
 script = ExtResource("1_d054b")
+inventory = ExtResource("2_idflq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -10)
@@ -1068,6 +1071,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="healthbar" type="ProgressBar" parent="."]
+visible = false
 modulate = Color(0, 0.764706, 0.00784314, 1)
 offset_left = -16.0
 offset_top = 17.0
@@ -1097,6 +1101,12 @@ stream = ExtResource("7_ux6h3")
 
 [node name="AudioStreamPlayer2D_attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_qxhrj")
+
+[node name="Inv_UI" parent="." instance=ExtResource("6_kqtpg")]
+offset_left = -40.0
+offset_top = -112.0
+offset_right = 48.0
+offset_bottom = -48.0
 
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
