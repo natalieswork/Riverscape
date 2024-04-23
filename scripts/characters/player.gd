@@ -43,7 +43,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	attack()
 	enemy_attack()
-	update_healthbar()
+	# update_healthbar()
 	current_camera()
 
 

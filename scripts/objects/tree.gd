@@ -94,7 +94,7 @@ func _on_respawn_timeout():
 	if state == State.CUTDOWN:
 		state = State.ALIVE
 
-
+# only plays cutting animation once
 func _on_animated_sprite_2d_animation_finished():
 	if state == State.CUTTING:
 		state = State.CUTDOWN 

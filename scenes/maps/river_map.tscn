@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://qmpqe7un6t4g"]
 
 [ext_resource type="Script" path="res://scripts/maps/river_map.gd" id="1_kv4kb"]
-[ext_resource type="PackedScene" uid="uid://cjiaug84cffw6" path="res://scenes/ui/interface.tscn" id="2_8eop7"]
 [ext_resource type="TileSet" uid="uid://cha21wb7fchj6" path="res://scenes/maps/forest_map.tres" id="2_7522e"]
 [ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="4_jkox7"]
+[ext_resource type="PackedScene" uid="uid://cjiaug84cffw6" path="res://scenes/ui/interface.tscn" id="5_fg2fy"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="8_lcw5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgfn1"]
@@ -14,8 +14,6 @@ y_sort_enabled = true
 script = ExtResource("1_kv4kb")
 metadata/_edit_vertical_guides_ = [1152.0]
 metadata/_edit_horizontal_guides_ = [16.0]
-
-[node name="Interface" parent="." instance=ExtResource("2_8eop7")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -65,6 +63,10 @@ position = Vector2(418, 336)
 
 [node name="tree4" parent="YSort" instance=ExtResource("4_jkox7")]
 position = Vector2(416, 200)
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+
+[node name="Interface" parent="InterfaceLayer" instance=ExtResource("5_fg2fy")]
 
 [connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
 [connection signal="body_exited" from="forest_entrance" to="." method="_on_forest_entrance_body_exited"]

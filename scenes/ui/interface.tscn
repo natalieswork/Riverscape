@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjiaug84cffw6"]
+[gd_scene load_steps=3 format=3 uid="uid://cjiaug84cffw6"]
 
-[ext_resource type="PackedScene" uid="uid://d2w7cpkcyedc3" path="res://scenes/ui/healthbar.tscn" id="1_x4tqe"]
-[ext_resource type="PackedScene" uid="uid://bk58i4wuoyeox" path="res://scenes/ui/staminabar.tscn" id="2_77eur"]
-[ext_resource type="PackedScene" uid="uid://b77hqqfcl5jmv" path="res://scenes/ui/branch_counter.tscn" id="3_boj3v"]
+[ext_resource type="PackedScene" uid="uid://d2w7cpkcyedc3" path="res://scenes/ui/bars/healthbar.tscn" id="1_56mgk"]
+[ext_resource type="PackedScene" uid="uid://b77hqqfcl5jmv" path="res://scenes/ui/counters/branch_counter.tscn" id="2_kyd76"]
 
 [node name="Interface" type="Control"]
 layout_mode = 3
@@ -19,10 +18,7 @@ offset_top = 8.0
 offset_right = 548.0
 offset_bottom = 113.0
 
-[node name="healthbar" parent="bars" instance=ExtResource("1_x4tqe")]
-layout_mode = 2
-
-[node name="staminabar" parent="bars" instance=ExtResource("2_77eur")]
+[node name="healthbar" parent="bars" instance=ExtResource("1_56mgk")]
 layout_mode = 2
 
 [node name="counters" type="HBoxContainer" parent="."]
@@ -36,5 +32,5 @@ offset_right = -8.0
 offset_bottom = 72.0
 grow_horizontal = 0
 
-[node name="branch_counter" parent="counters" instance=ExtResource("3_boj3v")]
+[node name="branch_counter" parent="counters" instance=ExtResource("2_kyd76")]
 layout_mode = 2

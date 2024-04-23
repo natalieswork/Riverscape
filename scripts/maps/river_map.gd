@@ -12,7 +12,7 @@ func _ready():
 		$player.position.y = global.player_exit_forest_posy
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+# Called every frame. 'delta' its the elapsed time since the previous frame.
 func _process(delta):
 	change_scene()
 
