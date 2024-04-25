@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dx8d58ckjykc4"]
 
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/alive_forest_map.tres" id="1_moogw"]
-[ext_resource type="AudioStream" uid="uid://bthyvsctuguky" path="res://assests/audio/music/Chilling_by_the_river.mp3" id="2_ldsnb"]
+[ext_resource type="AudioStream" uid="uid://bthyvsctuguky" path="res://assests/audio/music/Chilling_by_the_river.mp3" id="3_1cxp7"]
 [ext_resource type="Script" path="res://scenes/maps/alive_forest_map.gd" id="3_wqgwr"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="4_tk3j7"]
 [ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="5_os6qp"]
@@ -24,14 +24,15 @@ layer_3/name = "ysort"
 layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(327721, 20, 0, 3211270, 20, 0, 3735597, 20, 0, 2293773, 19, 0, 262170, 19, 0, 1507366, 19, 0, 3604512, 19, 0, 1638407, 19, 0, 393226, 19, 0, 1114159, 16, 0, 49, 25, 0, 3080213, 25, 0, 4522021, 25, 0, 1507351, 25, 0, 2490400, 20, 0, 2228271, 20, 0, 2687028, 16, 0, 2031668, 25, 0, 2883628, 25, 0, -196593, 20, 0, 131077, 16, 0, -196606, 19, 0, 3801100, 16, 0, 4325394, 20, 0, 2228266, 17, 0, 2818098, 17, 0, 196608, 17, 0, 262158, 17, 0, 4259839, 17, 0, 3670014, 20, 0, 4063231, 16, 0)
 
+[node name="AudioStream_alive_forest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1cxp7")
+volume_db = -12.381
+bus = &"Music"
+
 [node name="AudioStream_encounter_alive" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(678, 271)
 stream = ExtResource("6_tsvio")
-bus = &"Music"
-
-[node name="AudioStream_alive_forest" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_ldsnb")
-volume_db = -12.0
+volume_db = -10.666
 bus = &"Music"
 
 [node name="player" parent="." instance=ExtResource("4_tk3j7")]

@@ -1,11 +1,11 @@
-[gd_scene load_steps=139 format=3 uid="uid://joljn5y0kk16"]
+[gd_scene load_steps=140 format=3 uid="uid://joljn5y0kk16"]
 
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_d054b"]
 [ext_resource type="Texture2D" uid="uid://byh704qu2xoqj" path="res://assests/characters/castor/sprite_sheet/castor_sheet.png" id="2_48oii"]
+[ext_resource type="Resource" uid="uid://b3ou5ng10u6do" path="res://scenes/inventory/player_inventory.tres" id="2_idflq"]
 [ext_resource type="AudioStream" uid="uid://1m0bibe5jucj" path="res://assests/audio/sound effects/zapsplat_human_male_vocalisation_pain_short_sharp_oh_66509.mp3" id="5_pmfey"]
 [ext_resource type="AudioStream" uid="uid://pr1c35pvyd8c" path="res://assests/audio/sound effects/zapsplat_multimedia_game_sound_error_incorrect_negative_hard_tone_103171.mp3" id="6_4svo5"]
 [ext_resource type="AudioStream" uid="uid://crnxpffapnnae" path="res://assests/audio/sound effects/zapsplat_multimedia_game_sound_negative_incorrect_end_simple_retro_descending_glide_103172.mp3" id="6_yflfl"]
-[ext_resource type="Resource" uid="uid://b3ou5ng10u6do" path="res://scenes/inventory/player_inventory.tres" id="2_idflq"]
 [ext_resource type="AudioStream" uid="uid://cfwh4fsnl54pg" path="res://assests/audio/sound effects/zapsplat_foley_footsteps_forest_floor_18276.mp3" id="7_ux6h3"]
 [ext_resource type="AudioStream" uid="uid://cyg2m3k2f0tst" path="res://assests/audio/sound effects/zapsplat_human_punch_smack_hit_001_62758.mp3" id="8_qxhrj"]
 
@@ -1100,9 +1100,12 @@ wait_time = 3.0
 
 [node name="AudioStreamPlayer2D_walking" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_ux6h3")
+volume_db = -12.0
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2D_attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_qxhrj")
+bus = &"SFX"
 
 [node name="AudioStreamPlayer2D_hurt" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_pmfey")

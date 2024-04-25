@@ -14,9 +14,13 @@ config/name="Riverscape"
 run/main_scene="res://scenes/maps/river_map.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://scripts/audio/default_bus_layout.tres"
+
 [autoload]
 
-global="*res://scripts/global.gd"
+global="*res://global.gd"
 
 [display]
 
