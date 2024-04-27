@@ -52,8 +52,5 @@ position = Vector2(894, 926)
 position = Vector2(407.5, 508)
 shape = SubResource("RectangleShape2D_fgy6q")
 
-[connection signal="damage_to_player" from="coyote" to="player" method="_on_coyote_damage_to_player"]
-[connection signal="damage_to_player" from="coyote2" to="player" method="_on_coyote_2_damage_to_player"]
-[connection signal="damage_to_player" from="coyote3" to="player" method="_on_coyote_3_damage_to_player"]
 [connection signal="body_entered" from="forest_exit" to="." method="_on_forest_exit_body_entered"]
 [connection signal="body_exited" from="forest_exit" to="." method="_on_forest_exit_body_exited"]

@@ -27,7 +27,7 @@ var run_regen = 10 # stamina regen per second
 var run_cooldown = true
 
 
-@export var knockback_power: int = 4500
+@export var knockback_power: int = 3500
 
 func _ready():
 	update_animation()
@@ -114,28 +114,17 @@ func update_animation():
 	
 	$AnimatedSprite2D.play(anim_name)
 
-func knockback():
-	var knockback_direction = -velocity.normalized() * knockback_power
-	velocity = knockback_direction
-	move_and_slide()
-	
+
 func _on_player_hitbox_body_entered(body):
 	if body.has_method("enemy"):
-		knockback()
+		var knockback_direction = (position - body.position).normalized() * knockback_power
+		velocity = knockback_direction
+		move_and_slide()
 
 
 func _on_player_hitbox_body_exited(body):
 	if body.has_method("enemy"):
 		pass
-		#enemy_in_attack_range = false
-
-
-#func enemy_attack():
-	#if enemy_in_attack_range and enemy_attack_cooldown:
-		#global.player_health = global.player_health - 5
-		#enemy_attack_cooldown = false
-		#$attack_cooldown.start()
-		#print(global.player_health)
 
 
 func _on_attack_cooldown_timeout():
@@ -149,6 +138,15 @@ func attack():
 		global.player_active_attack = true
 		update_animation()
 		$deal_attack_timer.start()
+		
+		if current_direction == Direction.RIGHT:
+			$AnimationPlayer.play("attack_right")
+		if current_direction == Direction.LEFT:
+			$AnimationPlayer.play("attack_left")
+		if current_direction == Direction.UP:
+			$AnimationPlayer.play("attack_back")
+		if current_direction == Direction.DOWN:
+			$AnimationPlayer.play("attack_front")
 
 
 func _on_deal_attack_timer_timeout():

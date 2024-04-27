@@ -6,7 +6,7 @@ var player = null
 var health = 100
 var player_in_attack_zone = false
 var can_take_damage = true  
-signal damage_to_player
+@export var knockback_power: int = 3500
 
 func _physics_process(delta):
 	handle_damage()
@@ -41,7 +41,6 @@ func enemy():
 func _on_coyote_hitbox_body_entered(body):
 	if body.has_method("player"):
 		var damage = 5
-		#emit_signal("damage_to_player", damage)
 		global.player_health = global.player_health - damage
 
 
@@ -51,15 +50,8 @@ func _on_coyote_hitbox_body_exited(body):
 
 
 func handle_damage():
-	if player_in_attack_zone and global.player_active_attack == true:
-		if can_take_damage == true:
-			health = health - 20
-			$damage_cooldown.start()
-			can_take_damage = false
-			print("coyote health ", health)
-			
-			if health <= 0:
-				self.queue_free()
+	if health <= 0:
+		self.queue_free()
 
 
 func _on_damage_cooldown_timeout():
@@ -73,3 +65,16 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
+
+
+func _on_coyote_hurtbox_area_entered(area):
+	if area.is_in_group('attack_box'):
+		if can_take_damage == true:
+			health = health - 20
+			$damage_cooldown.start()
+			can_take_damage == false
+			print("coyote health ", health)
+			
+			var knockback_direction = (position - area.position).normalized() * knockback_power
+			velocity = knockback_direction
+			move_and_slide()

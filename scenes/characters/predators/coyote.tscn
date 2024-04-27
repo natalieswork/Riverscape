@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://djw0brrw10117"]
+[gd_scene load_steps=58 format=3 uid="uid://djw0brrw10117"]
 
 [ext_resource type="Texture2D" uid="uid://d1p3cyfpsckfl" path="res://assests/characters/predators/coyote/sprite_sheet/coyote.png" id="1_e0op0"]
 [ext_resource type="Script" path="res://scripts/characters/predators/coyote.gd" id="1_tabye"]
@@ -518,12 +518,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6myql"]
-radius = 111.005
+radius = 138.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_doh5h"]
 size = Vector2(33.5, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgu4j"]
+size = Vector2(66, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jy7cq"]
 size = Vector2(66, 38)
 
 [node name="coyote" type="CharacterBody2D"]
@@ -581,9 +584,16 @@ show_percentage = false
 
 [node name="knockback_timer" type="Timer" parent="."]
 
+[node name="coyote_hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="coyote_hurtbox"]
+position = Vector2(-2, -16)
+shape = SubResource("RectangleShape2D_jy7cq")
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
 [connection signal="body_entered" from="coyote_hitbox" to="." method="_on_coyote_hitbox_body_entered"]
 [connection signal="body_exited" from="coyote_hitbox" to="." method="_on_coyote_hitbox_body_exited"]
 [connection signal="timeout" from="damage_cooldown" to="." method="_on_damage_cooldown_timeout"]
 [connection signal="timeout" from="knockback_timer" to="." method="_on_knockback_timer_timeout"]
+[connection signal="area_entered" from="coyote_hurtbox" to="." method="_on_coyote_hurtbox_area_entered"]
