@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bb1p807d0forb"
+path="res://.godot/imported/zapsplat_multimedia_game_sound_harp_glissando_ascending_cute_fun_001_101830.mp3-6ed3dc835dea33e92ea4f8b3cb406cea.mp3str"
+
+[deps]
+
+source_file="res://assests/audio/sound effects/zapsplat_multimedia_game_sound_harp_glissando_ascending_cute_fun_001_101830.mp3"
+dest_files=["res://.godot/imported/zapsplat_multimedia_game_sound_harp_glissando_ascending_cute_fun_001_101830.mp3-6ed3dc835dea33e92ea4f8b3cb406cea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

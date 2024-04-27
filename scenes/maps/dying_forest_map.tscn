@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://qo5eue1kx8y6"]
+[gd_scene load_steps=7 format=3 uid="uid://qo5eue1kx8y6"]
 
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/alive_forest_map.tres" id="1_7oyio"]
 [ext_resource type="AudioStream" uid="uid://bthyvsctuguky" path="res://assests/audio/music/Chilling_by_the_river.mp3" id="2_6v4al"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="4_nqhcq"]
 [ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="5_wdmkp"]
 [ext_resource type="AudioStream" uid="uid://bmyu3l5p2vfvk" path="res://assests/audio/music/Encounter_music_v2.mp3" id="6_f3vv5"]
-[ext_resource type="PackedScene" uid="uid://cxjmhhdti0daa" path="res://scripts/audio/audio_control.tscn" id="7_25j72"]
 
 [node name="new_forest_map" type="Node2D"]
 y_sort_enabled = true
@@ -40,12 +39,6 @@ position = Vector2(552, 242)
 stream = ExtResource("6_f3vv5")
 volume_db = -10.0
 bus = &"Music"
-
-[node name="Control" parent="." instance=ExtResource("7_25j72")]
-offset_left = 108.0
-offset_top = 123.0
-offset_right = 108.0
-offset_bottom = 123.0
 
 [connection signal="encounter_music_started" from="coyote" to="." method="_on_coyote_encounter_music_started"]
 [connection signal="encounter_music_stopped" from="coyote" to="." method="_on_coyote_encounter_music_stopped"]
