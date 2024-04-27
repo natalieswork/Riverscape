@@ -41,7 +41,8 @@ func enemy():
 func _on_coyote_hitbox_body_entered(body):
 	if body.has_method("player"):
 		var damage = 5
-		emit_signal("damage_to_player", damage)
+		#emit_signal("damage_to_player", damage)
+		global.player_health = global.player_health - damage
 
 
 func _on_coyote_hitbox_body_exited(body):
