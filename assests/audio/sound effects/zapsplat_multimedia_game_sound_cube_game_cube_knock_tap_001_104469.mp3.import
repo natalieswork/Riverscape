@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de55sism0skw8"
+path="res://.godot/imported/zapsplat_multimedia_game_sound_cube_game_cube_knock_tap_001_104469.mp3-7f77463b4ea005002f1ff1f417687b2b.mp3str"
+
+[deps]
+
+source_file="res://assests/audio/sound effects/zapsplat_multimedia_game_sound_cube_game_cube_knock_tap_001_104469.mp3"
+dest_files=["res://.godot/imported/zapsplat_multimedia_game_sound_cube_game_cube_knock_tap_001_104469.mp3-7f77463b4ea005002f1ff1f417687b2b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

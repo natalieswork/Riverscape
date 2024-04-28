@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@onready var BG_music_river = $"AudioStream_BG_Music"
+@onready var BG_music_river = $"AudioStream_BG_Music_river"
 var BG_music_on =true
 
 

@@ -1,9 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://qo5eue1kx8y6"]
+[gd_scene load_steps=7 format=3 uid="uid://qo5eue1kx8y6"]
 
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/alive_forest_map.tres" id="1_7oyio"]
+[ext_resource type="AudioStream" uid="uid://bthyvsctuguky" path="res://assests/audio/music/Chilling_by_the_river.mp3" id="2_6v4al"]
+[ext_resource type="Script" path="res://scenes/maps/dying_forest_map.gd" id="3_0cpqw"]
+[ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="4_nqhcq"]
+[ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="5_wdmkp"]
+[ext_resource type="AudioStream" uid="uid://bmyu3l5p2vfvk" path="res://assests/audio/music/Encounter_music_v2.mp3" id="6_f3vv5"]
 
 [node name="new_forest_map" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("3_0cpqw")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_7oyio")
@@ -17,6 +23,25 @@ layer_2/tile_data = PackedInt32Array(2031665, 13, 1, 2031667, 131085, 1, 2883636
 layer_3/name = "ysort"
 layer_3/y_sort_enabled = true
 layer_3/tile_data = PackedInt32Array(327721, 23, 0, 3211270, 23, 0, 3735597, 23, 0, 1114159, 16, 0, 3080213, 27, 0, 4522021, 26, 0, 1507351, 26, 0, 2490400, 22, 0, 2228271, 23, 0, 2687028, 16, 0, 2031668, 27, 0, 2883628, 26, 0, -196593, 22, 0, 131077, 16, 0, 3801100, 16, 0, 4325394, 23, 0, 2228266, 17, 0, 2818098, 17, 0, 196608, 17, 0, 262158, 17, 0, 4259839, 17, 0, 3670014, 22, 0, 4063231, 16, 0, 2293773, 24, 0, 262170, 21, 0, 1507366, 24, 0, 3604512, 21, 0, 1638407, 21, 0, 393226, 24, 0, -196606, 21, 0, 49, 27, 0)
+
+[node name="AudioStream_dead_forest" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6v4al")
+volume_db = -12.0
+bus = &"Music"
+
+[node name="player" parent="." instance=ExtResource("4_nqhcq")]
+position = Vector2(235, 206)
+
+[node name="coyote" parent="." instance=ExtResource("5_wdmkp")]
+position = Vector2(552, 242)
+
+[node name="AudioStream_encounter" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_f3vv5")
+volume_db = -10.0
+bus = &"Music"
+
+[connection signal="encounter_music_started" from="coyote" to="." method="_on_coyote_encounter_music_started"]
+[connection signal="encounter_music_stopped" from="coyote" to="." method="_on_coyote_encounter_music_stopped"]
 
 [node name="Collision" type="StaticBody2D" parent="."]
 

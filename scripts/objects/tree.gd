@@ -72,12 +72,15 @@ func play_animation():
 	$AnimatedSprite2D.play(anim_name)
 
 
+@onready var chop_tree_sound = $"AudioStream_tree_cut"
 func cutdown_tree():
 	if player_in_area and state == State.ALIVE:
 		if Input.is_action_just_pressed("cutdown_tree"):
+			if !chop_tree_sound.playing:
+				chop_tree_sound.play()
 			state = State.CUTTING
 			drop_branch()
-
+	
 
 func _on_cutdown_area_body_entered(body):
 	if body.has_method("player"):

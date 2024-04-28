@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbmbytbx2lk6m"]
 
-[ext_resource type="Script" path="res://scripts/maps/alive_river_map.gd" id="1_fxv7p"]
+[ext_resource type="Script" path="res://scenes/maps/alive_river_map.gd" id="1_en1tl"]
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/alive_forest_map.tres" id="1_lm86e"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="2_333b2"]
 [ext_resource type="AudioStream" uid="uid://db31eqd6sndbg" path="res://assests/audio/music/Building_in_the_forest.mp3" id="3_4q36j"]
@@ -8,7 +8,7 @@
 [node name="NewRiverMap" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-86, -10)
-script = ExtResource("1_fxv7p")
+script = ExtResource("1_en1tl")
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -29,11 +29,11 @@ layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array(655391, 4, 2, 1835036, 3, 2, 1507382, 19, 0, 2031622, 19, 0, 720917, 19, 0, 393259, 19, 0, 1835052, 20, 0, 983049, 20, 0, 1572880, 20, 0, 58, 20, 0, 65543, 20, 0, 1638462, 25, 0, 131086, 25, 0, 50, 25, 0, -65496, 25, 0, 2228278, 25, 0, 1507332, 25, 0, 720947, 25, 0, 262197, 16, 0, 1376319, 16, 0, 393216, 16, 0, 19, 16, 0, 1900605, 17, 0, 327741, 17, 0, 1900594, 12, 1, 2097215, 12, 1, 196610, 12, 1, 1310743, 12, 1, 2097170, 12, 1, 852009, 12, 1, 1245188, 12, 1, 393226, 17, 0, 589825, 17, 0, 720911, 17, 0, 458799, 17, 0, 720958, 17, 0)
 
 [node name="player" parent="." instance=ExtResource("2_333b2")]
-position = Vector2(681, 255)
+position = Vector2(637, 237)
 
-[node name="AudioStream_BG_Music" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStream_BG_Music_river" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_4q36j")
-volume_db = -20.0
+volume_db = -16.0
 bus = &"Music"
 
 [node name="Camera2D" type="Camera2D" parent="."]

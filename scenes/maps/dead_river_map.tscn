@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce25qjamdepyx"]
+[gd_scene load_steps=5 format=3 uid="uid://ce25qjamdepyx"]
 
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/alive_forest_map.tres" id="1_2iwll"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="2_tpuex"]
+[ext_resource type="AudioStream" uid="uid://db31eqd6sndbg" path="res://assests/audio/music/Building_in_the_forest.mp3" id="3_mfbe0"]
+[ext_resource type="Script" path="res://scenes/maps/dead_river_map.gd" id="4_bmecc"]
 
 [node name="NewRiverMap" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("4_bmecc")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(-1, 0)
@@ -25,6 +28,11 @@ layer_4/tile_data = PackedInt32Array(655391, 4, 2, 1835036, 3, 2, 1507382, 24, 0
 
 [node name="player" parent="." instance=ExtResource("2_tpuex")]
 position = Vector2(509, 217)
+
+[node name="AudioStream_dead_river" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mfbe0")
+volume_db = -16.0
+bus = &"Music"
 
 [node name="collsions" type="StaticBody2D" parent="."]
 

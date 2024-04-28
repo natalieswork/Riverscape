@@ -8,7 +8,8 @@ var player_in_attack_zone = false
 var can_take_damage = true  
 
 var delay_timer = 6
-@onready var encounter = $AudioStream_coyote
+signal encounter_music_started
+signal encounter_music_stopped
 
 func _physics_process(delta):
 	handle_damage()
@@ -29,13 +30,17 @@ func _physics_process(delta):
 func _on_detection_area_body_entered(body):
 	player = body
 	chase_player = true 
-	encounter.play()
+	
+	print("encounter")
+	emit_signal("encounter_music_started")
 
 
 func _on_detection_area_body_exited(body):
 	player = null
 	chase_player = false
-	encounter.stop()
+	print("stopped")
+	emit_signal("encounter_music_stopped")
+
 
 
 func enemy():
@@ -78,3 +83,7 @@ func update_health():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
+
+
+func _on_new_forest_map_encounter_music_started():
+	pass # Replace with function body.

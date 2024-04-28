@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b415mjnfl2v0c"]
+[gd_scene load_steps=7 format=3 uid="uid://b415mjnfl2v0c"]
 
 [ext_resource type="Script" path="res://scripts/objects/tree.gd" id="1_xb1sw"]
 [ext_resource type="Resource" uid="uid://dtwio1jcikb6t" path="res://scenes/inventory/items/branch.tres" id="2_8gpas"]
 [ext_resource type="SpriteFrames" uid="uid://c14nty85d3mfk" path="res://scenes/objects/pine_tree.tres" id="3_pmdnk"]
+
+[ext_resource type="AudioStream" uid="uid://d102g1fq3cp7n" path="res://assests/audio/sound effects/Chop_and_fall_sound.mp3" id="4_nt7wg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3s0w"]
 size = Vector2(44, 24)
@@ -35,6 +37,10 @@ wait_time = 3.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -40)
+
+[node name="AudioStream_tree_cut" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_nt7wg")
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="cutdown_area" to="." method="_on_cutdown_area_body_entered"]
