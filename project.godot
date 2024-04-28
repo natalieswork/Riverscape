@@ -20,7 +20,7 @@ buses/default_bus_layout="res://scripts/audio/default_bus_layout.tres"
 
 [autoload]
 
-global="*res://global.gd"
+global="*res://scripts/global.gd"
 
 [display]
 
