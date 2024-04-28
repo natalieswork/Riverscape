@@ -43,3 +43,8 @@ position = Vector2(678, 271)
 
 [connection signal="encounter_music_started" from="coyote" to="." method="_on_coyote_encounter_music_started"]
 [connection signal="encounter_music_stopped" from="coyote" to="." method="_on_coyote_encounter_music_stopped"]
+
+[node name="Collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collision"]
+polygon = PackedVector2Array(849, -18, 849, 420, 849, 488, 769, 495, 767, 518, 646, 521, 640, 533, 640, 685, 644, 690, 764, 691, 767, 688, 767, 797, 773, 803, 849, 802, 850, 1185, 52, 1183, 48, 887, 44, 873, -18, 871, -17, 809, -17, 254, -63, 257, -65, 175, -17, 175, -15, 164, 95, 162, 97, 159, 97, 146, 169, 147, 184, 148, 192, 141, 193, 136, 193, 105, 193, 79, 197, 83, 260, 82, 332, 83, 337, 75, 338, -17, 756, -17, 842, -17, 849, -17, 826, -59, 27, -65, -55, -50, -101, 216, -88, 1215, 674, 1299, 915, 1246, 965, 929, 949, 540, 919, 129, 919, -56, 867, -50, 850, -22)
