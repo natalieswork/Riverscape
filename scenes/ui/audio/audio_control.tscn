@@ -1,0 +1,120 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxjmhhdti0daa"]
+
+[ext_resource type="Script" path="res://scripts/audio/mute_button.gd" id="1_bi0gi"]
+[ext_resource type="Script" path="res://scripts/audio/HSlider_SFX.gd" id="1_fexvb"]
+[ext_resource type="Texture2D" uid="uid://cxrh75fn3t52e" path="res://assests/ui/buttons/button_template.png" id="1_mmkp3"]
+[ext_resource type="Script" path="res://scripts/ui/audio/audio_control.gd" id="1_rawhx"]
+[ext_resource type="Script" path="res://scripts/audio/HSlider_master.gd" id="1_smsk7"]
+[ext_resource type="Script" path="res://scripts/audio/HSlider_Music.gd" id="3_2fokv"]
+
+[node name="AudioMenu" type="Control"]
+custom_minimum_size = Vector2(320, 384)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -704.0
+offset_bottom = -216.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rawhx")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mmkp3")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(282, 320)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = -14.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.933826, 1.02515)
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "Audio Settings"
+
+[node name="Master" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(282, 23)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/Master"]
+layout_mode = 2
+text = "Master Volume"
+
+[node name="HSlider_master_vol" type="HSlider" parent="NinePatchRect/VBoxContainer/Master"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("1_smsk7")
+
+[node name="Music" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(282, 23)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/Music"]
+layout_mode = 2
+text = "Music"
+
+[node name="HSlider_Music" type="HSlider" parent="NinePatchRect/VBoxContainer/Music"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.05
+script = ExtResource("3_2fokv")
+
+[node name="SoundEffects" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(282, 23)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="NinePatchRect/VBoxContainer/SoundEffects"]
+layout_mode = 2
+text = "Sound Effects "
+
+[node name="HSlider_SFX" type="HSlider" parent="NinePatchRect/VBoxContainer/SoundEffects"]
+custom_minimum_size = Vector2(160, 16)
+layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("1_fexvb")
+
+[node name="Button" type="Button" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+toggle_mode = true
+text = "Mute"
+script = ExtResource("1_bi0gi")
+
+[connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" to="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" method="release_focus"]
+[connection signal="value_changed" from="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" to="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" method="_on_value_changed"]
+[connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/Music/HSlider_Music" to="NinePatchRect/VBoxContainer/Music/HSlider_Music" method="release_focus"]
+[connection signal="value_changed" from="NinePatchRect/VBoxContainer/Music/HSlider_Music" to="NinePatchRect/VBoxContainer/Music/HSlider_Music" method="_on_value_changed"]
+[connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/SoundEffects/HSlider_SFX" to="NinePatchRect/VBoxContainer/SoundEffects/HSlider_SFX" method="release_focus"]
+[connection signal="value_changed" from="NinePatchRect/VBoxContainer/SoundEffects/HSlider_SFX" to="NinePatchRect/VBoxContainer/SoundEffects/HSlider_SFX" method="_on_value_changed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/Button" to="NinePatchRect/VBoxContainer/Button" method="_on_pressed"]
