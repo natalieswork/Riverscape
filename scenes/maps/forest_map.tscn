@@ -2,8 +2,8 @@
 
 [ext_resource type="TileSet" uid="uid://cha21wb7fchj6" path="res://scenes/maps/forest_map.tres" id="1_1i2gw"]
 [ext_resource type="Script" path="res://scripts/maps/forest_map.gd" id="1_hlji7"]
+[ext_resource type="PackedScene" uid="uid://c2eajdiil6gj0" path="res://scenes/ui/main_interface.tscn" id="2_a0i1l"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="2_fwe54"]
-[ext_resource type="PackedScene" uid="uid://cjiaug84cffw6" path="res://scenes/ui/interface.tscn" id="2_kamfk"]
 [ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="3_rykng"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fgy6q"]
@@ -15,9 +15,7 @@ script = ExtResource("1_hlji7")
 metadata/_edit_vertical_guides_ = [-2.0, 1364.0]
 metadata/_edit_horizontal_guides_ = [3.0, 1376.0]
 
-[node name="InterfaceLayer" type="CanvasLayer" parent="."]
-
-[node name="Interface" parent="InterfaceLayer" instance=ExtResource("2_kamfk")]
+[node name="InterfaceLayer" parent="." instance=ExtResource("2_a0i1l")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true

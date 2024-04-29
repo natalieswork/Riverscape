@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2eajdiil6gj0"]
+
+[ext_resource type="PackedScene" uid="uid://cjiaug84cffw6" path="res://scenes/ui/interface.tscn" id="1_bq80o"]
+[ext_resource type="PackedScene" uid="uid://cxjmhhdti0daa" path="res://scenes/ui/audio/audio_control.tscn" id="1_j3rx0"]
+
+[node name="InterfaceLayer" type="CanvasLayer"]
+
+[node name="Interface" parent="." instance=ExtResource("1_bq80o")]
+
+[node name="Control" parent="." instance=ExtResource("1_j3rx0")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -192.0
+offset_right = 160.0
+offset_bottom = 192.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
