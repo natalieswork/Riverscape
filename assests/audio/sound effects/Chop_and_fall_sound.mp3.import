@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d102g1fq3cp7n"
+path="res://.godot/imported/Chop_and_fall_sound.mp3-03aeb80ca04aed468b0c97d0b46da455.mp3str"
+
+[deps]
+
+source_file="res://assests/audio/sound effects/Chop_and_fall_sound.mp3"
+dest_files=["res://.godot/imported/Chop_and_fall_sound.mp3-03aeb80ca04aed468b0c97d0b46da455.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

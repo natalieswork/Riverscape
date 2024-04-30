@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyg2m3k2f0tst"
+path="res://.godot/imported/zapsplat_human_punch_smack_hit_001_62758.mp3-d807e14e0731f801fc5e63432c0d52c0.mp3str"
+
+[deps]
+
+source_file="res://assests/audio/sound effects/zapsplat_human_punch_smack_hit_001_62758.mp3"
+dest_files=["res://.godot/imported/zapsplat_human_punch_smack_hit_001_62758.mp3-d807e14e0731f801fc5e63432c0d52c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

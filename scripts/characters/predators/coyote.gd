@@ -6,7 +6,12 @@ var player = null
 var health = 100
 var player_in_attack_zone = false
 var can_take_damage = true  
+
 @export var knockback_power: int = 3500
+
+var delay_timer = 6
+signal encounter_music_started
+signal encounter_music_stopped
 
 func _physics_process(delta):
 	handle_damage()
@@ -27,11 +32,17 @@ func _physics_process(delta):
 func _on_detection_area_body_entered(body):
 	player = body
 	chase_player = true 
+	
+	print("encounter")
+	emit_signal("encounter_music_started")
 
 
 func _on_detection_area_body_exited(body):
 	player = null
 	chase_player = false
+	print("stopped")
+	emit_signal("encounter_music_stopped")
+
 
 
 func enemy():
@@ -42,12 +53,14 @@ func _on_coyote_hitbox_body_entered(body):
 	if body.has_method("player"):
 		var damage = 5
 		global.player_health = global.player_health - damage
+		player_in_attack_zone = true
+		
 
 
 func _on_coyote_hitbox_body_exited(body):
 	if body.has_method("player"):
 		player_in_attack_zone = false
-
+		
 
 func handle_damage():
 	if health <= 0:
@@ -78,3 +91,6 @@ func _on_coyote_hurtbox_area_entered(area):
 			var knockback_direction = (position - area.position).normalized() * knockback_power
 			velocity = knockback_direction
 			move_and_slide()
+
+func _on_new_forest_map_encounter_music_started():
+	pass # Replace with function body.

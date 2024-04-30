@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2w7cpkcyedc3"]
+
+[ext_resource type="PackedScene" uid="uid://vn61mrbq284s" path="res://scenes/ui/bars/bar.tscn" id="1_5v8q5"]
+[ext_resource type="Script" path="res://scripts/ui/bars/healthbar.gd" id="2_hpxav"]
+
+[node name="healthbar" instance=ExtResource("1_5v8q5")]
+script = ExtResource("2_hpxav")
+
+[node name="TextureProgressBar" parent="." index="1"]
+custom_minimum_size = Vector2(396, 53)

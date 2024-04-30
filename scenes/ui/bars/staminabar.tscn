@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk58i4wuoyeox"]
+
+[ext_resource type="PackedScene" uid="uid://vn61mrbq284s" path="res://scenes/ui/bars/bar.tscn" id="1_3n5md"]
+[ext_resource type="Texture2D" uid="uid://bls7omkg3f6f7" path="res://assests/ui/bar/stamina/label_EP.png" id="2_ax3yc"]
+[ext_resource type="Texture2D" uid="uid://bo88hbegw1k0h" path="res://assests/ui/bar/stamina/bg.png" id="3_agml7"]
+[ext_resource type="Texture2D" uid="uid://dq2ni5g2iby21" path="res://assests/ui/bar/stamina/fill.png" id="4_d0n4q"]
+
+[node name="staminabar" instance=ExtResource("1_3n5md")]
+offset_right = 392.0
+
+[node name="TextureRect" parent="counter" index="0"]
+texture = ExtResource("2_ax3yc")
+
+[node name="Label" parent="counter" index="1"]
+theme_override_font_sizes/font_size = 30
+
+[node name="TextureProgressBar" parent="." index="1"]
+custom_minimum_size = Vector2(248, 40)
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_under = ExtResource("3_agml7")
+texture_progress = ExtResource("4_d0n4q")

@@ -1,5 +1,15 @@
 extends CharacterBody2D
 
+@onready var playerWalkingAudio = $AudioStreamPlayer2D_walking
+@onready var playerAttackAudio = $AudioStreamPlayer2D_attack
+@onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
+
+@onready var player_low_health = $AudioStreamPlayer2D_low_health
+@onready var player_death_sound = $AudioStreamPlayer2D_death
+@onready var player_out_run = $AudioStreamPlayer2D_out_run
+
+@export var inventory: Inv
+
 enum Direction {
 	RIGHT, LEFT, DOWN, UP
 }
@@ -40,7 +50,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	attack()
 	#enemy_attack()
-	update_healthbar()
+	# update_healthbar()
 	current_camera()
 
 
@@ -62,24 +72,34 @@ func player_movement(delta):
 
 		if Input.is_action_pressed("ui_right"):
 			current_direction = Direction.RIGHT
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 			velocity.x = move_speed
 			velocity.y = 0
+			
 		elif Input.is_action_pressed("ui_left"):
 			current_direction = Direction.LEFT
 			velocity.x = -move_speed
 			velocity.y = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		elif Input.is_action_pressed("ui_down"):
 			current_direction = Direction.DOWN
 			velocity.y = move_speed
 			velocity.x = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		elif Input.is_action_pressed("ui_up"):
 			current_direction = Direction.UP
 			velocity.y = -move_speed
 			velocity.x = 0
+			if !playerWalkingAudio.playing:
+				playerWalkingAudio.play()
 		else:
 			current_state = State.IDLE
 			velocity.y = 0
 			velocity.x = 0
+			playerWalkingAudio.stop()
 		
 	update_animation()
 	move_and_slide()
@@ -147,6 +167,9 @@ func attack():
 			$AnimationPlayer.play("attack_back")
 		if current_direction == Direction.DOWN:
 			$AnimationPlayer.play("attack_front")
+		#if !playerAttackAudio.playing:
+			#	playerAttackAudio.play()
+		
 
 
 func _on_deal_attack_timer_timeout():
@@ -171,6 +194,8 @@ func die():
 	update_animation()
 	print("Player has been killed.")
 	self.queue_free() 
+	if !player_death_sound.playing:
+				player_death_sound.play()
 
 
 func update_healthbar():
@@ -181,6 +206,10 @@ func update_healthbar():
 		healthbar.visible = false
 	else:
 		healthbar.visible = true 
+		
+	if global.player_health <= 10:
+		if !player_low_health.playing:
+				player_low_health.play()
 
 
 func update_runbar():
@@ -207,8 +236,15 @@ func _on_run_timer_timeout():
 		if run_stamina > max_run_stamina:
 			run_stamina = max_run_stamina
 	update_runbar()
+	if run_stamina < 5:
+		if !player_out_run.playing:
+				player_out_run.play()
 
 
 
 func _on_run_cooldown_timeout():
 	run_cooldown = true
+
+# inventory functions
+func collect(item):
+	inventory.insert(item)

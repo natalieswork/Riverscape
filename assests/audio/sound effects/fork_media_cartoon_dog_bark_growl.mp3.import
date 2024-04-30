@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f5yjb1ia2tj7"
+path="res://.godot/imported/fork_media_cartoon_dog_bark_growl.mp3-2e6f79fa62c12b12567a625d45d89b5e.mp3str"
+
+[deps]
+
+source_file="res://assests/audio/sound effects/fork_media_cartoon_dog_bark_growl.mp3"
+dest_files=["res://.godot/imported/fork_media_cartoon_dog_bark_growl.mp3-2e6f79fa62c12b12567a625d45d89b5e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
