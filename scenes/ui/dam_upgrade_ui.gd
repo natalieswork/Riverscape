@@ -8,7 +8,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("inspect_structure"):
+	if !global.player_in_dam_area:
+		close()
+		
+	if global.player_in_dam_area and Input.is_action_just_pressed("inspect_structure"):
 		if is_open:
 			close()
 		else:
