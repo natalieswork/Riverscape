@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://rt7je0nfi7jc"]
+
+[ext_resource type="Script" path="res://scripts/objects/structure/dam.gd" id="1_0hud2"]
+[ext_resource type="Texture2D" uid="uid://bsjul7hn3lp4" path="res://assests/landscape/objects/dam/dam01.png" id="2_61skf"]
+[ext_resource type="Resource" uid="uid://18qo0d1w7hsp" path="res://scenes/objects/structure/dam_inventory.tres" id="2_nhcj5"]
+[ext_resource type="PackedScene" uid="uid://bgrmyltuo1omb" path="res://scenes/ui/upgrade_ui.tscn" id="4_2er1p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m1tay"]
+radius = 80.0
+
+[node name="Dam" type="Node2D"]
+script = ExtResource("1_0hud2")
+inventory = ExtResource("2_nhcj5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+texture = ExtResource("2_61skf")
+
+[node name="collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
+position = Vector2(-7.2, -58.1125)
+scale = Vector2(1.08036, 1.61719)
+polygon = PackedVector2Array(-59.9802, 35.9343, 6.66446, 40.8812, 73.3091, 35.9343, 80.7141, 26.0406, 6.66446, 21.0937, -67.3851, 26.0406)
+
+[node name="interact" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
+position = Vector2(0, -24)
+shape = SubResource("CircleShape2D_m1tay")
+
+[node name="UpgradeUI" parent="." instance=ExtResource("4_2er1p")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -16.0
+offset_top = -88.0
+offset_right = -16.0
+offset_bottom = -88.0
+grow_vertical = 1
+size_flags_vertical = 4

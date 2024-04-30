@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/objects/tree.gd" id="1_xb1sw"]
 [ext_resource type="Resource" uid="uid://dtwio1jcikb6t" path="res://scenes/inventory/items/branch.tres" id="2_8gpas"]
 [ext_resource type="SpriteFrames" uid="uid://c14nty85d3mfk" path="res://scenes/objects/pine_tree.tres" id="3_pmdnk"]
-
 [ext_resource type="AudioStream" uid="uid://d102g1fq3cp7n" path="res://assests/audio/sound effects/Chop_and_fall_sound.mp3" id="4_nt7wg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r3s0w"]
