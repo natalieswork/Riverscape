@@ -14,7 +14,8 @@ var player_exit_forest_posx = 1136
 var player_exit_forest_posy = 184
 
 # upgrade sytem vars
-var player_in_dam_area= false
+var player_in_dam_area = false
+var dam_max_branch = 5
 
 func finish_changescenes():
 	if transition_scene == true:
