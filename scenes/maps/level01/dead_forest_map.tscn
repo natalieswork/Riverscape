@@ -57,7 +57,7 @@ position = Vector2(-40, 216)
 shape = SubResource("RectangleShape2D_nv4kw")
 
 [node name="player" parent="." instance=ExtResource("3_hws6p")]
-position = Vector2(82, 222)
+position = Vector2(0, 216)
 
 [node name="Trees" type="Node2D" parent="."]
 y_sort_enabled = true

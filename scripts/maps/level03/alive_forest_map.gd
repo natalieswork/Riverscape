@@ -1,28 +1,29 @@
 extends Node2D
-@onready var BG_music_forest = $"AudioStream_alive_forest"
-var BG_music_on =true
 
-@onready var coyote = $"Coyote"
-@onready var encounter_alive = $"AudioStream_encounter_alive"
-var encounter_music_on = false
 signal encounter_music_started
 signal encounter_music_stopped
 
-func _ready():
-	$coyote.connect("encounter_music_started", _on_encounter_music_started)
-	$coyote.connect("encounter_music_stopped", _on_encounter_music_stopped)
+@onready var BG_music_forest = $Audio/AudioStream_alive_forest
+@onready var encounter = $Audio/AudioStream_encounter_alive
 
-# Called when the node enters the scene tree for the first time.
-#func _ready():
-	#pass # Replace with function body.
+var BG_music_on = true
+var encounter_music_on = false
+
+func _ready():
+	pass
+	#$coyote.connect("encounter_music_started", _on_encounter_music_started)
+	#$coyote.connect("encounter_music_stopped", _on_encounter_music_stopped)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	change_scene()
 	update_music_status()
-	
+
+
 func update_music_status():
 	if BG_music_on:
-		encounter_alive.stop()
+		
+		encounter.stop()
 		if !BG_music_forest.playing:
 			BG_music_forest.play()
 	else:
@@ -30,22 +31,18 @@ func update_music_status():
 		
 	if encounter_music_on:
 		BG_music_forest.stop()
-		if !encounter_alive.playing:
-			encounter_alive.play()
+		if !encounter.playing:
+			encounter.play()
 	else:
-		encounter_alive.stop()
-func _on_encounter_music_started():
-	BG_music_on = false
-	encounter_music_on= true
-
-func _on_encounter_music_stopped():
-	BG_music_on = true
-	encounter_music_on = false
+		encounter.stop()
 
 
-func _on_coyote_encounter_music_started():
-	_on_encounter_music_started()
-
-
-func _on_coyote_encounter_music_stopped():
-	_on_encounter_music_stopped()
+func _on_forest_exit_body_entered(body):
+	if body.has_method("player"):
+		global.transition_scene = true
+	
+func change_scene():
+	if global.transition_scene == true:
+		if global.current_scene == "forest_map":
+			get_tree().change_scene_to_file("res://scenes/maps/level03/alive_river_map.tscn")
+			global.finish_changescenes()

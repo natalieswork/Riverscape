@@ -57,7 +57,7 @@ position = Vector2(-40, 217)
 shape = SubResource("RectangleShape2D_oupye")
 
 [node name="player" parent="." instance=ExtResource("4_nqhcq")]
-position = Vector2(235, 206)
+position = Vector2(8, 216)
 
 [node name="coyote" parent="." instance=ExtResource("5_wdmkp")]
 position = Vector2(136, 448)
