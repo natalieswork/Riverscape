@@ -1,7 +1,12 @@
 extends Control
 
+class_name DamUpgradeUI
+
+signal add_branch
+
 var is_open = false
 @onready var dam_inv: Inv = preload("res://scenes/objects/structure/dam_inventory.tres")
+@onready var player_inv: Inv = preload("res://scenes/inventory/player_inventory.tres")
 @onready var progress_bar: ProgressBar = $NinePatchRect/VBoxContainer/ProgressBar
 @onready var level_text: Label  = $NinePatchRect/VBoxContainer/HBoxContainer/level
 @onready var count_text: Label = $NinePatchRect/VBoxContainer/HBoxContainer/count
@@ -9,6 +14,7 @@ var is_open = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	close()
+	update()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -33,9 +39,10 @@ func close():
 	is_open = false
 
 func update():
+	print("called")
 	var branch_slot = null
 	for slot in dam_inv.slots:
-		if slot.item != null and slot.item.name == "branch":
+		if slot != null and slot.item != null and slot.item.name == "branch":
 			branch_slot = slot
 			break
 			
@@ -48,8 +55,13 @@ func update():
 		count_text.text = "(0/" + str(global.dam_max_branch) + ")"
 		
 
-func update_bar():
-	pass
-	
-func update_text():
-	pass
+func _on_add_one_pressed():
+	emit_signal("add_branch", 1)
+	update()
+
+
+func _on_add_all_pressed():
+	var amount = player_inv.get_item_amount("branch")
+	print(amount)
+	emit_signal("add_branch", amount)
+	update()

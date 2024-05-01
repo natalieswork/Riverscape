@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://qmpqe7un6t4g"]
+[gd_scene load_steps=9 format=3 uid="uid://qmpqe7un6t4g"]
 
 [ext_resource type="Script" path="res://scripts/maps/river_map.gd" id="1_kv4kb"]
 [ext_resource type="PackedScene" uid="uid://rt7je0nfi7jc" path="res://scenes/objects/structure/dam.tscn" id="2_4hjjd"]
 [ext_resource type="TileSet" uid="uid://cha21wb7fchj6" path="res://scenes/maps/forest_map.tres" id="2_7522e"]
 [ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="4_jkox7"]
 [ext_resource type="PackedScene" uid="uid://c2eajdiil6gj0" path="res://scenes/ui/main_interface.tscn" id="5_rb5al"]
+[ext_resource type="PackedScene" uid="uid://bgrmyltuo1omb" path="res://scenes/ui/dam_upgrade_ui.tscn" id="7_1utln"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="8_lcw5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgfn1"]
@@ -70,5 +71,12 @@ position = Vector2(416, 200)
 
 [node name="InterfaceLayer" parent="." instance=ExtResource("5_rb5al")]
 
+[node name="UpgradeUI" parent="InterfaceLayer" instance=ExtResource("7_1utln")]
+offset_left = 488.0
+offset_top = 72.0
+offset_right = -360.0
+offset_bottom = -401.0
+
 [connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
 [connection signal="body_exited" from="forest_entrance" to="." method="_on_forest_entrance_body_exited"]
+[connection signal="add_branch" from="InterfaceLayer/UpgradeUI" to="Dam" method="_on_upgrade_ui_add_branch"]

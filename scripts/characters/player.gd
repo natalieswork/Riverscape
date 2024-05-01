@@ -242,5 +242,8 @@ func _on_run_cooldown_timeout():
 	run_cooldown = true
 
 # inventory functions
-func collect(item):
-	inventory.insert(item)
+func collect(item, amount: int = 1):
+	inventory.insert(item, amount)
+
+func allocate_item(item, amount: int = 1):
+	inventory.remove(item, amount)

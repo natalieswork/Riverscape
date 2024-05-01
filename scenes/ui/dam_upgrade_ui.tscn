@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgrmyltuo1omb"]
+[gd_scene load_steps=5 format=3 uid="uid://bgrmyltuo1omb"]
 
 [ext_resource type="Script" path="res://scripts/ui/dam_upgrade_ui.gd" id="1_4w2ft"]
 [ext_resource type="Texture2D" uid="uid://cxrh75fn3t52e" path="res://assests/ui/buttons/button_template.png" id="2_2yhhc"]
 [ext_resource type="Texture2D" uid="uid://dqcs4mgoe3ewx" path="res://assests/landscape/objects/branch.png" id="3_cvime"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pngv"]
+bg_color = Color(0.423529, 0.686275, 0.141176, 1)
 
 [node name="UpgradeUI" type="Control"]
 layout_mode = 3
@@ -56,6 +59,7 @@ text = "(9/10)"
 [node name="ProgressBar" type="ProgressBar" parent="NinePatchRect/VBoxContainer"]
 custom_minimum_size = Vector2(80, 15)
 layout_mode = 2
+theme_override_styles/fill = SubResource("StyleBoxFlat_5pngv")
 show_percentage = false
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
@@ -81,3 +85,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 9
 text = "Add All"
 expand_icon = true
+
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/HBoxContainer2/VBoxContainer/add_one" to="." method="_on_add_one_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/HBoxContainer2/VBoxContainer/add_all" to="." method="_on_add_all_pressed"]
