@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Riverscape"
-run/main_scene="res://scenes/maps/river_map.tscn"
+run/main_scene="res://scenes/maps/level01/dead_river_map.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 
 [audio]

@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-@onready var playerWalkingAudio = $AudioStreamPlayer2D_walking
-@onready var playerAttackAudio = $AudioStreamPlayer2D_attack
-@onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
-
-@onready var player_low_health = $AudioStreamPlayer2D_low_health
-@onready var player_death_sound = $AudioStreamPlayer2D_death
-@onready var player_out_run = $AudioStreamPlayer2D_out_run
+@onready var playerWalkingAudio = $Audio/AudioStreamPlayer2D_walking
+@onready var playerAttackAudio = $Audio/AudioStreamPlayer2D_attack
+@onready var playerHurtAudio = $Audio/AudioStreamPlayer2D_hurt
+@onready var player_low_health = $Audio/AudioStreamPlayer2D_low_health
+@onready var player_death_sound = $Audio/AudioStreamPlayer2D_death
+@onready var player_out_run = $Audio/AudioStreamPlayer2D_out_run
 
 @export var inventory: Inv
 
@@ -237,13 +236,14 @@ func _on_run_timer_timeout():
 				player_out_run.play()
 
 
-
 func _on_run_cooldown_timeout():
 	run_cooldown = true
+
 
 # inventory functions
 func collect(item, amount: int = 1):
 	inventory.insert(item, amount)
+
 
 func allocate_item(item, amount: int = 1):
 	inventory.remove(item, amount)
