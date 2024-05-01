@@ -74,7 +74,7 @@ func _on_add_one_pressed():
 		update()
 	else:
 		# trigger upgrade?
-		print("Dam complete.")
+		print("Dam Full.")
 
 
 func _on_add_all_pressed():
@@ -96,4 +96,5 @@ func _on_add_all_pressed():
 		update()
 	else:
 		# trigger upgrade? 
-		print("Dam complete.")
+		print("Dam Full.")
+		

@@ -1,5 +1,7 @@
 extends Node
 
+signal dam_upgrade
+
 var game_first_loaded = true
 var player_active_attack = false
 var player_health = 100
@@ -14,8 +16,18 @@ var player_exit_forest_posx = 1136
 var player_exit_forest_posy = 184
 
 # upgrade sytem vars
+# dam vars
 var player_in_dam_area = false
+var dam_level = 1
+var dam_upgraded = false
 var dam_max_branch = 5
+
+# lodge vars
+var player_in_lodge_area = false
+var lodge_level = 1
+var lodge_upgraded = false
+var lodge_max_branch = 5
+
 
 func finish_changescenes():
 	if transition_scene == true:
@@ -24,5 +36,14 @@ func finish_changescenes():
 			current_scene = "forest_map"
 		else:
 			current_scene = "river_map"
-	
+
+
+func upgrade_dam():
+	dam_level += 1
+	if dam_level == 2:
+		dam_max_branch = 10 # new goal after upgrade
+	elif dam_level == 3:
+		dam_max_branch = 15  
+		
+	dam_upgrade.emit(dam_level)
 
