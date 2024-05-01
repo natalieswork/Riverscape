@@ -92,3 +92,4 @@ offset_right = -456.0
 offset_bottom = -312.0
 
 [connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
+[connection signal="add_branch" from="InterfaceLayer/UpgradeUI" to="Dam" method="_on_upgrade_ui_add_branch"]

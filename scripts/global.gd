@@ -28,6 +28,8 @@ var lodge_level = 1
 var lodge_upgraded = false
 var lodge_max_branch = 5
 
+# map level
+var world_level = 1
 
 func finish_changescenes():
 	if transition_scene == true:
@@ -40,10 +42,11 @@ func finish_changescenes():
 
 func upgrade_dam():
 	dam_level += 1
-	if dam_level == 2:
-		dam_max_branch = 10 # new goal after upgrade
-	elif dam_level == 3:
-		dam_max_branch = 15  
+	if dam_level == world_level:
+		if dam_level == 2:
+			dam_max_branch = 10 # new goal after upgrade
+		elif dam_level == 3:
+			dam_max_branch = 15  
 		
 	dam_upgrade.emit(dam_level)
 
