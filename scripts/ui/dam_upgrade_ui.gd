@@ -20,9 +20,11 @@ func _ready():
 func _process(delta):
 	
 	if !global.player_in_dam_area:
+		# Sound effect?
 		close()
 		
 	if global.player_in_dam_area and Input.is_action_just_pressed("inspect_structure"):
+		# Sound effect?
 		if is_open:
 			close()
 		else:
@@ -39,7 +41,7 @@ func close():
 	is_open = false
 
 func update():
-	print("called")
+	#updates the ui
 	var branch_slot = null
 	for slot in dam_inv.slots:
 		if slot != null and slot.item != null and slot.item.name == "branch":
@@ -56,12 +58,42 @@ func update():
 		
 
 func _on_add_one_pressed():
-	emit_signal("add_branch", 1)
-	update()
+	var branches_available = player_inv.get_item_amount("branch")
+	#if branches_available > 0:
+		# Sound effect? No branch available noise
+	#else:
+		# No branches sound effect?
+	
+	# calc how many more branches can be added to the dam
+	var current_branch_amount = dam_inv.get_item_amount("branch")
+	var space_left = global.dam_max_branch - current_branch_amount
+
+	# Only proceed if there is space left
+	if space_left > 0:
+		emit_signal("add_branch", 1)
+		update()
+	else:
+		# trigger upgrade?
+		print("Dam complete.")
 
 
 func _on_add_all_pressed():
-	var amount = player_inv.get_item_amount("branch")
-	print(amount)
-	emit_signal("add_branch", amount)
-	update()
+	var current_branch_amount = dam_inv.get_item_amount("branch")
+	var space_left = global.dam_max_branch - current_branch_amount
+
+	# Calculate how many branches the player has
+	var branches_to_add = player_inv.get_item_amount("branch")
+	#if branches_to_add > 0:
+		# Sound effect? No branch available noise
+	#else:
+		# No branches sound effect?
+
+	# Cap the addition to the dam inv at the maximum space left
+	branches_to_add = min(branches_to_add, space_left)
+
+	if branches_to_add > 0:
+		emit_signal("add_branch", branches_to_add)
+		update()
+	else:
+		# trigger upgrade? 
+		print("Dam complete.")

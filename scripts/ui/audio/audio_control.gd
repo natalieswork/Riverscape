@@ -9,6 +9,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("menu"):
+		# Sound effect?
 		if is_open:
 			close()
 		else:

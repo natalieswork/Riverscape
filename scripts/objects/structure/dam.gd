@@ -16,7 +16,7 @@ func _process(delta):
 func _on_interact_body_entered(body):
 	if body.has_method("player"):
 		global.player_in_dam_area = true
-		player = body
+		player = body # needed to access player inventory
 
 
 func _on_interact_body_exited(body):
@@ -25,13 +25,13 @@ func _on_interact_body_exited(body):
 
 func add_branch(amount: int = 1):
 	if player:
-		var branch_item = player.inventory.find_item("branch") # Returns an InvItem directly
+		var branch_item = player.inventory.find_item("branch") 
 		if branch_item:
-			if player.inventory.remove(branch_item, amount): # Check if successfully removed
-				if dam_inventory.insert(branch_item, amount): # Check if successfully inserted
+			if player.inventory.remove(branch_item, amount): # check successfully removed
+				if dam_inventory.insert(branch_item, amount): # check successfully inserted
 					var damb = dam_inventory.get_item_amount("branch")
 					print("Dam number: ", damb)
-					print("Amount passed to dam add: ", amount)
+					# print("Amount passed to dam add: ", amount)
 				else:
 					print("Failed to insert branches into dam inventory")
 			else:

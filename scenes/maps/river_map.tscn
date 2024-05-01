@@ -18,7 +18,7 @@ metadata/_edit_vertical_guides_ = [1152.0]
 metadata/_edit_horizontal_guides_ = [16.0]
 
 [node name="Dam" parent="." instance=ExtResource("2_4hjjd")]
-position = Vector2(576, 108)
+position = Vector2(528, 432)
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -72,10 +72,10 @@ position = Vector2(416, 200)
 [node name="InterfaceLayer" parent="." instance=ExtResource("5_rb5al")]
 
 [node name="UpgradeUI" parent="InterfaceLayer" instance=ExtResource("7_1utln")]
-offset_left = 488.0
-offset_top = 72.0
-offset_right = -360.0
-offset_bottom = -401.0
+offset_left = 440.0
+offset_top = 332.0
+offset_right = -408.0
+offset_bottom = -141.0
 
 [connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
 [connection signal="body_exited" from="forest_entrance" to="." method="_on_forest_entrance_body_exited"]
