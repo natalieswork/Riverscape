@@ -17,9 +17,6 @@ script = ExtResource("1_kv4kb")
 metadata/_edit_vertical_guides_ = [1152.0]
 metadata/_edit_horizontal_guides_ = [16.0]
 
-[node name="Dam" parent="." instance=ExtResource("2_4hjjd")]
-position = Vector2(528, 432)
-
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
 tile_set = ExtResource("2_7522e")
@@ -36,9 +33,6 @@ layer_4/name = "ysort"
 layer_4/y_sort_enabled = true
 layer_4/tile_data = PackedInt32Array()
 
-[node name="player" parent="." instance=ExtResource("8_lcw5w")]
-position = Vector2(576, 153)
-
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
@@ -51,6 +45,12 @@ position = Vector2(4, 56)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forest_entrance"]
 position = Vector2(1180, 128)
 shape = SubResource("RectangleShape2D_qgfn1")
+
+[node name="player" parent="." instance=ExtResource("8_lcw5w")]
+position = Vector2(576, 153)
+
+[node name="Dam" parent="." instance=ExtResource("2_4hjjd")]
+position = Vector2(528, 432)
 
 [node name="YSort" type="Control" parent="."]
 y_sort_enabled = true

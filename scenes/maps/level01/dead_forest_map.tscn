@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cox3157tawdrf"]
+[gd_scene load_steps=10 format=3 uid="uid://cox3157tawdrf"]
 
 [ext_resource type="TileSet" uid="uid://cmmhvstkpewxs" path="res://scenes/maps/level03/alive_forest_map.tres" id="1_6cdq5"]
 [ext_resource type="PackedScene" uid="uid://djw0brrw10117" path="res://scenes/characters/predators/coyote.tscn" id="2_nms88"]
@@ -6,10 +6,27 @@
 [ext_resource type="AudioStream" uid="uid://bthyvsctuguky" path="res://assests/audio/music/Chilling_by_the_river.mp3" id="4_ns8k2"]
 [ext_resource type="Script" path="res://scripts/maps/level01/dead_forest_map.gd" id="5_3o0at"]
 [ext_resource type="AudioStream" uid="uid://bmyu3l5p2vfvk" path="res://assests/audio/music/Encounter_music_v2.mp3" id="6_v35th"]
+[ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="7_lrw7x"]
+[ext_resource type="PackedScene" uid="uid://c2eajdiil6gj0" path="res://scenes/ui/main_interface.tscn" id="8_js0bo"]
 
-[node name="new_forest_map" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nv4kw"]
+size = Vector2(48, 80)
+
+[node name="Forest01" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("5_3o0at")
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStream_dead_forest" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("4_ns8k2")
+volume_db = -12.0
+bus = &"Music"
+
+[node name="AudioStream_encounter" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("6_v35th")
+volume_db = -10.0
+bus = &"Music"
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -23,34 +40,67 @@ layer_2/name = "cliff"
 layer_2/tile_data = PackedInt32Array(2031665, 31, 1, 2031667, 131103, 1, 2883636, 131103, 3, 3080244, 131080, 5, 3211316, 131080, 7, 2031670, 262175, 1, 2162742, 28, 0, 2359350, 28, 0, 2883638, 262175, 3, 3080246, 262152, 5, 3211318, 262152, 7, 262148, 131103, 3, 458756, 131080, 5, 589828, 131080, 7, 458753, 131080, 5, 524287, 8, 5, 655359, 8, 7, 589825, 131080, 7, -131062, 262175, 1, -65537, 31, 1, -131070, 131103, 1, -131067, 131103, 1, -131065, 131103, 1, 262151, 262175, 3, 458759, 131080, 5, 524295, 131080, 7, 262153, 262175, 3, 65546, 262175, 3, 131082, 262175, 3, 262154, 262175, 3, 393226, 262152, 7, 458762, 262152, 7, 524298, 262152, 7, 131085, 131103, 3, 131088, 131103, 3, 131091, 262175, 3, -65517, 262175, 1, -65520, 131103, 1, -65523, 131103, 1, 262159, 131080, 7, 262157, 8, 7, 262163, 262152, 7, 262162, 262152, 7, 2097201, 31, 3, 262145, 31, 3, 327679, 31, 3, 196607, 31, 3, 65535, 31, 3, -1, 31, 3, 2293801, 31, 3, 2424873, 31, 3, 2490409, 31, 3, 2621481, 31, 3, 2162732, 131103, 1, 2162729, 31, 1, 2162734, 131103, 1, 2162737, 131103, 1, 2752553, 8, 7, 2752555, 131080, 7, 2359340, 30, 0, 2228275, 30, 0, 2687030, 262175, 1, 2162738, 28, 0, 2424881, 28, 0, 2359343, 28, 0, 2359344, 28, 0, 2490417, 28, 0, 2424884, 28, 0, 2490415, 28, 0, 2490412, 28, 0, 2555958, 30, 0, 2621484, 131103, 3, 2621486, 131103, 3, 2752558, 262152, 7, 2687025, 31, 1, 2883633, 31, 3, 3080241, 8, 5, 3211313, 8, 7, 2752563, 28, 0, 2555953, 30, 0, 2621489, 30, 0, 2687028, 131103, 1, 3670012, 31, 1, 3735548, 31, 1, 3801084, 31, 1, 3866620, 31, 1, 3932156, 31, 1, 3997692, 31, 1, 4063228, 31, 1, 4128764, 31, 1, 4194300, 31, 1, 4259836, 31, 1, 4325372, 31, 1, 4390908, 31, 1, 4456444, 31, 3, 4653052, 8, 5, 4784124, 8, 7, 3735549, 28, 0, 3801085, 28, 0, 3866621, 28, 0, 3932157, 28, 0, 3997693, 28, 0, 4063229, 28, 0, 4128765, 28, 0, 4194301, 28, 0, 4259837, 28, 0, 4325373, 28, 0, 4390909, 28, 0, 4456445, 131103, 3, 4784125, 131080, 7, 3670014, 131103, 1, 3735550, 28, 0, 3801086, 28, 0, 3866622, 28, 0, 3932158, 28, 0, 3997694, 28, 0, 4063230, 28, 0, 4128766, 28, 0, 4194302, 28, 0, 4259838, 28, 0, 4390910, 28, 0, 4456446, 131103, 3, 4653054, 131080, 5, 4784126, 131080, 7, 3735551, 28, 0, 3801087, 28, 0, 3866623, 28, 0, 3932159, 28, 0, 3997695, 28, 0, 4063231, 28, 0, 4128767, 28, 0, 4194303, 28, 0, 4390911, 28, 0, 4456447, 131103, 3, 4784127, 131080, 7, 3735552, 28, 0, 3801088, 28, 0, 4063232, 17, 0, 4194304, 17, 0, 4390912, 131103, 3, 4718592, 131080, 7, 3604481, 262175, 1, 3801089, 262175, 3, 3932161, 262175, 3, 4063233, 131103, 1610612739, 4259841, 262175, 3, 4390913, 262175, 3, 4587521, 131080, 5, 4718593, 262152, 7)
 layer_3/name = "ysort"
 layer_3/y_sort_enabled = true
-layer_3/tile_data = PackedInt32Array(327721, 23, 0, 3211270, 23, 0, 3735597, 23, 0, 1114159, 16, 0, 2490400, 23, 0, 2228271, 23, 0, 2687028, 16, 0, -196593, 23, 0, 131077, 16, 0, 3801100, 16, 0, 4325394, 23, 0, 2228266, 17, 0, 2818098, 17, 0, 196608, 17, 0, 262158, 17, 0, 4259839, 17, 0, 3670014, 23, 0, 4063231, 16, 0, 2293773, 24, 0, 262170, 24, 0, 1507366, 24, 0, 3604512, 24, 0, 1638407, 24, 0, 393226, 24, 0, -196606, 24, 0, 49, 27, 0, 3080213, 27, 0, 4522021, 27, 0, 1507351, 27, 0, 2031668, 27, 0, 2883628, 27, 0)
-
-[node name="coyote" parent="." instance=ExtResource("2_nms88")]
-position = Vector2(259, 838)
-
-[node name="coyote2" parent="." instance=ExtResource("2_nms88")]
-position = Vector2(705, 210)
-
-[node name="player" parent="." instance=ExtResource("3_hws6p")]
-position = Vector2(82, 222)
-
-[node name="AudioStream_dead_forest" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_ns8k2")
-volume_db = -12.0
-bus = &"Music"
-
-[node name="AudioStream_encounter" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_v35th")
-volume_db = -10.0
-bus = &"Music"
+layer_3/tile_data = PackedInt32Array(1114159, 16, 0, 2228271, 23, 0, 2687028, 16, 0, -196593, 23, 0, 131077, 16, 0, 3801100, 16, 0, 2228266, 17, 0, 2818098, 17, 0, 196608, 17, 0, 262158, 17, 0, 4259839, 17, 0, 3670014, 23, 0, 4063231, 16, 0, -196606, 24, 0, 49, 27, 0, 3080213, 27, 0, 4522021, 27, 0, 1507351, 27, 0, 2031668, 27, 0, 2883628, 27, 0)
 
 [node name="collsision" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collsision"]
 polygon = PackedVector2Array(849, -17, 849, 485, 777, 488, 768, 496, 766, 502, 767, 516, 761, 520, 647, 520, 639, 535, 639, 644, 639, 684, 645, 691, 763, 691, 766, 688, 767, 797, 773, 803, 849, 802, 849, 1185, 47, 1185, 48, 1163, 49, 887, 41, 872, -15, 872, -17, 772, -17, 257, -65, 257, -65, 175, -17, 175, -17, 162, 93, 160, 97, 158, 97, 147, 183, 147, 192, 141, 193, 81, 263, 81, 331, 82, 337, 75, 337, -18, 415, -18, 837, -17, 848, -17, 842, -30, 664, -97, 423, -125, 1, -131, -159, -54, -90, 254, -140, 506, -202, 1143, -63, 1268, 152, 1271, 559, 1273, 969, 1276, 989, 1084, 961, 818, 927, 555, 921, 343, 896, 119, 884, -2, 858, -27, 850, -24, 848, -17)
 
-[connection signal="encounter_music_started" from="." to="coyote" method="_on_new_forest_map_encounter_music_started"]
-[connection signal="encounter_music_started" from="coyote" to="." method="_on_coyote_encounter_music_started"]
-[connection signal="encounter_music_stopped" from="coyote" to="." method="_on_coyote_encounter_music_stopped"]
-[connection signal="encounter_music_started" from="coyote2" to="." method="_on_coyote_2_encounter_music_started"]
-[connection signal="encounter_music_stopped" from="coyote2" to="." method="_on_coyote_2_encounter_music_stopped"]
+[node name="forest_exit" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="forest_exit"]
+position = Vector2(-40, 216)
+shape = SubResource("RectangleShape2D_nv4kw")
+
+[node name="player" parent="." instance=ExtResource("3_hws6p")]
+position = Vector2(82, 222)
+
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="tree" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(499, 928)
+
+[node name="tree2" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(578, 104)
+
+[node name="tree3" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(544, 728)
+
+[node name="tree4" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(184, 712)
+
+[node name="tree5" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(576, 416)
+
+[node name="tree6" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(328, 608)
+
+[node name="tree7" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(464, 211)
+
+[node name="tree8" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(59, 552)
+
+[node name="tree9" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(296, 180)
+
+[node name="tree10" parent="Trees" instance=ExtResource("7_lrw7x")]
+position = Vector2(148, 416)
+
+[node name="coyote" parent="." instance=ExtResource("2_nms88")]
+position = Vector2(236, 353)
+
+[node name="coyote2" parent="." instance=ExtResource("2_nms88")]
+position = Vector2(696, 104)
+
+[node name="coyote3" parent="." instance=ExtResource("2_nms88")]
+position = Vector2(596, 576)
+
+[node name="coyote4" parent="." instance=ExtResource("2_nms88")]
+position = Vector2(82, 768)
+
+[node name="InterfaceLayer" parent="." instance=ExtResource("8_js0bo")]
+
+[connection signal="body_entered" from="forest_exit" to="." method="_on_forest_exit_body_entered"]
