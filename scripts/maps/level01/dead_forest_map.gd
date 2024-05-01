@@ -1,6 +1,9 @@
 extends Node2D
 
-@onready var BG_music_forest_dead = $Audio/AudioStream_dead_forest
+signal encounter_music_started
+signal encounter_music_stopped
+
+@onready var BG_music_forest = $Audio/AudioStream_dead_forest
 @onready var encounter = $Audio/AudioStream_encounter
 
 var BG_music_on = true
@@ -20,13 +23,13 @@ func update_music_status():
 	if BG_music_on:
 		
 		encounter.stop()
-		if !BG_music_forest_dead.playing:
-			BG_music_forest_dead.play()
+		if !BG_music_forest.playing:
+			BG_music_forest.play()
 	else:
-		BG_music_forest_dead.stop()
+		BG_music_forest.stop()
 		
 	if encounter_music_on:
-		BG_music_forest_dead.stop()
+		BG_music_forest.stop()
 		if !encounter.playing:
 			encounter.play()
 	else:
