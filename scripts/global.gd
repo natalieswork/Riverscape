@@ -22,6 +22,8 @@ var player_in_dam_area = false
 var dam_level = 1
 var dam_upgraded = false
 var dam_max_branch = 5
+var dam_max_branch_2 = 5
+var dam_max_branch_3 = 5
 
 # lodge vars
 var player_in_lodge_area = false
@@ -55,7 +57,7 @@ func finish_changescenes():
 
 
 func check_and_upgrade_world_level():
-	if dam_upgraded and world_level <= 3: # (and lodge_upgraded) - natalie uncomment this when lodge is implemented
+	if dam_upgraded and world_level < 3: # (and lodge_upgraded) - natalie uncomment this when lodge is implemented
 		world_level += 1
 		load_new_map()
 		print("World level increased to", world_level)
@@ -78,9 +80,9 @@ func upgrade_dam():
 func update_dam_stats():
 	if dam_level == world_level:
 		if dam_level == 2:
-			dam_max_branch = 10  # New goal after upgrade
+			dam_max_branch = dam_max_branch_2  # New goal after upgrade
 		elif dam_level == 3:
-			dam_max_branch = 15  # New goal after final upgrade
+			dam_max_branch = dam_max_branch_3  # New goal after final upgrade
 		print("Dam stats updated: Level", dam_level, "with max branches", dam_max_branch)
 
 
