@@ -3,10 +3,17 @@ extends Node2D
 @export var dam_inventory: Inv
 var player = null
 var branch = preload("res://scenes/objects/branch_collectable.tscn")
+@onready var dam_texture = $Sprite2D
+
+var dam_texture_paths = {
+1: "res://assests/landscape/objects/dam/dam01.png",
+2: "res://assests/landscape/objects/dam/dam02.png",
+3: "res://assests/landscape/objects/dam/dam03.png"
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	global.dam_upgrade.connect(_on_dam_upgrade)
+	update_dam_sprite()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -46,6 +53,8 @@ func check_dam_upgrade():
 	if dam_inventory.get_item_amount("branch") >= global.dam_max_branch:
 		# Sound effect? Yayyy you got the upgrade
 		global.upgrade_dam()
+		update_dam_sprite()
+		dam_inventory.reset()
 
 
 func _on_upgrade_ui_add_branch(amount: int):
@@ -53,6 +62,10 @@ func _on_upgrade_ui_add_branch(amount: int):
 	add_branch(amount)
 
 
-func _on_dam_upgrade(new_level):
-	print("Dam upgraded to level ", new_level, "!!!!!!!!!!")
-	# Any additional logic needed when the dam upgrades
+func update_dam_sprite():
+	var path = dam_texture_paths.get(global.dam_level, "")
+	if path != "":
+		var texture_resource = load(path) 
+		dam_texture.texture = texture_resource
+	else:
+		print("Texture path not found for dam level: ", global.dam_level)

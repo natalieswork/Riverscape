@@ -13,12 +13,16 @@ var is_open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	level_text.text = "Dam Level " + str(global.dam_level)
 	close()
 	update()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-
+	if global.dam_upgraded:
+		update()
+		
+		
 	if !global.player_in_dam_area:
 		# Sound effect?
 		close()
@@ -50,6 +54,7 @@ func update():
 			
 
 	if branch_slot != null:
+		level_text.text = "Dam Level " + str(global.dam_level)
 		count_text.text = "(" + str(branch_slot.amount) + "/" + str(global.dam_max_branch) + ")"
 		progress_bar.value = branch_slot.amount
 		progress_bar.max_value = global.dam_max_branch
