@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="5_3rwhd"]
 [ext_resource type="PackedScene" uid="uid://rt7je0nfi7jc" path="res://scenes/objects/structure/dam.tscn" id="5_ukgw5"]
 [ext_resource type="PackedScene" uid="uid://c2eajdiil6gj0" path="res://scenes/ui/main_interface.tscn" id="6_fehtf"]
-[ext_resource type="PackedScene" uid="uid://bgrmyltuo1omb" path="res://scenes/ui/dam_upgrade_ui.tscn" id="8_k2swo"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dam_upgrade_ui.tscn" id="8_k2swo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvky6"]
 size = Vector2(50, 79)

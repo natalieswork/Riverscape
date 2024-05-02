@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bxap8w6kb46x5"]
+
+[ext_resource type="Texture2D" uid="uid://ca0v6a6mqufuu" path="res://assests/ui/main_menu.png" id="2_eohmh"]
+[ext_resource type="Texture2D" uid="uid://cy1cdxhml1t3h" path="res://assests/ui/buttons/new_button.png" id="3_lgg5f"]
+[ext_resource type="Texture2D" uid="uid://dtyofkq7xb65e" path="res://assests/ui/buttons/exit_button.png" id="4_1dd2c"]
+
+[sub_resource type="GDScript" id="GDScript_xb6y6"]
+script/source = "extends Control
+
+func _on_start_pressed():
+	TransitionScreen.transition()
+	await  TransitionScreen.on_transition_finished
+	get_tree().change_scene_to_file(\"res://scenes/maps/level01/dead_river_map.tscn\")
+
+
+func _on_exit_pressed():
+	get_tree().quit()
+"
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_xb6y6")
+
+[node name="background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_eohmh")
+expand_mode = 1
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 448.0
+offset_right = 691.0
+offset_bottom = 609.0
+scale = Vector2(0.36176, 0.42003)
+icon = ExtResource("3_lgg5f")
+metadata/_edit_use_anchors_ = true
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 448.0
+offset_top = 448.0
+offset_right = 915.0
+offset_bottom = 609.0
+scale = Vector2(0.357036, 0.431412)
+icon = ExtResource("4_1dd2c")
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
