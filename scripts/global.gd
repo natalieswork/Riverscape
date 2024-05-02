@@ -64,11 +64,13 @@ func check_and_upgrade_world_level():
 
 func upgrade_dam():
 	dam_upgraded = true
+	dam_level += 1
 	if dam_level <= 3:
-		dam_level += 1
 		check_and_upgrade_world_level()
 		update_dam_stats()
 		dam_upgrade.emit(dam_level)
+	elif dam_level == 4:
+		load_win_scene()
 	else:
 		print("Dam is already at maximum level.")
 
@@ -85,6 +87,7 @@ func update_dam_stats():
 func load_new_map():
 	var new_map_path = get_map_path("river")
 	if new_map_path != "":
+		game_first_loaded = true
 		get_tree().change_scene_to_file(new_map_path)
 	else:
 		print("Failed to load new map for: ", current_scene)
@@ -97,4 +100,12 @@ func get_map_path(name: String) -> String:
 	else:
 		print("Invalid map name or level")
 		return ""
+		
+
+func load_win_scene():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	print("Won the game!")
+	var win_scene_path = "res://scenes/ui/winner.tscn"
+	get_tree().change_scene_to_file(win_scene_path)
 
