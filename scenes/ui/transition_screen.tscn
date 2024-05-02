@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bt5cdg7v2b8me"]
+[gd_scene load_steps=6 format=3 uid="uid://cnwiadhgc675h"]
 
 [ext_resource type="Script" path="res://scripts/ui/transition_screen.gd" id="1_uqnue"]
 
@@ -57,6 +57,7 @@ _data = {
 }
 
 [node name="transition_screen" type="CanvasLayer"]
+layer = 2
 script = ExtResource("1_uqnue")
 
 [node name="ColorRect" type="ColorRect" parent="."]
