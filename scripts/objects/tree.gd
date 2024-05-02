@@ -17,6 +17,19 @@ var player_in_area = false
 
 var branch = preload("res://scenes/objects/branch_collectable.tscn")
 
+var tree_paths = {
+	"oak": {
+		1: "res://scenes/objects/tree_config/oak_tree01.tres",
+		2: "res://scenes/objects/tree_config/oak_tree02.tres",
+		3: "res://scenes/objects/tree_config/oak_tree03.tres"
+	},
+	"pine": {
+		1: "res://scenes/objects/tree_config/pine_tree01.tres",
+		2: "res://scenes/objects/tree_config/pine_tree02.tres",
+		3: "res://scenes/objects/tree_config/pine_tree03.tres"
+	}
+}
+
 @export var item: InvItem
 var player = null
 
@@ -25,7 +38,6 @@ var player = null
 func _ready():
 	# randomly pick a type when the node is initialized
 	var ran_int = randi() % Type.size()
-	print("ran_int ", ran_int)
 	if  ran_int == 0:
 		tree_type = Type.OAK
 	else:
@@ -40,17 +52,15 @@ func _ready():
 
 
 func initialize_tree():
+	var tree_path = ""
 	match tree_type:
 		Type.OAK:
-		# Set properties specific to OAK.
-			var oak_frames = preload("res://scenes/objects/oak_tree.tres")
-			$AnimatedSprite2D.frames = oak_frames
-			print("Initialized as an Oak tree.")
+			tree_path = tree_paths["oak"].get(global.world_level, tree_paths["oak"][1])  # Fallback to level 1 if no specific level match
 		Type.PINE:
-		# Set properties specific to PINE.
-			var pine_frames = preload("res://scenes/objects/pine_tree.tres")
-			$AnimatedSprite2D.frames = pine_frames
-			print("Initialized as an Pine tree.")
+			tree_path = tree_paths["pine"].get(global.world_level, tree_paths["pine"][1])  # Fallback to level 1 if no specific level match
+
+	var tree_frames = load(tree_path)
+	$AnimatedSprite2D.frames = tree_frames
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

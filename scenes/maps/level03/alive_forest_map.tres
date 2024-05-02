@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cs67qxbpt3pgu" path="res://assests/landscape/tiles/whole_cliffs_dying.png" id="6_2lu40"]
 [ext_resource type="Texture2D" uid="uid://b6x20018noub6" path="res://assests/landscape/tiles/whole_cliffs.png" id="6_kwmfj"]
 [ext_resource type="Texture2D" uid="uid://crykj8yq3s4xg" path="res://assests/landscape/objects/dam.png" id="7_5gw3c"]
-[ext_resource type="Texture2D" uid="uid://vog1sn1ke3q0" path="res://assests/landscape/tiles/edge_grass_dying.png" id="7_ux3sa"]
+[ext_resource type="Texture2D" uid="uid://c8c5712ihtrqa" path="res://assests/landscape/tiles/edge_grass_dying.png" id="7_ux3sa"]
 [ext_resource type="Texture2D" uid="uid://gjdkx43e3rki" path="res://assests/landscape/tiles/grass_textre_dying.png" id="8_1tupa"]
 [ext_resource type="Texture2D" uid="uid://cg8183gim2j5w" path="res://assests/landscape/objects/lodge.png" id="8_m75ch"]
 [ext_resource type="Texture2D" uid="uid://bpyqef5pe23s8" path="res://assests/landscape/objects/alive_whole_oak.png" id="9_cbg1n"]

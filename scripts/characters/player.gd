@@ -1,12 +1,11 @@
 extends CharacterBody2D
 
-@onready var playerWalkingAudio = $AudioStreamPlayer2D_walking
-@onready var playerAttackAudio = $AudioStreamPlayer2D_attack
-@onready var playerHurtAudio = $AudioStreamPlayer2D_hurt
-
-@onready var player_low_health = $AudioStreamPlayer2D_low_health
-@onready var player_death_sound = $AudioStreamPlayer2D_death
-@onready var player_out_run = $AudioStreamPlayer2D_out_run
+@onready var playerWalkingAudio = $Audio/AudioStreamPlayer2D_walking
+@onready var playerAttackAudio = $Audio/AudioStreamPlayer2D_attack
+@onready var playerHurtAudio = $Audio/AudioStreamPlayer2D_hurt
+@onready var player_low_health = $Audio/AudioStreamPlayer2D_low_health
+@onready var player_death_sound = $Audio/AudioStreamPlayer2D_death
+@onready var player_out_run = $Audio/AudioStreamPlayer2D_out_run
 
 @export var inventory: Inv
 
@@ -24,7 +23,7 @@ const walk_speed = 100
 const run_speed = 160
 var enemy_in_attack_range = false
 var enemy_attack_cooldown = true
-# var health = 100
+
 var alive = true
 
 # running vars
@@ -41,7 +40,11 @@ func _ready():
 
 
 func _physics_process(delta):
+	if not alive:
+		return 
+		
 	if global.player_health <= 0:
+		alive = false
 		die()
 
 	player_movement(delta)
@@ -56,6 +59,9 @@ func player():
 
 
 func player_movement(delta):
+	#if current_state == State.DEAD:
+		#return
+		
 	if current_state != State.ATTACK:
 		var move_speed = walk_speed
 		if Input.is_action_pressed("run") and run_stamina > 0 and run_cooldown: 
@@ -118,7 +124,7 @@ func update_animation():
 			anim_name = "death"
 			
 
-	if current_state != State.DEAD:
+	if alive:
 		match current_direction:
 			Direction.RIGHT:
 				anim_name += "right"
@@ -148,7 +154,7 @@ func enemy_attack():
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
 		print(global.player_health)
-		if !playerHurtAudio.playing:
+		if !playerHurtAudio.playing and global.player_health % 20 == 0:
 				playerHurtAudio.play()
 
 
@@ -184,14 +190,30 @@ func current_camera():
 
 
 func die():
+	print("Player has been killed.")
 	global.player_health = 0
-	alive = false
 	current_state = State.DEAD
 	update_animation()
-	print("Player has been killed.")
-	self.queue_free() 
+
 	if !player_death_sound.playing:
 				player_death_sound.play()
+	await get_tree().create_timer(3).timeout
+	respawn_player_at_river()
+
+
+func respawn_player_at_river():
+ 	# change back to river map
+	if global.current_scene != "river_map":
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
+		global.current_scene = "river_map"
+		get_tree().change_scene_to_file(global.get_map_path("river"))
+
+	global.player_health = global.player_max_health  # Reset health
+	alive = true  # Ensure player is marked alive again if necessary
+	current_state = State.IDLE
+	inventory.reset()
+	update_animation()
 
 
 func update_healthbar():
@@ -237,10 +259,15 @@ func _on_run_timer_timeout():
 				player_out_run.play()
 
 
-
 func _on_run_cooldown_timeout():
 	run_cooldown = true
 
+
 # inventory functions
-func collect(item):
-	inventory.insert(item)
+func collect(item, amount: int = 1):
+	inventory.insert(item, amount)
+
+
+func allocate_item(item, amount: int = 1):
+	inventory.remove(item, amount)
+

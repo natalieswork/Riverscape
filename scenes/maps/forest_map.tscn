@@ -40,20 +40,22 @@ polygon = PackedVector2Array(440.6, 454, 947.987, 462, 953, 1120, 444, 1118, 441
 [node name="player" parent="." instance=ExtResource("2_fwe54")]
 position = Vector2(472, 514)
 
-[node name="coyote" parent="." instance=ExtResource("3_rykng")]
-position = Vector2(824, 669)
-
-[node name="coyote2" parent="." instance=ExtResource("3_rykng")]
-position = Vector2(571, 817)
-
-[node name="coyote3" parent="." instance=ExtResource("3_rykng")]
-position = Vector2(894, 926)
-
 [node name="forest_exit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forest_exit"]
 position = Vector2(407.5, 508)
 shape = SubResource("RectangleShape2D_fgy6q")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="coyote3" parent="Node2D" instance=ExtResource("3_rykng")]
+position = Vector2(894, 926)
+
+[node name="coyote2" parent="Node2D" instance=ExtResource("3_rykng")]
+position = Vector2(571, 817)
+
+[node name="coyote" parent="Node2D" instance=ExtResource("3_rykng")]
+position = Vector2(824, 669)
 
 [connection signal="body_entered" from="forest_exit" to="." method="_on_forest_exit_body_entered"]
 [connection signal="body_exited" from="forest_exit" to="." method="_on_forest_exit_body_exited"]

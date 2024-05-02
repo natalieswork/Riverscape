@@ -642,7 +642,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 3.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -1026,13 +1026,38 @@ collision_layer = 3
 script = ExtResource("1_d054b")
 inventory = ExtResource("2_idflq")
 
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer2D_out_run" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("6_4svo5")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D_death" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("6_yflfl")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D_low_health" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("6_4svo5")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D_hurt" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("5_pmfey")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D_attack" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("8_qxhrj")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D_walking" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("7_ux6h3")
+volume_db = -12.0
+bus = &"SFX"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2, -10)
 sprite_frames = SubResource("SpriteFrames_8ci7i")
-animation = &"walk_right"
+animation = &"idle_front"
 autoplay = "idle_front"
-frame = 3
-frame_progress = 0.732409
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
@@ -1054,10 +1079,10 @@ wait_time = 0.5
 position = Vector2(0, -14)
 enabled = false
 zoom = Vector2(2, 2)
-limit_left = 1
-limit_top = 10
-limit_right = 1150
-limit_bottom = 673
+limit_left = -16
+limit_top = -32
+limit_right = 1000
+limit_bottom = 700
 limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -1067,6 +1092,10 @@ drag_vertical_enabled = true
 position = Vector2(0, -15)
 enabled = false
 zoom = Vector2(2, 2)
+limit_left = -16
+limit_top = -16
+limit_right = 848
+limit_bottom = 1184
 limit_smoothed = true
 rotation_smoothing_enabled = true
 drag_horizontal_enabled = true
@@ -1098,31 +1127,7 @@ show_percentage = false
 [node name="run_cooldown" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="AudioStreamPlayer2D_walking" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_ux6h3")
-volume_db = -12.0
-bus = &"SFX"
-
-[node name="AudioStreamPlayer2D_attack" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_qxhrj")
-bus = &"SFX"
-
-[node name="AudioStreamPlayer2D_hurt" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_pmfey")
-bus = &"SFX"
-
-[node name="AudioStreamPlayer2D_low_health" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_4svo5")
-bus = &"SFX"
-
-[node name="AudioStreamPlayer2D_death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_yflfl")
-bus = &"SFX"
-
-[node name="AudioStreamPlayer2D_out_run" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_4svo5")
-bus = &"SFX"
-
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="player_hitbox" to="." method="_on_player_hitbox_body_entered"]
 [connection signal="body_exited" from="player_hitbox" to="." method="_on_player_hitbox_body_exited"]
 [connection signal="timeout" from="attack_cooldown" to="." method="_on_attack_cooldown_timeout"]
