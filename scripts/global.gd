@@ -21,8 +21,8 @@ var player_exit_forest_posy = 265
 var player_in_dam_area = false
 var dam_level = 1
 var dam_upgraded = false
-var dam_max_branch = 5
-var dam_max_branch_2 = 5
+var dam_max_branch = 3
+var dam_max_branch_2 = 4
 var dam_max_branch_3 = 5
 
 # lodge vars

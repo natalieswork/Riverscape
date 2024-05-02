@@ -47,6 +47,7 @@ icon = ExtResource("3_lgg5f")
 metadata/_edit_use_anchors_ = true
 
 [node name="Exit" type="Button" parent="."]
+layout_mode = 0
 offset_left = 448.0
 offset_top = 448.0
 offset_right = 915.0
