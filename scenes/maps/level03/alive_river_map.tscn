@@ -52,16 +52,16 @@ layer_5/tile_data = PackedInt32Array(58, 20, 0, 65543, 20, 0, 1638462, 25, 0, 13
 [node name="collsions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collsions"]
-polygon = PackedVector2Array(-20, 262, -20, 713, 270, 716, 1150, 715, 1152, 635, 1031, 636, 1027, 630, 1028, 322, 1152, 321, 1150, 301, 1188, 305, 1187, 229, 1150, 229, 1151, 190, 1130, 197, 879, 196, 869, 190, 867, 148, 850, 145, 850, 127, 811, 132, 799, 128, 801, 115, 765, 115, 765, -8, 783, -35, 646, -34, 418, -34, 420, 122, 419, 140, 414, 149, 314, 148, 315, 172, 309, 181, 244, 181, 244, 204, 240, 213, 86, 213, 87, 255, 80, 262, -17, 262, -56, 250, -58, 182, -84, -80, 19, -113, 318, -91, 626, -100, 1235, -81, 1220, 202, 1223, 601, 1203, 756, 217, 749, -60, 748, -144, 581, -120, 409, -75, 270, -29, 261)
+polygon = PackedVector2Array(-20, 262, -20, 713, 270, 716, 1142, 714, 1142, 634, 1031, 636, 1027, 630, 1028, 322, 1134, 322, 1134, 306, 1188, 305, 1187, 229, 1134, 234, 1134, 202, 1130, 197, 879, 196, 869, 190, 867, 148, 850, 145, 850, 127, 811, 132, 799, 128, 801, 115, 765, 115, 765, -8, 783, -35, 646, -34, 418, -34, 420, 122, 419, 140, 414, 149, 314, 148, 315, 172, 309, 181, 244, 181, 244, 204, 240, 213, 86, 213, 87, 255, 80, 262, -17, 262, -56, 250, -58, 182, -84, -80, 19, -113, 318, -91, 626, -100, 1235, -81, 1220, 202, 1223, 601, 1203, 756, 217, 749, -60, 748, -144, 581, -120, 409, -75, 270, -29, 261)
 
 [node name="forest_entrance" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="forest_entrance"]
-position = Vector2(1173, 267.5)
+position = Vector2(1158, 266)
 shape = SubResource("RectangleShape2D_yhwv1")
 
 [node name="player" parent="." instance=ExtResource("2_333b2")]
-position = Vector2(662, 290)
+position = Vector2(654, 322)
 
 [node name="Dam" parent="." instance=ExtResource("6_wseef")]
 position = Vector2(534, 236)
@@ -100,6 +100,7 @@ position = Vector2(190, 338)
 position = Vector2(406, 253)
 
 [node name="InterfaceLayer" parent="." instance=ExtResource("7_681wn")]
+visible = false
 
 [node name="UpgradeUI" parent="InterfaceLayer" instance=ExtResource("8_va2m8")]
 offset_left = 373.0

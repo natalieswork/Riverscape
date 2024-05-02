@@ -38,7 +38,6 @@ var player = null
 func _ready():
 	# randomly pick a type when the node is initialized
 	var ran_int = randi() % Type.size()
-	print("ran_int ", ran_int)
 	if  ran_int == 0:
 		tree_type = Type.OAK
 	else:

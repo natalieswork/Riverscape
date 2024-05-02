@@ -43,6 +43,8 @@ func _on_forest_exit_body_entered(body):
 	
 func change_scene():
 	if global.transition_scene == true:
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		if global.current_scene == "forest_map":
 			get_tree().change_scene_to_file("res://scenes/maps/level03/alive_river_map.tscn")
 			global.finish_changescenes()

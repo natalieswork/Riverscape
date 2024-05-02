@@ -204,6 +204,8 @@ func die():
 func respawn_player_at_river():
  	# change back to river map
 	if global.current_scene != "river_map":
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		global.current_scene = "river_map"
 		get_tree().change_scene_to_file(global.get_map_path("river"))
 

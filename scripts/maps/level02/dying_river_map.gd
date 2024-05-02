@@ -36,6 +36,8 @@ func _on_forest_entrance_body_entered(body):
 
 func change_scene():
 	if global.transition_scene == true:
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		if global.current_scene == "river_map":
 			get_tree().change_scene_to_file("res://scenes/maps/level02/dying_forest_map.tscn")
 			global.game_first_loaded = false

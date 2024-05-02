@@ -10,8 +10,8 @@ var player_max_health = 100
 var current_scene = "river_map" # river_map, forest_map
 var transition_scene = false
 
-var player_start_posx = 560
-var player_start_posy = 290
+var player_start_posx = 650
+var player_start_posy = 325
 
 var player_exit_forest_posx = 975
 var player_exit_forest_posy = 265
