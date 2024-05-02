@@ -5,6 +5,7 @@ signal dam_upgrade
 var game_first_loaded = true
 var player_active_attack = false
 var player_health = 100
+var player_max_health = 100
 
 var current_scene = "river_map" # river_map, forest_map
 var transition_scene = false
@@ -28,6 +29,19 @@ var lodge_level = 1
 var lodge_upgraded = false
 var lodge_max_branch = 5
 
+var map_paths = {
+	"river": {
+		1: "res://scenes/maps/level01/dead_river_map.tscn",
+		2: "res://scenes/maps/level02/dying_river_map.tscn",
+		3: "res://scenes/maps/level03/alive_river_map.tres"
+	},
+	"forest": {
+		1: "res://scenes/maps/level01/dead_forest_map.tscn",
+		2: "res://scenes/maps/level02/dying_forest_map.tscn",
+		3: "res://scenes/maps/level03/alive_forest_map.tscn"
+	}
+}
+
 # map level
 var world_level = 1
 
@@ -49,4 +63,12 @@ func upgrade_dam():
 			dam_max_branch = 15  
 		
 	dam_upgrade.emit(dam_level)
+
+
+func get_map_path(name: String) -> String:
+	if name in map_paths and world_level in map_paths[name]:
+		return map_paths[name][world_level]
+	else:
+		print("Invalid map name or level")
+		return ""
 

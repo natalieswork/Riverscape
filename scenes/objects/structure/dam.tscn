@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bsjul7hn3lp4" path="res://assests/landscape/objects/dam/dam01.png" id="2_61skf"]
 [ext_resource type="Resource" uid="uid://18qo0d1w7hsp" path="res://scenes/objects/structure/dam_inventory.tres" id="2_nhcj5"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m1tay"]
-radius = 80.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfdbl"]
+size = Vector2(232, 101)
 
 [node name="Dam" type="Node2D"]
 script = ExtResource("1_0hud2")
@@ -25,8 +25,8 @@ polygon = PackedVector2Array(-59.9802, 35.9343, 6.66446, 40.8812, 73.3091, 35.93
 [node name="interact" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
-position = Vector2(0, -24)
-shape = SubResource("CircleShape2D_m1tay")
+position = Vector2(-4, -24)
+shape = SubResource("RectangleShape2D_rfdbl")
 
 [connection signal="body_entered" from="interact" to="." method="_on_interact_body_entered"]
 [connection signal="body_exited" from="interact" to="." method="_on_interact_body_exited"]

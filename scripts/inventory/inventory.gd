@@ -56,3 +56,11 @@ func find_item(item_name: String) -> InvItem:
 		if slot.item != null and slot.item.name == item_name:
 			return slot.item
 	return null
+
+
+func reset() -> void:
+	for slot in slots:
+		slot.item = null
+		slot.amount = 0
+	update.emit()
+
