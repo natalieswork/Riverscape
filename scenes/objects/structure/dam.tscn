@@ -8,6 +8,7 @@
 size = Vector2(232, 101)
 
 [node name="Dam" type="Node2D"]
+position = Vector2(0, 8)
 script = ExtResource("1_0hud2")
 dam_inventory = ExtResource("2_nhcj5")
 
@@ -20,7 +21,7 @@ texture = ExtResource("2_61skf")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collision"]
 position = Vector2(-7.2, -58.1125)
 scale = Vector2(1.08036, 1.61719)
-polygon = PackedVector2Array(-59.9802, 35.9343, 6.66446, 40.8812, 73.3091, 35.9343, 80.7141, 26.0406, 6.66446, 21.0937, -67.3851, 26.0406)
+polygon = PackedVector2Array(-67.3849, 40.8811, 6.66446, 40.8812, 80.7138, 40.8811, 80.7141, 26.0406, 6.66446, 21.0937, -67.3851, 26.0406)
 
 [node name="interact" type="Area2D" parent="."]
 

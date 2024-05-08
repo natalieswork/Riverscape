@@ -527,6 +527,8 @@ size = Vector2(33.5, 12)
 size = Vector2(66, 38)
 
 [node name="coyote" type="CharacterBody2D"]
+y_sort_enabled = true
+position = Vector2(0, -5)
 script = ExtResource("1_tabye")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -578,6 +580,7 @@ offset_right = 229.0
 offset_bottom = 46.0
 scale = Vector2(0.1, 0.1)
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
