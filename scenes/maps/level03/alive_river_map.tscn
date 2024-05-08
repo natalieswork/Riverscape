@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="5_e7lxm"]
 [ext_resource type="PackedScene" uid="uid://rt7je0nfi7jc" path="res://scenes/objects/structure/dam.tscn" id="6_wseef"]
 [ext_resource type="PackedScene" uid="uid://c2eajdiil6gj0" path="res://scenes/ui/main_interface.tscn" id="7_681wn"]
-[ext_resource type="PackedScene" uid="uid://bgrmyltuo1omb" path="res://scenes/ui/dam_upgrade_ui.tscn" id="8_va2m8"]
+[ext_resource type="PackedScene" uid="uid://be2o0lwlr0518" path="res://scenes/ui/dam_upgrade_ui.tscn" id="8_gquic"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhwv1"]
 size = Vector2(50, 77)
@@ -99,11 +99,7 @@ position = Vector2(318, 288)
 
 [node name="InterfaceLayer" parent="." instance=ExtResource("7_681wn")]
 
-[node name="UpgradeUI" parent="InterfaceLayer" instance=ExtResource("8_va2m8")]
-offset_left = 373.0
-offset_top = 152.0
-offset_right = -475.0
-offset_bottom = -320.0
+[node name="UpgradeUI" parent="InterfaceLayer" instance=ExtResource("8_gquic")]
 
 [connection signal="body_entered" from="forest_entrance" to="." method="_on_forest_entrance_body_entered"]
 [connection signal="add_branch" from="InterfaceLayer/UpgradeUI" to="Dam" method="_on_upgrade_ui_add_branch"]
