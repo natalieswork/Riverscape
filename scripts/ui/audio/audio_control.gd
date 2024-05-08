@@ -12,15 +12,23 @@ func _process(delta):
 		# Sound effect?
 		if is_open:
 			close()
-		else:
+		elif !global.dam_menu_open:
 			open()
+		else:
+			print("can open audio settings, other ui is open")
 
 
 func open():
 	visible = true 
 	is_open = true
+	global.setting_menu_open = true
 
 
 func close():
 	visible = false
 	is_open = false
+	global.setting_menu_open = false
+
+
+func _on_quit_pressed():
+	pass # Replace with function body.

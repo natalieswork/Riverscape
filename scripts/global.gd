@@ -31,6 +31,10 @@ var lodge_level = 1
 var lodge_upgraded = false
 var lodge_max_branch = 5
 
+# ui aides
+var dam_menu_open = false
+var setting_menu_open = false
+
 var map_paths = {
 	"river": {
 		1: "res://scenes/maps/level01/dead_river_map.tscn",

@@ -7,9 +7,9 @@ signal add_branch
 var is_open = false
 @onready var dam_inv: Inv = preload("res://scenes/objects/structure/dam_inventory.tres")
 @onready var player_inv: Inv = preload("res://scenes/inventory/player_inventory.tres")
-@onready var progress_bar: ProgressBar = $NinePatchRect/VBoxContainer/ProgressBar
-@onready var level_text: Label  = $NinePatchRect/VBoxContainer/HBoxContainer/level
-@onready var count_text: Label = $NinePatchRect/VBoxContainer/HBoxContainer/count
+@onready var progress_bar: ProgressBar = $NinePatchRect/VBoxContainer/HBoxContainer/ProgressBar
+@onready var level_text: Label  = $NinePatchRect/VBoxContainer/HBoxContainer2/level
+@onready var count_text: Label = $NinePatchRect/VBoxContainer/HBoxContainer2/count
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,18 +31,23 @@ func _process(delta):
 		# Sound effect?
 		if is_open:
 			close()
-		else:
+		elif !global.setting_menu_open:
 			open()
+		else:
+			print("cant open dam ui, another ui is open")
 
 
 func open():
 	visible = true 
 	is_open = true
+	global.dam_menu_open = true
 
 
 func close():
 	visible = false
 	is_open = false
+	global.dam_menu_open = false
+	
 
 func update():
 	#updates the ui
