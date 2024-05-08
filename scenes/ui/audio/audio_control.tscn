@@ -143,6 +143,67 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit to Main Menu"
 
+[node name="quit_confirm" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -148.0
+offset_top = -80.0
+offset_right = 148.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mmkp3")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="quit_confirm"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 14.0
+offset_right = 288.0
+offset_bottom = 149.0
+theme_override_constants/separation = 13
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="quit_confirm/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 6
+theme_override_font_sizes/font_size = 25
+text = "Are you sure?"
+
+[node name="Label2" type="Label" parent="quit_confirm/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.313726, 0, 0, 1)
+theme_override_font_sizes/font_size = 12
+text = "WARNING: Your progress will not be saved."
+
+[node name="HBoxContainer" type="HBoxContainer" parent="quit_confirm/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 17
+
+[node name="yes" type="Button" parent="quit_confirm/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "Yes"
+
+[node name="no" type="Button" parent="quit_confirm/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 2
+text = "No"
+
 [connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" to="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" method="release_focus"]
 [connection signal="value_changed" from="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" to="NinePatchRect/VBoxContainer/Master/HSlider_master_vol" method="_on_value_changed"]
 [connection signal="mouse_exited" from="NinePatchRect/VBoxContainer/Music/HSlider_Music" to="NinePatchRect/VBoxContainer/Music/HSlider_Music" method="release_focus"]
@@ -151,3 +212,5 @@ text = "Quit to Main Menu"
 [connection signal="value_changed" from="NinePatchRect/VBoxContainer/SoundEffects/HSlider_SFX" to="NinePatchRect/VBoxContainer/SoundEffects/HSlider_SFX" method="_on_value_changed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/Button" to="NinePatchRect/VBoxContainer/Button" method="_on_pressed"]
 [connection signal="pressed" from="NinePatchRect/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="quit_confirm/VBoxContainer/HBoxContainer/yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="quit_confirm/VBoxContainer/HBoxContainer/no" to="." method="_on_no_pressed"]

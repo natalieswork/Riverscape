@@ -1,6 +1,8 @@
 extends Button
+
 var muted_color = Color(0.5, 0.5, 0.5)
 var unmuted_color = Color(1, 1, 1)
+
 var bus_master := AudioServer.get_bus_index("Master")
 # Called when the node enters the scene tree for the first time.
 func _ready():

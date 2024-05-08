@@ -1,9 +1,12 @@
 extends Control
 
 var is_open = false
+@onready var quit_confirm = $quit_confirm
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	quit_confirm.visible = false
 	close()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,4 +34,15 @@ func close():
 
 
 func _on_quit_pressed():
-	pass # Replace with function body.
+	quit_confirm.visible = true
+
+
+func _on_yes_pressed():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	print("Quit to main menu")
+	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
+
+
+func _on_no_pressed():
+	quit_confirm.visible = false
