@@ -1022,6 +1022,7 @@ radius = 27.0185
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
+position = Vector2(0, -8)
 collision_layer = 3
 script = ExtResource("1_d054b")
 inventory = ExtResource("2_idflq")
@@ -1123,6 +1124,7 @@ offset_right = 304.0
 offset_bottom = 61.0
 scale = Vector2(0.1, 0.1)
 show_percentage = false
+metadata/_edit_use_anchors_ = true
 
 [node name="run_cooldown" type="Timer" parent="."]
 wait_time = 3.0
