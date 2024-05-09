@@ -35,12 +35,13 @@ var run_regen = 10 # stamina regen per second
 var run_cooldown = true
 
 
+
 func _ready():
 	update_animation()
 
 
 func _physics_process(delta):
-	if not alive:
+	if alive == false:
 		return 
 		
 	if global.player_health <= 0:
@@ -149,7 +150,7 @@ func _on_player_hitbox_body_exited(body):
 
 
 func enemy_attack():
-	if enemy_in_attack_range and enemy_attack_cooldown:
+	if enemy_in_attack_range and enemy_attack_cooldown and alive:
 		global.player_health = global.player_health - 5
 		enemy_attack_cooldown = false
 		$attack_cooldown.start()
@@ -190,30 +191,20 @@ func current_camera():
 
 
 func die():
+	global.player_health = global.player_max_health  # Reset health
 	print("Player has been killed.")
-	global.player_health = 0
 	current_state = State.DEAD
 	update_animation()
-
-	if !player_death_sound.playing:
-				player_death_sound.play()
-	await get_tree().create_timer(3).timeout
-	respawn_player_at_river()
-
-
-func respawn_player_at_river():
- 	# change back to river map
-	if global.current_scene != "river_map":
-		TransitionScreen.transition()
-		await TransitionScreen.on_transition_finished
-		global.current_scene = "river_map"
-		get_tree().change_scene_to_file(global.get_map_path("river"))
-
-	global.player_health = global.player_max_health  # Reset health
+	if !global.has_played_death_sound:
+		player_death_sound.play()
+		global.has_played_death_sound = true 
+	await get_tree().create_timer(3).timeout 
+	global.load_death_scene()
+	await get_tree().create_timer(1).timeout
 	alive = true  # Ensure player is marked alive again if necessary
 	current_state = State.IDLE
-	inventory.reset()
 	update_animation()
+	global.has_played_death_sound = false
 
 
 func update_healthbar():

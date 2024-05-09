@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/objects/structure/dam.gd" id="1_0hud2"]
 [ext_resource type="Texture2D" uid="uid://bsjul7hn3lp4" path="res://assests/landscape/objects/dam/dam01.png" id="2_61skf"]
 [ext_resource type="Resource" uid="uid://18qo0d1w7hsp" path="res://scenes/objects/structure/dam_inventory.tres" id="2_nhcj5"]
-[ext_resource type="PackedScene" uid="uid://dade2ae5a7dkb" path="res://transition.tscn" id="4_xtdlo"]
+[ext_resource type="PackedScene" uid="uid://dade2ae5a7dkb" path="res://scenes/ui/transition.tscn" id="4_xtdlo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfdbl"]
 size = Vector2(232, 101)

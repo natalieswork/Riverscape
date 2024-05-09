@@ -35,6 +35,9 @@ var lodge_max_branch = 5
 var dam_menu_open = false
 var setting_menu_open = false
 
+var world_level = 1
+var has_played_death_sound = false
+
 var map_paths = {
 	"river": {
 		1: "res://scenes/maps/level01/dead_river_map.tscn",
@@ -48,8 +51,6 @@ var map_paths = {
 	}
 }
 
-# map level
-var world_level = 1
 
 func finish_changescenes():
 	if transition_scene == true:
@@ -120,6 +121,7 @@ func load_win_scene():
 	var win_scene_path = "res://scenes/ui/winner.tscn"
 	get_tree().change_scene_to_file(win_scene_path)
 	
+	
 func start_pos_update():
 	if world_level == 2:
 		global.player_start_posx =  584
@@ -127,4 +129,18 @@ func start_pos_update():
 	elif world_level == 3:
 		global.player_start_posx =  646
 		global.player_start_posy = 227
+
+
+func load_death_scene():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	var died_scene_path = "res://scenes/ui/died.tscn"
+	get_tree().change_scene_to_file(died_scene_path)
+
+
+func respawn_player_at_river():
+	TransitionScreen.transition()
+	await TransitionScreen.on_transition_finished
+	global.current_scene = "river_map"
+	get_tree().change_scene_to_file(global.get_map_path("river"))
 
