@@ -8,7 +8,8 @@ var branch = preload("res://scenes/objects/branch_collectable.tscn")
 var dam_texture_paths = {
 1: "res://assests/landscape/objects/dam/dam01.png",
 2: "res://assests/landscape/objects/dam/dam02.png",
-3: "res://assests/landscape/objects/dam/dam03.png"
+3: "res://assests/landscape/objects/dam/dam03.png",
+4: "res://assests/landscape/objects/lodge/lodge03.png"
 }
 
 # Called when the node enters the scene tree for the first time.

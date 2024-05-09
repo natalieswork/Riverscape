@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rt7je0nfi7jc"]
+[gd_scene load_steps=6 format=3 uid="uid://rt7je0nfi7jc"]
 
 [ext_resource type="Script" path="res://scripts/objects/structure/dam.gd" id="1_0hud2"]
 [ext_resource type="Texture2D" uid="uid://bsjul7hn3lp4" path="res://assests/landscape/objects/dam/dam01.png" id="2_61skf"]
 [ext_resource type="Resource" uid="uid://18qo0d1w7hsp" path="res://scenes/objects/structure/dam_inventory.tres" id="2_nhcj5"]
+[ext_resource type="PackedScene" uid="uid://dade2ae5a7dkb" path="res://scenes/ui/transition.tscn" id="4_xtdlo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfdbl"]
 size = Vector2(232, 101)
@@ -28,6 +29,9 @@ polygon = PackedVector2Array(-67.3849, 40.8811, 6.66446, 40.8812, 80.7138, 40.88
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact"]
 position = Vector2(-4, -24)
 shape = SubResource("RectangleShape2D_rfdbl")
+
+[node name="Node2D" parent="." instance=ExtResource("4_xtdlo")]
+position = Vector2(0, -24)
 
 [connection signal="body_entered" from="interact" to="." method="_on_interact_body_entered"]
 [connection signal="body_exited" from="interact" to="." method="_on_interact_body_exited"]
