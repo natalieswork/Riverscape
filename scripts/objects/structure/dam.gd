@@ -4,6 +4,7 @@ extends Node2D
 var player = null
 var branch = preload("res://scenes/objects/branch_collectable.tscn")
 @onready var dam_texture = $Sprite2D
+@onready var upgrade = $Audio/AudioStream_upgrade
 
 var dam_texture_paths = {
 1: "res://assests/landscape/objects/dam/dam01.png",
@@ -53,6 +54,9 @@ func add_branch(amount: int = 1):
 func check_dam_upgrade():
 	if dam_inventory.get_item_amount("branch") >= global.dam_max_branch:
 		# Sound effect? Yayyy you got the upgrade
+		if !upgrade.playing:
+			upgrade.play()
+		#await get_tree().create_timer(1).timeout
 		global.upgrade_dam()
 		update_dam_sprite()
 		dam_inventory.reset()

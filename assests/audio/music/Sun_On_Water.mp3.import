@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Sun_On_Water.mp3-9a683e684f99b635c5ecd1ae8f1b
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

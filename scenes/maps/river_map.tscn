@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://cha21wb7fchj6" path="res://scenes/maps/forest_map.tres" id="2_7522e"]
 [ext_resource type="PackedScene" uid="uid://b415mjnfl2v0c" path="res://scenes/objects/tree.tscn" id="4_jkox7"]
 [ext_resource type="PackedScene" uid="uid://c2eajdiil6gj0" path="res://scenes/ui/main_interface.tscn" id="5_rb5al"]
-[ext_resource type="PackedScene" uid="uid://bgrmyltuo1omb" path="res://scenes/ui/dam_upgrade_ui.tscn" id="7_1utln"]
+[ext_resource type="PackedScene" uid="uid://be2o0lwlr0518" path="res://scenes/ui/dam_upgrade_ui.tscn" id="7_1utln"]
 [ext_resource type="PackedScene" uid="uid://joljn5y0kk16" path="res://scenes/characters/player.tscn" id="8_lcw5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qgfn1"]
