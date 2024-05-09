@@ -2,9 +2,11 @@ extends CanvasLayer
 @onready var player_inv: Inv = preload("res://scenes/inventory/player_inventory.tres")
 @onready var branch_count = $ColorRect/branch_count
 var brnaches = 0
-
+@onready var death_sound = $Audio/AudioStream_death
 # Called when the node enters the scene tree for the first time.
 func _ready():	
+	if !death_sound.playing:
+		death_sound.play()
 	var branch_slot = null
 	for slot in player_inv.slots:
 		if slot != null and slot.item != null and slot.item.name == "branch":
