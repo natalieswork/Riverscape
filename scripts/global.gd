@@ -63,14 +63,16 @@ func finish_changescenes():
 func check_and_upgrade_world_level():
 	if dam_upgraded and world_level < 3: # (and lodge_upgraded) - natalie uncomment this when lodge is implemented
 		world_level += 1
+		
 		load_new_map()
-		print("World level increased to", world_level)
+		print("World level increased to ", world_level)
 		dam_upgraded = false  # reset after world level increment
 
 
 func upgrade_dam():
 	dam_upgraded = true
 	dam_level += 1
+	await get_tree().create_timer(3).timeout # play damn upgrade animation
 	if dam_level <= 3:
 		check_and_upgrade_world_level()
 		update_dam_stats()
@@ -94,6 +96,9 @@ func load_new_map():
 	var new_map_path = get_map_path("river")
 	if new_map_path != "":
 		game_first_loaded = true
+		start_pos_update()
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
 		get_tree().change_scene_to_file(new_map_path)
 	else:
 		print("Failed to load new map for: ", current_scene)
@@ -114,4 +119,12 @@ func load_win_scene():
 	print("Won the game!")
 	var win_scene_path = "res://scenes/ui/winner.tscn"
 	get_tree().change_scene_to_file(win_scene_path)
+	
+func start_pos_update():
+	if world_level == 2:
+		global.player_start_posx =  584
+		global.player_start_posy = 272
+	elif world_level == 3:
+		global.player_start_posx =  646
+		global.player_start_posy = 227
 

@@ -20,6 +20,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if global.dam_upgraded:
+		close()
 		update()
 		
 		
