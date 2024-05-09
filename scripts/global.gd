@@ -72,7 +72,7 @@ func check_and_upgrade_world_level():
 func upgrade_dam():
 	dam_upgraded = true
 	dam_level += 1
-	await get_tree().create_timer(3).timeout # play damn upgrade animation
+	await get_tree().create_timer(2).timeout # play damn upgrade animation
 	if dam_level <= 3:
 		check_and_upgrade_world_level()
 		update_dam_stats()
