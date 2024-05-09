@@ -26,7 +26,7 @@
 
 To get started with Riverscape, clone this repository and follow the installation instructions below.
 
-`git clone https://github.com/natalieswork/RiverscapeGame.git`
+`git clone https://github.com/natalieswork/Riverscape.git`
 
 ## Installation
 
