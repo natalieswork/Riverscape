@@ -73,7 +73,7 @@ func check_and_upgrade_world_level():
 func upgrade_dam():
 	dam_upgraded = true
 	dam_level += 1
-	await get_tree().create_timer(2).timeout # play damn upgrade animation
+	await get_tree().create_timer(1).timeout # play damn upgrade animation
 	if dam_level <= 3:
 		check_and_upgrade_world_level()
 		update_dam_stats()
@@ -123,12 +123,15 @@ func load_win_scene():
 	
 	
 func start_pos_update():
-	if world_level == 2:
-		global.player_start_posx =  584
-		global.player_start_posy = 272
+	if world_level == 1:
+		player_start_posx = 650
+		player_start_posy = 325
+	elif world_level == 2:
+		player_start_posx =  584
+		player_start_posy = 272
 	elif world_level == 3:
-		global.player_start_posx =  646
-		global.player_start_posy = 227
+		player_start_posx =  646
+		player_start_posy = 227
 
 
 func load_death_scene():
@@ -144,3 +147,14 @@ func respawn_player_at_river():
 	global.current_scene = "river_map"
 	get_tree().change_scene_to_file(global.get_map_path("river"))
 
+
+func new_game_stats():
+	dam_level = 1
+	world_level = 1
+	dam_upgraded = false
+	update_dam_stats()
+	start_pos_update()
+	game_first_loaded = true
+	player_health = player_max_health
+	current_scene = "river_map" # river_map, forest_map
+	transition_scene = false

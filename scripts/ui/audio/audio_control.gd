@@ -2,6 +2,7 @@ extends Control
 
 var is_open = false
 @onready var quit_confirm = $quit_confirm
+@onready var player_inv: Inv = preload("res://scenes/inventory/player_inventory.tres")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -41,6 +42,8 @@ func _on_yes_pressed():
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	print("Quit to main menu")
+	player_inv.reset()
+	global.new_game_stats()
 	get_tree().change_scene_to_file("res://scenes/ui/main_menu.tscn")
 
 

@@ -191,7 +191,6 @@ func current_camera():
 
 
 func die():
-	global.player_health = global.player_max_health  # Reset health
 	print("Player has been killed.")
 	current_state = State.DEAD
 	update_animation()
@@ -202,6 +201,7 @@ func die():
 	global.load_death_scene()
 	await get_tree().create_timer(1).timeout
 	alive = true  # Ensure player is marked alive again if necessary
+	global.player_health = global.player_max_health  # Reset health
 	current_state = State.IDLE
 	update_animation()
 	global.has_played_death_sound = false
