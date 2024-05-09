@@ -22,6 +22,7 @@ func _ready():
 		else: 
 			branch_count.text = "You lost " + str(branches) + " branches!"
 			
+	global.player_health = global.player_max_health
 	player_inv.reset()
 
 

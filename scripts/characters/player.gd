@@ -197,11 +197,11 @@ func die():
 	if !global.has_played_death_sound:
 		player_death_sound.play()
 		global.has_played_death_sound = true 
-	await get_tree().create_timer(3).timeout 
+	await get_tree().create_timer(2.5).timeout 
 	global.load_death_scene()
+	#global.player_health = global.player_max_health
 	await get_tree().create_timer(1).timeout
 	alive = true  # Ensure player is marked alive again if necessary
-	global.player_health = global.player_max_health  # Reset health
 	current_state = State.IDLE
 	update_animation()
 	global.has_played_death_sound = false

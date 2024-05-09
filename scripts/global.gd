@@ -22,6 +22,7 @@ var player_in_dam_area = false
 var dam_level = 1
 var dam_upgraded = false
 var dam_max_branch = 1
+var dam_max_branch_1 = 1
 var dam_max_branch_2 = 2
 var dam_max_branch_3 = 3
 
@@ -86,7 +87,9 @@ func upgrade_dam():
 
 func update_dam_stats():
 	if dam_level == world_level:
-		if dam_level == 2:
+		if dam_level == 1:
+			dam_max_branch = dam_max_branch_1
+		elif dam_level == 2:
 			dam_max_branch = dam_max_branch_2  # New goal after upgrade
 		elif dam_level == 3:
 			dam_max_branch = dam_max_branch_3  # New goal after final upgrade
