@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://4ueak3cj2b10"]
+[gd_scene load_steps=3 format=3 uid="uid://4ueak3cj2b10"]
 
 [ext_resource type="Script" path="res://scripts/ui/died.gd" id="1_ai2rp"]
+[ext_resource type="AudioStream" uid="uid://msuyebqkvgug" path="res://assests/audio/music/Spooky.mp3" id="2_7lrj6"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_ai2rp")
@@ -56,3 +57,10 @@ offset_right = 641.0
 offset_bottom = 518.0
 theme_override_font_sizes/font_size = 21
 text = "Press 'Enter' to Continue"
+
+[node name="Audio" type="Node2D" parent="."]
+
+[node name="AudioStream_death" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("2_7lrj6")
+volume_db = -12.381
+bus = &"Music"
