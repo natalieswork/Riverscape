@@ -14,7 +14,7 @@
 - [Getting Started](#getting-started)
 - [Installation](#installation)
 - [Tech Stack](#tech-stack)
--  [Features](#features)
+- [Features](#features)
 - [How to Play](#how-to-play)
 - [Controls](#controls)
 - [Project Structure](#project-structure)
@@ -35,11 +35,12 @@ To get started with Riverscape, clone this repository and follow the installatio
 3. Press 'Play' to start the game at the main menu.
 
 ## Tech Stack
-**Game Engine**: [Godot Engine 4.2.1](https://godotengine.org/)
-**Programming Language**: GDScript
- **Art and Animation**: [Aseprite](https://aseprite.org/)
- **Audio**: GarageBand 
- **Version Control**: Git 
+
+- **Game Engine**: [Godot Engine 4.2.1](https://godotengine.org/)
+- **Programming Language**: GDScript
+- **Art and Animation**: [Aseprite](https://aseprite.org/)
+- **Audio**: GarageBand
+- **Version Control**: Git 
 
 ## Features
 
