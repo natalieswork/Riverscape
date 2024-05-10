@@ -12,6 +12,7 @@
 ## Table of Contents
 
 - [Getting Started](#getting-started)
+- [Build Directory](#build-directory)
 - [Installation](#installation)
 - [Tech Stack](#tech-stack)
 - [Features](#features)
@@ -27,6 +28,27 @@
 To get started with Riverscape, clone this repository and follow the installation instructions below.
 
 `git clone https://github.com/natalieswork/Riverscape.git`
+
+## Build Directory
+
+For users interested only in playing the game without delving into its development, pre-compiled executables are available for both macOS and Windows. These can be found in the `build` directory of the repository.
+
+### Windows Installation
+
+1. Navigate to the `/build/windows` directory.
+2. Download the `.zip` file and extract it.
+4. Double-click the downloaded file to run the game. No additional installation is required.
+
+### macOS Installation
+
+1. Navigate to the `/build/macOS` directory.
+2. Download the `.zip` file and extract it.
+3. Inside the extracted folder, find the `.app` file.
+4. Drag the `.app` file to your Applications folder to install it.
+5. Open your Applications folder and click on the game's icon to start playing.
+
+These executables include all necessary files to run the game.
+
 
 ## Installation
 
