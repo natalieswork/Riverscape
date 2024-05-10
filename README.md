@@ -37,7 +37,7 @@ For users interested only in playing the game without delving into its developme
 
 1. Navigate to the `/build/windows` directory.
 2. Download the `.zip` file and extract it.
-4. Double-click the downloaded file to run the game. No additional installation is required.
+4. Double-click the downloaded file to run the game. You may need to allow the file to run if a Windows Defender pop-up occurs. No additional installation is required.
 
 ### macOS Installation
 
@@ -45,7 +45,7 @@ For users interested only in playing the game without delving into its developme
 2. Download the `.zip` file and extract it.
 3. Inside the extracted folder, find the `.app` file.
 4. Drag the `.app` file to your Applications folder to install it.
-5. Open your Applications folder and click on the game's icon to start playing.
+5. Open your Applications folder and double-click on the game's icon to start playing. You may need to change system settings to allow this file to run.
 
 These executables include all necessary files to run the game.
 
