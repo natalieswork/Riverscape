@@ -1,6 +1,6 @@
 # Riverscape: The Beaver Video Game
 
-**Riverscape** is a unique video game that immerses players in the life of a beaver. In this game, players gather resources, upgrade a dam, and fend off predators, blending action and simulation within a dynamically evolving ecosystem. The project repositiory is hosted [here](https://github.com/natalieswork/Riverscape).
+**Riverscape** is a unique video game that immerses players in the life of a beaver. In this game, players gather resources, upgrade a dam, and fend off predators, blending action and simulation within a dynamically evolving ecosystem. The project repository is hosted [here](https://github.com/natalieswork/Riverscape). A demo video can be viewed [here](https://youtu.be/J2Zaukrr5c8).
 
 - **Version**: 1.0
 - **Date**: 10 May 2024
