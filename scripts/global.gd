@@ -22,9 +22,9 @@ var player_in_dam_area = false
 var dam_level = 1
 var dam_upgraded = false
 var dam_max_branch = 1
-var dam_max_branch_1 = 1
-var dam_max_branch_2 = 2
-var dam_max_branch_3 = 3
+var dam_max_branch_1 = 5
+var dam_max_branch_2 = 10
+var dam_max_branch_3 = 15
 
 # lodge vars
 var player_in_lodge_area = false
@@ -161,3 +161,4 @@ func new_game_stats():
 	player_health = player_max_health
 	current_scene = "river_map" # river_map, forest_map
 	transition_scene = false
+	has_played_death_sound = false

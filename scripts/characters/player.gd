@@ -199,12 +199,13 @@ func die():
 		global.has_played_death_sound = true 
 	await get_tree().create_timer(2.5).timeout 
 	global.load_death_scene()
+	global.has_played_death_sound = false
 	#global.player_health = global.player_max_health
 	await get_tree().create_timer(1).timeout
-	alive = true  # Ensure player is marked alive again if necessary
+	alive = true 
 	current_state = State.IDLE
 	update_animation()
-	global.has_played_death_sound = false
+
 
 
 func update_healthbar():

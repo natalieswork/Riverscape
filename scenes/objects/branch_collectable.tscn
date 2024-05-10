@@ -107,7 +107,10 @@ _data = {
 script = ExtResource("1_ymakl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -4.76837e-07)
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(2.08165e-12, 60)
+rotation = 0.349066
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_eoxrb")
 animation = &"branch"

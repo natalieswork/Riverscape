@@ -528,15 +528,15 @@ size = Vector2(66, 38)
 
 [node name="coyote" type="CharacterBody2D"]
 y_sort_enabled = true
-position = Vector2(0, -5)
 script = ExtResource("1_tabye")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tdujy")
-animation = &"walk_left"
-frame_progress = 0.939858
-offset = Vector2(5, -20)
+animation = &"walk_right"
+frame = 1
+frame_progress = 0.612545
+offset = Vector2(10, -19)
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -555,11 +555,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
-position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_6myql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_doh5h")
 
 [node name="coyote_hitbox" type="Area2D" parent="."]
@@ -574,10 +572,10 @@ wait_time = 0.5
 
 [node name="healthbar" type="ProgressBar" parent="."]
 modulate = Color(0.780392, 0.172549, 0.117647, 1)
-offset_left = -11.0
-offset_top = 6.0
-offset_right = 229.0
-offset_bottom = 46.0
+offset_left = -12.0
+offset_top = 8.0
+offset_right = 228.0
+offset_bottom = 48.0
 scale = Vector2(0.1, 0.1)
 show_percentage = false
 metadata/_edit_use_anchors_ = true

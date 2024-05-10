@@ -16,14 +16,14 @@ script = ExtResource("1_xb1sw")
 item = ExtResource("2_8gpas")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -64)
+position = Vector2(2, -72)
 sprite_frames = ExtResource("3_pmdnk")
 animation = &"cutting"
 
 [node name="collision" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
-position = Vector2(2, -4)
 shape = SubResource("RectangleShape2D_r3s0w")
 
 [node name="cutdown_area" type="Area2D" parent="."]
@@ -33,7 +33,7 @@ position = Vector2(0, -24)
 shape = SubResource("CircleShape2D_j2dxd")
 
 [node name="respawn" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 10.0
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(0, -40)

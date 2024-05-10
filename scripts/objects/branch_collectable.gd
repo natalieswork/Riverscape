@@ -11,6 +11,7 @@ func _process(delta):
 	pass
 
 func fall_from_tree():
+	$AnimatedSprite2D.visible = true
 	$AnimationPlayer.play("fall_from_tree")
 	await get_tree().create_timer(2).timeout
 	$AnimationPlayer.play("fade")
