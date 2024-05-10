@@ -1014,15 +1014,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bs6wh"]
-radius = 7.0
-height = 14.0
+radius = 8.0
+height = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_20qwf"]
 radius = 27.0185
 
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
-position = Vector2(0, -8)
 collision_layer = 3
 script = ExtResource("1_d054b")
 inventory = ExtResource("2_idflq")
@@ -1055,13 +1054,12 @@ volume_db = -12.0
 bus = &"SFX"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -10)
 sprite_frames = SubResource("SpriteFrames_8ci7i")
 animation = &"idle_front"
 autoplay = "idle_front"
+offset = Vector2(2, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_bs6wh")
 
 [node name="player_hitbox" type="Area2D" parent="."]
@@ -1119,9 +1117,9 @@ autostart = true
 [node name="runbar" type="ProgressBar" parent="."]
 modulate = Color(0, 0.654902, 0.694118, 1)
 offset_left = -16.0
-offset_top = 11.0
+offset_top = 8.0
 offset_right = 304.0
-offset_bottom = 61.0
+offset_bottom = 58.0
 scale = Vector2(0.1, 0.1)
 show_percentage = false
 metadata/_edit_use_anchors_ = true
